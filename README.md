@@ -1,2 +1,2 @@
-# Hardcore-Gaming-website
+# Hardcore Gaming Website
 Website
