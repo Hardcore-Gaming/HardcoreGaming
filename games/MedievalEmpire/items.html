@@ -1,0 +1,726 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Medieval Empire</title>
+    <link rel="stylesheet" href="../../styles/games.css">
+</head>
+<body>
+    <h1 class="tittle">
+        Medieval Empire
+    </h1>
+
+    <p>
+        Page Content
+    </p>
+
+    <nav>
+
+        <button class="buttons-ME" onclick="document.location='../medievalempire.html'">
+            Back
+        </button>
+
+        <button class="buttons-ME" onclick="document.location='character.html'">
+            Character
+        </button>
+
+        <button class="buttons-ME" onclick="document.location='items.html'">
+            Items
+        </button>
+
+        <button class="buttons-ME" onclick="document.location='vechicles.html'">
+            Vechicles
+        </button>
+
+        <button class="buttons-ME" onclick="document.location='building.html'">
+            Building
+        </button>
+
+        <button class="buttons-ME" onclick="document.location='buisness.html'">
+            Buisness
+        </button>
+
+        <button class="buttons-ME" onclick="document.location='sports.html'">
+            Sports
+        </button>
+
+        <button class="buttons-ME" onclick="document.location='minigames.html'">
+            Minigames
+        </button>
+
+        <button class="buttons-ME" onclick="document.location='events.html'">
+            Events
+        </button>
+
+        <button class="buttons-ME" onclick="document.location='mechanics.html'">
+            Mechanics
+        </button>
+    </nav>
+
+    <p>
+        Character
+    </p>
+
+    <p class="Description">
+        Ladder
+        BatteringRam
+        Catapult
+        Trebuchet
+        Tower
+        Balista
+        Scorpio
+        GrapeShot
+        Basilisk
+        Mortar
+        Hwacha
+        Cannon
+
+        Currency
+        -copper coin
+        -silver coin
+        -gold coin
+        -platinum coin
+
+        Lumber
+        -stick
+        -wood
+        -log
+
+        Stone
+        -rock
+        -stone
+        -boulder
+
+        Food
+        -wheat
+        -vegetable
+        -fruit
+        -meat
+        -water
+        -spices
+
+        Ore
+        -tin
+        -copper
+        -iron
+        -silver
+        -gold
+        -sulfur
+        -lead
+        -obsidion(Only Near Volcano)
+
+        copper/tin = bronze
+        iron/bronze = steel
+        steel/titanium = titanium
+
+        Fabric
+        -silk
+        -linen
+        -wool
+        -leather
+        -fur
+
+        Parts
+        -pullrope
+        -cover
+        -hook
+        -lever
+        -spring
+        -netting
+
+        EngineerParts
+        -sling
+        -axle
+        -wheel/Iron
+        -tongue
+        -wagonbed
+        -ram
+        -bar
+        -roof
+        -ramp
+        -beam
+        -floor
+
+        SiegeFrame
+        -BatterRam-w?Roof
+        -Tower
+        -Wagon
+        -SiegeLadder
+        -Ballista
+        -Catapult
+        -Trebuchet
+
+        Other
+        -resin= pitch/tar
+        -clay
+        -flint
+        -feather
+        -charcoal
+        -qicklime=from limestone
+        -oil
+        -posion
+        -maggots
+
+        Furniture
+        ===========================
+        -bench(RoomIngredient)
+        -chair(RoomIngredient)
+        -table(RoomIngredient)
+        -workbench(CraftingRequirment)
+        -grinder(Sharpen)
+        -fence(Farm)
+        -bed(Room)-bedroll
+        -tanner(Leather)
+        -loon(Cloth)
+        -anvil(CraftingRequirment)
+        -furance(Smelt)
+
+        Container
+        ===========================
+        Chest(All(excpt.Weapons,Armor)
+        Crates(Items)
+        Barrel(Water,Liquor)
+        Sack(Food,)
+        WeaponRack(Weapon)
+        ArmorStand(Armor)
+        Trunk(Weapons,Armor)
+        Shelf(Books)
+
+        Weapons(One-Handed,Two-Handed)
+        ===========================
+        Dagger
+        Sling
+        Sword
+        Bow
+        Crossbow
+        Axe
+        Mace
+        Spear
+        Flail
+        Staff
+        Knife
+        Slingshot
+        Musket
+        Grenada
+        Lasso
+
+        Medical
+        ============================
+        Bandage- heals injury
+        HealingOli- heal and prevents infection
+        Splint- fixes broken bones
+        Leeches- suck posion
+        Maggots- cleans infections
+        Burn- stops bleeding
+        amputate - replace limb
+        Mercuary- ?
+
+        Other
+        ============================
+        Saddle
+
+        Tools,Items,Junk
+        Weapons,Armor,Equitment
+        Wheat,Fruit,Vetables,Meats
+        Wheat,//Bread,Cake,
+        Fruit,//Apples,Oranges,Grape,Banana
+        Vegtable,//Carrot,Cobbage,Leek,
+        Meat,//Chicken,Steak,Sausage,Ham,Porkchop
+        Fish,//Salmon
+
+        Default,
+        Currency,
+        Resource,
+        Equipment,
+
+        Medical,//Bandage-used for Healing or Other
+        Storage,//Chest-Containts Items, Barrel-Contains Water,Sack-Contains Food,Crate-Containts Material,
+        WeaponRack-Stores Weapons, ArmorStand-Stores Armor, Trunk-Stores Both Weapons/Armor, Shelf-Stores Books
+        Tools,//Hammer-Blacksmith, Shear-Shear Sheep, Bucket-Gather Water, Shovel-Change Terrian
+        Furniture,//Workbench-Craft, Grinder-Sharpen, Table-Craft Buildings,Chair,//Craft Buildings,Lantern,//Craft Buildings
+        Material,//Wool-Craft Clothes/Gear
+        Misc,//Paper-Note/Messages or Other, Tabbaco-BOOST MORALE, Weed,//BOOST Liquer,//BOOST MORALE,Book,//Random Book
+        CopperCoin,//100 Copper > 1 Silver
+        SliverCoin,//10 Silver > 1 Gold
+        GoldCoin,//No Exchange
+        PlatinumCoin//Not Acualy Currency
+
+        Currency,//CopperCoin, SilverCoin, GoldCoin
+        Food,//Fruit,Vegtables,Meat,
+        Water,//CleanWater/SpringWater
+        Lumber,//Stick,Wood,Log
+        Stone,//Stone,Rock,Boulder
+        Mineral,//Iron,Ruby,Diamond,Sappire,Amethyst,Copper,Platinum,Sulfur,Lead,Nickel
+        Material,//Wool,Fiber,Cotton
+
+        bandage- heals injury
+        maggots- cleans infections
+        Burn- stops bleeding
+        amputate - cut limb
+
+        Coin
+        -copper
+        -silver
+        -gold
+
+        Tools
+        -hammer
+        -shear
+        -bucket
+        -shovel
+        -axe
+        -pickaxe
+
+        Material
+        -Wood Plank
+        -Stone Brick
+        -Clay
+        -Metal Plate
+        -Leather
+        -Cloth
+        -Bronze Ingot
+        -Iron Ingot
+        -Steel Ingot
+        -Copper Ingot
+        -Sliver Ingot
+        -Gold Ingot
+
+        Furniture
+        -bench(RoomIngredient)
+        -chair(RoomIngredient)
+        -table(RoomIngredient)
+        -workbench(CraftingRequirment)
+        -grinder(Sharpen)
+        -fence(FarmIngredient)
+        -bed(RoomIngredient)
+        -tanner(Leather)
+        -loon(Cloth)
+        -anvil(CraftingRequirment)
+        -furance(Smelt)
+
+        Storage(No Furniture)
+        -chest(All(excpt.Weapons,Armor)
+        -barrel(Water,Liquor)
+        -sack(Food,)
+        -crate(Items)
+        -trunk(Weapons,Armor)
+        -armorstand(Armor)
+        -weaponrack(Weapon)
+        -shelf(Books)
+
+        Misc
+        -paper
+        -book(learn)
+        -tabbaco
+        -liquor
+        -weed
+
+        Types
+        =============================
+        Gambeson(linen/wool)
+        Boiled(leather)
+        Shell(turtles)
+        Scale(metal/manyplates)
+        Lamellar(iron/leather)
+        Laminar(metal/bigplates)
+        Mail(chain)
+        Plated(chain/metal)
+        Brigandine(leather/metal)
+        Plate(metal)
+
+        ARMOR
+        =============================
+        Helmet
+        -cap(leatherhat)
+        -hood
+        -coif(ChainHelm)
+        -skullcap
+        -kettle
+        -nasal
+        -spangen
+        -broe
+        -kabuto
+        -coppergate
+        -sutton
+        -enclosedhelm
+        -greathelm
+        -hounskull
+        -closehelm
+        -armet
+
+        Face
+        -scarf
+        -mask
+        -plaguedoctor
+
+        Shoulder
+        -spaulder(smaller)
+        -pauldron
+
+        Neck
+        -necklace
+        -collar
+
+        Back
+        -satchel
+        -cloak
+
+        Chest
+        *UNDER*
+        -tunic
+        -gambeson(paddedarmor)
+        -surcoat(padded W/designs)
+        -cuirass(lether/metal)
+        -hauberk(ChainArmor)
+        *OVER*
+        -plackart(OnlyTorso)
+        -scale(Torso&Arms)
+        -plated(FullChest)
+
+        Arms
+        -bracer
+        -vambrace
+
+        Hands
+        -glove
+        -gauntlet
+
+        Finger
+        -ring
+
+        Waist
+        -belt
+        -faulds
+
+        Legs
+        -trouser
+        -chausses
+
+        Feet
+        -clogge
+        -sandle
+        -boot
+        -sabaton
+
+        Weapon
+        -knife
+        -club
+        -whip
+        -dagger
+        -sword
+        -mace
+        -axe
+        -spear
+        -flail
+        -greatsword
+        -largeaxe
+        -hammer
+        -lance
+        JapaneseWeapons
+        -katana
+        -kama(scytheaxes)
+        -Manriki-gusari(chainweapon)range/melee
+        -Kusarigama(Both manriki-gusari/kama)
+        -Kyoketsu-shoge(Both manriki-gusari/blade)
+        -Shuriken(throwingStars)
+        -Kunai(ninjathrowingknifes
+        -Bo(Staff)
+        -Fukiya(blowdart)
+
+        Shield(small,medium,large,ex.large)
+        -buckler
+        -moorish
+        -targe
+        -heater
+        -kite
+        -pavise
+        -tower
+
+        RangedWeapon
+        -sling
+        -bow
+        -longbow
+        -crossbow
+        -handcannon
+        -arquebuses
+        -javelin
+        -throwingknife
+        -hachet
+        -blowpipe
+        -grenade(shrap, fire, posion)
+        -flamethrower
+        -rocket
+
+        Ammo
+        -rock
+        -arrow
+        -bolt
+        -bullet
+        -dart
+        -oil
+        -greekfire(sulfur,quicklime,resin,oil)
+
+        Equipment
+        -holster
+        -quiver
+        -pouch
+        -horn
+        -banner
+        -grappinghook
+        -baldric
+        -crowbar
+        -compass
+        -lockpick
+        -bag
+        -torch
+
+        Weapon
+        Off-Hand
+        Armor
+        Helemet
+        Face
+        Chest
+        Legs
+        Arms
+        Feet
+        Hand
+
+        Bandage
+        HealingOli
+        Splint
+        Leeches
+        Mercuary
+
+        Chest
+        Crates
+        WeaponRack
+        ArmorStand
+        Trunk
+
+        Dagger
+        Rock
+        Sword
+        Bow
+        Crossbow
+        Axe
+        Mace
+        Spear
+        Staff
+        Knife
+        Slingshot
+        Musket
+        Grenada
+        Lasso
+        One-Handed
+        Two-Handed
+
+        Currency
+        -copper coin
+        -silver coin
+        -gold coin
+
+        Lumber
+        -stick
+        -wood
+        -log
+
+        Stone
+        -stone
+        -rock
+        -boulder
+
+        Food
+        -wheat
+        -vegetable
+        -fruit
+        -meat
+        -water
+        -sugar
+
+        Ore
+        -tin
+        -copper
+        -iron
+        -silver
+        -gold
+        -sulfur
+        -lead
+        -obsidion(Only Near Volcano)
+
+        copper/tin = bronze
+
+        Fabric
+        -silk
+        -linen
+        -wool
+        -leather
+        -fur
+
+        Other
+        -resin= pitch/tar
+        -clay
+        -flint
+        -feather
+        -charcoal
+        -qicklime=
+        -oil
+        -posion
+        -maggots
+
+        Ladder
+        Ram
+        Catapult
+        Trebuchet
+        Tower
+        Balista
+        Scorpio
+        GrapeShot
+        Basilisk
+        Mortar
+        Hwacha
+        Cannon
+
+        *SiegeEngines*
+        Mining- mine under obstacle
+        GrappleHook- Rope with Hook on End to scale walls
+        Ladder- to climb up walls
+        Mangonel-ManPowered Trebucket
+        Battering Ram-Breaks Gates
+        SiegeTower-ShieldedStairtoWall
+        Trebucket- shoot boudlers at building/areas(CounterWieght)
+        Catapult- shoot rock,flame,carcasses
+        Ballista- shoot large bolt/boudlers destroying SiegeEngine/AreaAttack
+        Cannon- Gunpower Shoots cannonballs
+        Mortar- Shoot explosive
+        Bombard- Break wall
+
+        *Defence*
+        Barricade- stop/slow characters/mounted
+        Moat- can't Cross
+        Drawbridge- bridge that can be open/closed
+        Trench- slow characters
+        Rollinglog- injuries characters
+        RollingHay/Flame- injuries/kill characters
+        Caltrop- slow infantry and stop Calvary
+        Pit- tarp a character didnt see and falls an dies/injured(Spike,Snake,Snare,Stuck)
+        Muderholes- holes to peak
+        Tower- space for units to defend
+        Gate- open/closed path/entrance
+        Barbican- Extention of Gates(muderholes,arrow-slit,trapdoor)
+        Gunport- firing platform for better post
+        Stairs- get to floors
+        Portcullis- outter gate with spikes at bottom
+        RollingTrap- Boulder, WoodBarrel, FalmingBarrel
+        DropTrap- Stone, Tar, Oil
+        SwingTrap- big object(Log, Boulder, Spike) hanging to swing and smash/pierce
+
+        *Transportation*
+        Cart-Hand Held Wagon/FilledWithItems
+        Chariot- 2people
+        Farm Wagon-carrys food/2people
+        Jail Wagon-carry captives
+        Delivery Wagon-Carry some items
+        FrieghtWagon-Carrys Alot of items
+        Normadic wagon-Living in or Workshop
+        War wagon-Fort
+        Pageant Wagon-Merchant
+        Carriage-Carrys People or Containers
+        Canoe-
+        Boat-
+        Farie-
+        Schooner-
+        Cog-boat
+        Brig-
+        Hulk-
+        Clipper-
+        Caravel-
+        Carrack-
+        Galley-
+        Balinger-
+        Warship
+        Frigate-
+
+        *Other*
+        Plough-Farm Better(Need Mount)
+
+        Coin
+        -copper
+        -silver
+        -gold
+        -platinum
+        100Copper>10Sliver>1Gold 10Gold 1Platium
+
+        Food
+        -water(waterskin,barrel,bucket)
+        -wheat(bread,cake)
+        -fruit(apples,oranges,grape,banana)
+        -vegetable(carrot,cabbage,leek)
+        -meat(chicken,steak,pork,ham)
+        -fish(salmon,crab)
+        -spice(sugar,salt)
+
+        Lumber
+        -stick
+        -wood
+        -log
+
+        Stone
+        -stone
+        -rock
+        -boulder
+
+        Ore
+        -tin
+        -copper
+        -iron
+        -silver
+        -gold
+        -sulfur
+        -lead
+        -obsidion(Only Near Volcano)
+        copper/tin = bronze
+
+        Fabric
+        -silk
+        -linen
+        -wool
+        -leather
+        -fur
+
+        Material
+        -Wood Plank
+        -Stone Brick
+        -Clay
+        -Metal Plate
+        -Leather
+        -Cloth
+        -Bronze Ingot
+        -Iron Ingot
+        -Steel Ingot
+        -Copper Ingot
+        -Sliver Ingot
+        -Gold Ingot
+
+        Jewels
+        -ruby
+        -diamond
+        -sappire
+        -amethyhst
+
+        Misc
+        -paper
+        -book(learn)
+        -tabbaco
+        -liquor
+        -weed
+
+        Other
+        -resin= pitch/tar
+        -clay
+        -flint
+        -feather
+        -oil
+        -greekfire(sulfur,quicklime,resin,oil)
+    </p>
+
+</body>
+</html>
