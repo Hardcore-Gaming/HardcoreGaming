@@ -1,0 +1,10 @@
+.tittle {
+    text-align: center;
+    color: black;
+}
+
+.Description {
+    width: 300px;
+    margin: auto;
+    line-height: 24px;
+}
