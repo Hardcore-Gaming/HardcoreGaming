@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hardcore Gaming</title>
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+    <h1 class="tittle">
+        General Information
+    </h1>
+
+    <p>
+        By Hardcore Gaming
+    </p>
+
+    <p>
+        <button class="buttons" onclick="document.location='index.html'">
+            Home
+        </button>
+
+        <button class="buttons" onclick="document.location='games.html'">
+            Games
+        </button>
+
+        <button class="buttons" onclick="document.location='servers.html'">
+            Servers
+        </button>
+
+        <button class="buttons" onclick="document.location='forum.html'">
+            Forum
+        </button>
+
+        <button class="buttons" onclick="document.location='aboutus.html'">
+            About Us
+        </button>
+
+        <button class="buttons" onclick="document.location='profile.html'">
+            Profiles
+        </button>
+
+        <button class="buttons" onclick="document.location='general.html'">
+            General
+        </button>
+
+        <button class="buttons" onclick="document.location='examplepage.html'">
+            TestButton
+        </button>
+    </p>
+
+    <p>
+        Basic game information layout
+    <p>
+        Username
+        Password
+        First Name
+        Last Name
+        Date of  Birth
+        E-mail
+        Phone #
+        Gender
+        Terms
+    <p>
+        Introduction
+        Start Game
+        Chapters
+        Basics
+        Story
+        Expansions
+        Characters
+        Inventory
+        Weapons & Armor
+        Classes
+        Skills
+        Mastery
+        Levels
+        Prestige
+        Quest
+        Task
+        Objectives
+        Map
+        Areas
+        NPC
+        Traits
+        Items
+        Multiplayer
+        Settings
+    <p>
+        PLAY
+        Singleplayer
+        -campaign
+        -custom
+        Co-Op
+        -same as singleplayer
+        Multiplayer
+        -same as singleplayer
+        -pvp gamemodes
+        Servers
+        -same as singleplayer
+        -pvp gamemodes
+
+        PROFILE
+        Name
+        Level
+        Inventory
+        Character
+        Stats
+        Ranks
+        Leaderboard
+
+        CONTENT
+        Buy
+        Create
+        Download
+
+        OPTIONS
+        Audio
+        -sound
+        -music
+        Display
+        Controls
+        -keyboard
+        -controller
+
+        ABOUT
+        Credits
+
+        EXIT
+    <p>
+        #Players All/Online/Offline/Ban
+        #Cities #NPC #Resources #PlayerOwnedNPC #Traveling
+        #Servers Offical/Player/Dedicated
+        Server Players, Stats, TimeUp, Money, Played, info
+        Player Profile, Stats, TimePlayed, Info,
+        Profile Name/Level/Character/Homes/Age/Knowledge/Resources
+        Reputation Good/Neutral/Bad
+        LogKeepTrackOfEverything/RecentlyHappened
+    <p>
+        Speed-ups Rate Extra Boost Instant
+        Experience Resource Character Stats Item
+        Packages
+        Protection
+
+        Subscriber Only Servers Non-paytowin
+        Creator
+        Skins
+    <p>
+        sound/music/effects/voice
+        whisper/talk/headset/radio
+    <p>
+        Content
+        ==========================================
+        0.Register/Sign-in
+        a.Register
+        b.Sign-in
+        1.Menu
+        a.Singleplayer
+        b.Co-Op
+        c.Mulitplayer
+        d.Server
+        2.Profile
+        a.character
+        b.party
+        c.alliance
+        d.stats
+        3.Map
+        a.players
+        b.settlements
+        c.land
+        d.world
+        4.Items
+        a.resources
+        b.material
+        c.weapons
+        d.armor
+        e.tools
+        f.currency
+        5.Buildings
+        a.houses
+        b.workshops
+        c.defences
+        d.camps
+        e.shops
+        f.misc.
+        6.NPC
+        a.netrual
+        b.animals
+        c.good/evil
+        =========================================
+    <p>
+        Gamemodes
+        ==============
+        -Campaign
+        [ ]NPCs,[ ]Objectives,[ ]Task,
+        -Invasion
+        [ ]NPCs,[ ]WaveSystem,[ ]Shop
+        -Operation
+        [ ]NPCs,[ ]Objectives,
+        -Battlefield
+        [ ]OtherPlayers,[ ]NPCs,[ ]Loot,[ ]Objective,[ ]Camps,[ ]Forts,[ ]Base
+        -Extract
+        [ ]OtherPlayers,[ ]NPCs,[ ]Loot,[ ]Objective,[ ]Extract
+        -Teamdeathmatch
+        [ ]OtherPlayers,[ ]Base,
+        -Search&Destroy
+        [ ]OtherPlayers,[ ]Base,[ ]Objective
+        -Free-For-All
+        [ ]OtherPlayers,[ ]RandomSpawn,
+        -CapturetheFlag
+        [ ]OtherPlayers,[ ]Base,
+        -BattleRoyal
+        [ ]OtherPlayers,[ ]StartingDrop,
+        -Conquest
+        [ ]OtherPlayers,[ ]Base,
+        -AllSettings
+        [ ]#Players,[ ]#Points,
+    <p>
+        BaseNPC
+        Mood- Based on Mood to do bad thing
+        Morales- Based on Decisions to Kill or Trade/Chat
+        Loyalty- Based on How Treated to Listen
+        Needs- Moods required to maintain
+        Actions- Todo(Trade, Attack)
+        PlayerOptions- Interact
+
+        *HUMAN*
+        Peasant
+        Mood low scales
+            high
+            Morales Mercenary Hunter
+                Trader
+                Loyalty Help Ignore
+                    Threaten
+                    Need Water Food Resting Travel Trade Settle(lookForSettlment) Help(+Loyalty)
+                    Conversate Rob
+                    Chat(+detailOfStats) Recruit(%chancetojoin) Trade(-/+StuffTrade)
+
+                    Mercenary or Trader
+                    -Mercenary
+                    Mood Crinimal Trader
+                        Enforcer
+                        Need Excitement
+                        Fight
+                        Hire(+TempRecruit)
+
+                        -Trader
+                        Mood Crinimal Merchant
+                            Leader
+                            Trade
+                            Hunt Collect
+                            Trade
+
+                            Crinimal or Soldier or Enforcer
+                            -Crinimal
+                            Mood Heathen Bandit
+                                Mercenary
+                                Greedy Kill Steal
+                                Soldier(Follower) Captain(Recruit)
+                                    Leader(Base)
+
+                                    -Enforcer
+                                    Mood Mercenary Enforcer
+                                        Templar
+                                        FindCrinimal
+
+                                        Merchant or Leader
+                                        -Merchant
+                                        FindSettlement
+
+                                        -Leader
+                                        CreateSettlements
+
+                                        *ANIMALS*
+                                        -herbivore
+                                        Squirrel
+                                        Rabbits
+                                        Chicken
+                                        Coyote
+                                        Armadillo
+                                        Cow
+                                        Sheep(wool)
+                                        Deer
+                                        Elk
+                                        Antelope
+                                        Ox(PullWagons/FarmTools)
+                                        Horse(Mount)
+                                        Mule(Pack)
+                                        Donkey(Pack)
+                                        Camel(Mount)
+                                        Goat
+                                        Elephant(Mount)
+                                        Buffalo
+
+                                        -omnivore
+                                        Cat(Tame)
+                                        Dog(Tame)
+                                        Rhino
+                                        Boar
+                                        Chimpanzee
+                                        Gorillas
+                                        Bear
+                                        Bull
+                                        Fox
+                                        Porcupine
+
+                                        -carnivore
+                                        Wolf
+                                        Tiger
+                                        Leopard
+                                        Hyena
+                                        Alligator
+                                        KomodoDragon
+
+                                        (Posions/infestation)
+                                        -insects
+                                        Spider
+                                        Scoripion
+                                        Rat-Carry Fleas
+                                        Lizard
+                                        Snake
+                                        Bee
+                                        Centipede
+                                        Locust
+                                        Worm
+                                        Silkworm
+                                        Frog
+                                        Wasp
+                                        Termite
+                                        Ant
+                                        Cockroach
+                                        Fly
+                                        Fleas-Chance to pass +>Chance of Diease
+
+                                        -fish
+                                        Pike
+                                        Salmon
+                                        Crab
+                                        Whale
+                                        Octopus
+                                        Shark
+                                        Eel
+                                        Turtle
+
+                                        -birds
+                                        Raven
+                                        Geese
+                                        Vultures
+                                        Duck
+                                        Eagle
+                                        Falcon
+                                        Bat
+                                        Parrot
+                                        Pigeon
+                                        Sparrow
+                                        Owl
+                                        Robin
+                                        Hawk
+
+                                        -other
+                                        Neanderthal-Cavemen
+
+                                        Units
+                                        ===============
+                                        Orders
+                                        -SelectUnit/Squad/All
+                                        -Move/Follow/Hold/Partol
+                                        -CoverFire/TakeCover
+                                        -Spot/Target/Area
+                                        -Clear/Breach
+                                        -Formation
+                                        -Use/EnterVechicleItem
+                                        PassiveOrder
+                                        -CheckUnit
+                                        -DestroyTank/Bunker
+                                        -HoldFire/FreeFire/ReturnFire
+                                        -Ammo/Medic
+                                        Stat
+                                        -Health/Armor
+                                        -Skill/Stats/Spec
+                                        -Loadout
+                                        Learn
+                                        -Training
+                                        -TimetoFollowOrder
+                                        -AbilityToExcuteOrder
+                                        -Intelligence
+                                        -Speciality
+                                        [ ]Recuit,[ ]Soldier,[ ]Medic,[ ]Demo,[ ]Sniper,[ ]Heavy,[ ]Crew,[ ]Pilot,[ ]Mechanic,
+                                        [ ]Armorer,[ ]Builder,[ ]Other
+    <p>
+        Family -> Clan -> Tribe
+        Chief
+        Advisors
+        General Assembly
+        Banners
+        Tattoo
+
+        Deciding to go to War
+        Call to Arms
+        Mustering Tropps
+        Deployment for Battle
+
+        Territoral Expansion
+        Political Feuds
+        Relgious War
+        Reconquest
+
+        Secert - Tunels, Passages, Storage
+        Carriers - messages to plan attacks
+        Message of places -
+        Offical Summons - date & place
+        Treaties -
+        Alliances - Friendly armys not controled by you
+        Citizenship - Allow of privlages or adopt as own
+
+        Aristocratic - Main
+        Aristocratic Retinue - VIP
+        Freemen - Settlement Arms
+        Foreign Allies - foreign freelancer soldiers
+        Mercenaries - Paied freelancers
+        Levy - villagers with little experience in fighting
+        Malisa - Trained peasants with no expertise
+        Peasant - villagers with no experience
+
+        Theifs Criminal
+        Ambush, Traps, Survey, Sneaky, Heist, Racketeering
+
+        Reputaion - Gossip of name of traitors,secret tunels
+        Bans - of weapon and other stuff
+        Camp - tents
+        Pillaging - Kill, Loot, & Burn Down
+        Decimation - Kill % of Army for cowardest
+        Scurged - Kill Retreating Friedly Forces
+        Mutiny - to not listen to orders or refuse to obey the orders of a person in authority
+
+        Find Waterhole digging up dirt every where until odd find
+        Balistica with Rope and Hooks
+
+        Weapon Cleaning - dirt, sharp, slick, parts
+        Blueprints
+        Books
+        Recipes
+    <p>
+        OPTIONS
+        =================
+        Introduce- ask name and family
+        Help - ask for job/quest
+        recruit - ask to join party/settlement
+        threathen - rob the character
+        advertise - give character chance to vist settlement
+        gossip - learn random details like settlement, job/quest, other
+
+        Diplomacy
+        =================
+        Neutral
+        Alliance
+        Enimie
+
+        Language
+        =================
+        English
+        Greek
+        Latin
+        French
+        German
+        Turkish
+        Gothic
+        Irish
+        Dutch
+        Chinese
+        Khazar
+        Slavic
+        Arabic
+        Spanish
+        Swedish
+        Saxon
+        Japanese
+        Mandarin
+
+        Religion
+        =================
+        Christianity
+        Judaism
+        Islam
+        Paganism
+    </p>
+</body>
+</html>
