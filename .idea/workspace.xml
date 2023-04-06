@@ -5,31 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37b14f0a-6bf1-49f0-a2b8-40c49f9fbad4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/games/InfectionApocalypse/building.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/games/InfectionApocalypse/components.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/games/InfectionApocalypse/equipment.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/games/InfectionApocalypse/gamemodes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/games/InfectionApocalypse/guide.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/games/InfectionApocalypse/people.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/games/InfectionApocalypse/zombie.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/games/OperationWarfare/equipment.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/games/OperationWarfare/factions.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/games/OperationWarfare/guide.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/games/OperationWarfare/objectives.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/games/OperationWarfare/ranks.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/games/SpaceGalaxies/building.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/games/SpaceGalaxies/duties.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/games/SpaceGalaxies/guide.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/games/SpaceGalaxies/items.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/games/SpaceGalaxies/vechicles.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/games/SuperViglantie/items.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/games/MedievalEmpire/events.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/games/MedievalEmpire/mechanics.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/games/MedievalEmpire/vechicles.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/InfectionApocalypse/character.html" beforeDir="false" afterPath="$PROJECT_DIR$/games/InfectionApocalypse/character.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/OperationWarfare/building.html" beforeDir="false" afterPath="$PROJECT_DIR$/games/OperationWarfare/building.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/OperationWarfare/vechicles.html" beforeDir="false" afterPath="$PROJECT_DIR$/games/OperationWarfare/vechicles.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/SpaceGalaxies/character.html" beforeDir="false" afterPath="$PROJECT_DIR$/games/SpaceGalaxies/character.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/SuperViglantie/character.html" beforeDir="false" afterPath="$PROJECT_DIR$/games/SuperViglantie/character.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/FightEncounter/character.html" beforeDir="false" afterPath="$PROJECT_DIR$/games/FightEncounter/character.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/fightencounter.html" beforeDir="false" afterPath="$PROJECT_DIR$/games/fightencounter.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/games/infectionapocalypse.html" beforeDir="false" afterPath="$PROJECT_DIR$/games/infectionapocalypse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/medievalempire.html" beforeDir="false" afterPath="$PROJECT_DIR$/games/medievalempire.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/operationwarfare.html" beforeDir="false" afterPath="$PROJECT_DIR$/games/operationwarfare.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/games/spacegalaxies.html" beforeDir="false" afterPath="$PROJECT_DIR$/games/spacegalaxies.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/games/superviglantie.html" beforeDir="false" afterPath="$PROJECT_DIR$/games/superviglantie.html" afterDir="false" />
     </list>
@@ -49,10 +33,11 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/games/SuperViglantie" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/games/MedievalEmpire" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\NZXT\Documents\GitHub\Hardcore-Gaming-website\games\MedievalEmpire" />
       <recent name="C:\Users\NZXT\Documents\GitHub\Hardcore-Gaming-website\games\SuperViglantie" />
       <recent name="C:\Users\NZXT\Documents\GitHub\Hardcore-Gaming-website\games\SpaceGalaxies" />
       <recent name="C:\Users\NZXT\Documents\GitHub\Hardcore-Gaming-website\games\InfectionApocalypse" />
