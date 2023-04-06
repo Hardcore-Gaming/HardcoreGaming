@@ -1,0 +1,280 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Life Style</title>
+    <link rel="stylesheet" href="../../styles/games.css">
+</head>
+<body>
+    <h1 class="tittle">
+        Life Style
+    </h1>
+
+    <p>
+        Page Content
+    </p>
+
+    <nav>
+
+        <button class="buttons-LS" onclick="document.location='../lifestyle.html'">
+            Back
+        </button>
+
+        <button class="buttons-LS" onclick="document.location='character.html'">
+            Character
+        </button>
+
+        <button class="buttons-LS" onclick="document.location='items.html'">
+            Items
+        </button>
+
+        <button class="buttons-LS" onclick="document.location='vechicles.html'">
+            Vechicles
+        </button>
+
+        <button class="buttons-LS" onclick="document.location='building.html'">
+            Building
+        </button>
+
+        <button class="buttons-LS" onclick="document.location='buisness.html'">
+            Buisness
+        </button>
+
+        <button class="buttons-LS" onclick="document.location='sports.html'">
+            Sports
+        </button>
+
+        <button class="buttons-LS" onclick="document.location='minigames.html'">
+            Minigames
+        </button>
+
+        <button class="buttons-LS" onclick="document.location='events.html'">
+            Events
+        </button>
+
+        <button class="buttons-LS" onclick="document.location='mechanics.html'">
+            Mechanics
+        </button>
+    </nav>
+
+    <p>
+        Mechanics
+    </p>
+
+    <p class="Description">
+        INTERNET
+        websites darkweb onlinepcgames
+
+        COMPUTER|LAPTOP
+        ethernet/wifi pcgames
+
+        PHONE
+        wifi/data phonegames call/message/voicemail/contact
+        Snaptoplace-placeobject
+        buildingplan- place a greenplan turn blue fill with required
+        Rotate,Move,
+
+        Foundation
+
+        Walls-Roof-Floor
+
+        Window-Garage
+
+        Blood- goes down then you die from being unconscious or be not stable
+        +Revive -Died -TimeDrain
+        Health- goes down then damaged to Blood which means you either fell down or dying
+        +Meds -Damage +TimeRegen(DependingFood/Liquid)
+        Armor- take some damage instead of health
+        +Armor +BulletDamageReducing
+        Stanima- energy used from running, jumping, oxygen
+        -OnMovementUsed(BesideWalking) +RegenUnused +Parkour +Vaulting
+        Hunger- amount of food needed to not starve to deahth and keep your health healing
+        +EatFood -TimeDrain -LowerHealthAt#
+        Thirst- amount of liquids needed stay hydrated keep stantima up and not die from dehydration
+        +DrinkLiquid -TimeDrain -LowerHealthAt#
+        Energy- keeps track of time awake until needed sleep and away from drowsiness, fatigue, reactiontime
+        +SleepBed -TimeUp&StanimaUsed
+        Bladder- amount of food/liquid intake until need to use restroom
+        -UseRestroom +ConsumedFoodLiquid
+        Tempature- Keeps track of heat and cold to hot can make you passout to cold can also unitl death
+        -ColdTemp NormalTemp +HotTemp
+
+
+        Blood- +Revive -Died -TimeDrain
+        Health- +Meds -Damage +TimeRegen(DependingFood/Liquid)
+        Armor- +Armor +BulletDamageReducing
+        Stanima- -OnMovementUsed(BesideWalking) +RegenUnused +Parkour +Vaulting
+        Hunger- +EatFood -TimeDrain -LowerHealthAt#
+        Thirst- +DrinkLiquid -TimeDrain -LowerHealthAt#
+        Energy- +SleepBed -TimeUp&StanimaUsed
+        Bladder- -UseRestroom +ConsumedFoodLiquid
+        Tempature- -ColdTemp NormalTemp +HotTemp
+
+        the armor to health to blood when health is down then a crawl status and revive
+        stanima goes down when using jump/sprint and drains energy on use per action sleep
+        for time to fill energy food and water to have health naturally regen bladder filled
+        per food/water consumed and pee button to consume more food/water last the tempature
+        cold or hot per zone with too much of either can make you unconscious to die
+
+        Pockets- Usable Items
+        Equipment- Slots of Clothes,Gear, and Equipment
+        Backpack- Grid based slotted inventory
+        Phone- Contact people and use apps
+        Wallet- Carry Money,Card,ID
+
+        Inventory System
+
+        Player (Independent of backpack inventory)
+        • Containers
+        Sizes, MaxSlots,
+        • Clothing
+        Wearing
+        • Armour
+        Equipment
+        • Weapon
+        Selection Wheel
+        • HolsterSlots
+        Primary-Seconday-Sidearm-Melee
+
+        • Containers
+        Backpack-Crate-Rack-Bundle-Case
+        • InventorySlots
+        Material-Weapons-Clothes-Gear-Medical
+        • Pockets
+        ExtraSlots
+        ClipforSmallContainers
+
+        Features
+        • Backpack can be swapped
+        • Each backpack has a separate pockets slot
+        • Item types - food, potions, armor etc.
+        • Item tooltip
+        • Item info and usage menu
+        • Drag and drop
+        • Stacking
+
+        Paying- pullout money with options to select ammount and place/give for paying
+
+        Paperwork- fillout paper and give/turnin
+
+        Bills- send money to pay bills to services
+
+        Pockets- Usable Items
+        Depending on gear get slots for hotbar wheel to select item to use or equip
+
+        Equipment- Slots for Clothes,Gear, and Equipment
+        Clothes is Cosmetic
+        Gear is Backpack,Holster,Equipment
+        Equipment is stuff that give UI or Stats
+
+        Backpack- Grid based slotted inventory
+        button slots that are arranged in a layout by #slotsWidex#slotsHigh Example:4x4
+        items can take 1-# slots arranged as a tetris block
+
+        Holster- Hold weapons/other
+        if weapon is equipped can use to quickly grab waepon from inventory
+
+        Wheel (1-6Slots)
+        Menu,Phone,Character,Inventory,Wallet,Backpack,Pocket,Tools,Equipment,Holster,Clothe,
+
+
+        CLOTHES/EQUIPMENT
+        Head- hats,helmet
+        Ear-earpiece,jewelery
+        Face-facemask,gasmask
+        Neck- Bandana,Jewelry
+        Shoulder- Carry,Weapon
+        Chest- Shirt
+        Overall- Coat,Armor
+        Wrist- Watch
+        Back- Backpack
+        Hand- Gloves
+        Belt- Leather
+        Pant- Jean,Shorts
+        Knee- Pads
+        Ankle- Monitor
+        Sock- Socks
+        Shoe- Hightop,Highheels
+
+        POCKETS
+        Pants-4Slots
+        Toolbelt-6Slot
+        Utilitybelt-8Slots
+
+        INVENTORY
+        #by# size backpack with Items like tetris blocks
+
+        Plague
+        Hypothermia
+        Heatstroke
+        Virus
+        Deases
+        Dehydration
+        Starvation
+        Drown
+        BrokenBone
+        Burns
+        Flu
+        Allergy
+
+        sinkhole
+        wildifre
+        Tornado
+        Blizzard
+        Metor
+        Avalanche
+        Heatwave
+        VolcanoEruption
+        Landslide
+        Tsunami
+        Typhoon
+        Earthquake
+        Flood
+
+        *DESIGNS*
+        Beat Maker -
+
+        Clothes -
+
+        Furinture -
+
+        Hair -
+
+        Jewelry -
+
+        Painting -
+        Color-Trim
+        Shape-Sticker
+        misc
+
+        Tatto -
+
+        Buy
+
+        Subscriptions- FREE Newspaper/Magazines, ClubMembership,
+
+        Lifetime- FREE Supplie, Rentfree, Dividends,
+
+        Inherited- better start FREE money,house,car,clothe,equipment,buissness,city,
+
+        Quick Licenses- FREE licenses without test or training
+
+        Irl $1.00 = In-game $10.00(In-game $1 = Irl $0.01)
+
+        SkinCrates- LockedCrate Needs Key
+        SportEquipment	Furniture	Building	Car	Weapons		Clothes		Emotes		Server
+
+        *FuturePlans*
+        DLCs-Space(Spaceship,Planets),Jurassic(Dinosaurs),Horror(Slashers,Ghost,Monster),Scifi(Hover,Jetpack),
+        Medieval(Sword,Armor),Western(Gunslinger),Fantasy(Races,Magic),Superhero(Superpower,Sidekick/Henchmen),
+        Cops/Robebers(Swat,Cartel),Gangsters(Mafia,Yukaza,Cholo),Worldwar(90s-Clothes,Weapons)
+
+        OpenIRLCasino (IRL$500k Required)
+
+        In-Game Money to Real Money (IRL$1M Goal)
+
+        E-Everyone
+        (Cuttout Content)
+        A(o)-AdultsOnly-Language,Blood/Gore,Violence,Gambling,Nudity,Humor,Substances,
+    </p>
+</body>
+</html>
