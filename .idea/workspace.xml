@@ -5,16 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37b14f0a-6bf1-49f0-a2b8-40c49f9fbad4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/profiles/action_page.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profiles/action_page_get.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aboutus.html" beforeDir="false" afterPath="$PROJECT_DIR$/aboutus.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buttons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/examplepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/examplepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forum.html" beforeDir="false" afterPath="$PROJECT_DIR$/forum.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games.html" beforeDir="false" afterPath="$PROJECT_DIR$/games.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/general.html" beforeDir="false" afterPath="$PROJECT_DIR$/general.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servers.html" beforeDir="false" afterPath="$PROJECT_DIR$/servers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profiles/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/profiles/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profiles/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/profiles/profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/profile.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,15 +30,18 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/games/MedievalEmpire" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/styles" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\NZXT\Documents\GitHub\Hardcore-Gaming-website\styles" />
+      <recent name="C:\Users\NZXT\Documents\GitHub\Hardcore-Gaming-website" />
       <recent name="C:\Users\NZXT\Documents\GitHub\Hardcore-Gaming-website\games\MedievalEmpire" />
       <recent name="C:\Users\NZXT\Documents\GitHub\Hardcore-Gaming-website\games\SuperViglantie" />
       <recent name="C:\Users\NZXT\Documents\GitHub\Hardcore-Gaming-website\games\SpaceGalaxies" />
-      <recent name="C:\Users\NZXT\Documents\GitHub\Hardcore-Gaming-website\games\InfectionApocalypse" />
-      <recent name="C:\Users\NZXT\Documents\GitHub\Hardcore-Gaming-website\games\OperationWarfare" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\NZXT\Documents\GitHub\Hardcore-Gaming-website\profiles" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
