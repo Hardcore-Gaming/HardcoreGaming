@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37b14f0a-6bf1-49f0-a2b8-40c49f9fbad4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/profiles/Accounts/default-profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/profiles/Accounts/owner-chruskosco.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/admin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/welcome.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum.html" beforeDir="false" afterPath="$PROJECT_DIR$/forum.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/profiles/action_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/profiles/action_page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profiles/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/profiles/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profiles/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/profiles/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profiles/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/profiles/profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/admin.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,17 +30,18 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/profiles/Accounts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/profiles" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\NZXT\Documents\GitHub\Hardcore-Gaming-website\profiles\Accounts" />
       <recent name="C:\Users\NZXT\Documents\GitHub\Hardcore-Gaming-website\profiles" />
+      <recent name="C:\Users\NZXT\Documents\GitHub\Hardcore-Gaming-website\profiles\Accounts" />
       <recent name="C:\Users\NZXT\Documents\GitHub\Hardcore-Gaming-website\styles" />
       <recent name="C:\Users\NZXT\Documents\GitHub\Hardcore-Gaming-website" />
       <recent name="C:\Users\NZXT\Documents\GitHub\Hardcore-Gaming-website\games\MedievalEmpire" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\NZXT\Documents\GitHub\Hardcore-Gaming-website" />
       <recent name="C:\Users\NZXT\Documents\GitHub\Hardcore-Gaming-website\profiles\Accounts" />
       <recent name="C:\Users\NZXT\Documents\GitHub\Hardcore-Gaming-website\profiles" />
     </key>
