@@ -35,3 +35,19 @@
     margin-right: 8px;
     transition: opacity 0.15s;
 }
+/*
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ol {
+    float: right;
+    width: 70%;
+}
+
+section::after {
+    content: "";
+    display: table;
+    clear: both;
+}
