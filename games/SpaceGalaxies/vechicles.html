@@ -3,6 +3,30 @@
 <head>
     <title>Space Galaxies</title>
     <link rel="stylesheet" href="../../styles/games.css">
+    <style>
+    p.boardered-SG {border-style: dashed;}
+
+    #ships{
+        border-collapse: collapse;
+    }
+    #ships td, #ships th{
+        border: 1px solid black;
+        padding: 8px;
+    }
+    #ships tr:nth-child(even){
+        background-color: white;
+    }
+    #ships tr:hover{
+        background-color: purple;
+    }
+    #ships th{
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: gray;
+        color: black;
+    }
+    </style>
 </head>
 <body>
     <h1 class="tittle">
@@ -61,16 +85,175 @@
     </p>
 
     <p class="Description">
-        SmallShip
-        ===============
-        Hull
-        Frame
-        Air
-        Cockpit
-        Sensor
-        Wings
-        Thruster
-        Turrents
+    <table id="ships"
+        <tr>
+            <th>Shuttle</th>
+            <th>SmallShip</th>
+            <th>MediumShip</th>
+            <th>LargeShip</th>
+            <th>Station</th>
+        </tr>
+        <tr>
+            <td>None</td>
+            <td>Hull</td>
+            <td>Hull</td>
+            <td>Hull</td>
+            <td>Hull</td>
+        </tr>
+        <tr>
+            <td>None</td>
+            <td>Frame</td>
+            <td>Frame</td>
+            <td>Frame</td>
+            <td>Frame</td>
+        </tr>
+        <tr>
+            <td>None</td>
+            <td>Cockpit</td>
+            <td>Cockpit</td>
+            <td>Cockpit</td>
+            <td>Cockpit</td>
+        </tr>
+        <tr>
+            <td>None</td>
+            <td>Air</td>
+            <td>Air</td>
+            <td>Air</td>
+            <td>Air</td>
+        </tr>
+        <tr>
+            <td>None</td>
+            <td>Sensor</td>
+            <td>Sensor</td>
+            <td>Sensor</td>
+            <td>Sensor</td>
+        </tr>
+        <tr>
+            <td>None</td>
+            <td>Thruster</td>
+            <td>Thruster</td>
+            <td>Thruster</td>
+            <td>Thruster</td>
+        </tr>
+        <tr>
+            <td>None</td>
+            <td>Turrent</td>
+            <td>Turrent</td>
+            <td>Turrent</td>
+            <td>Turrent</td>
+        </tr>
+        <tr>
+            <td>None</td>
+            <td>Wings</td>
+            <td>Wings(optional)</td>
+            <td>Wings(optional)</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td>None</td>
+            <td>Shield(optional)</td>
+            <td>Shield/Deflector</td>
+            <td>Shield/Deflector</td>
+            <td>Shield/Deflector</td>
+        </tr>
+        <tr>
+            <td>None</td>
+            <td>Storage</td>
+            <td>Storage</td>
+            <td>Storage</td>
+            <td>Storage</td>
+        </tr>
+        <tr>
+            <td>None</td>
+            <td>LightSpeedDrive</td>
+            <td>LightSpeedDrive</td>
+            <td>LightSpeedDrive</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td>None</td>
+            <td>TrackorBeam</td>
+            <td>TrackorBeam</td>
+            <td>TrackorBeam</td>
+            <td>TrackorBeam</td>
+        </tr>
+        <tr>
+            <td>None</td>
+            <td>WarpCore</td>
+            <td>WarpCore</td>
+            <td>WarpCore</td>
+            <td>WarpCore</td>
+        </tr>
+        <tr>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+            <td>ControlCenter</td>
+            <td>ControlCenter</td>
+        </tr>
+        <tr>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+            <td>ComputerCore</td>
+            <td>ComputerCore</td>
+        </tr>
+        <tr>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+            <td>Gyro</td>
+            <td>Gyro</td>
+        </tr>
+        <tr>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+            <td>PowerGenerator</td>
+            <td>PowerGenerator</td>
+        </tr>
+        <tr>
+            <td>None</td>
+            <td>EngineerRoom</td>
+            <td>EngineerRoom</td>
+            <td>EngineerRoom</td>
+            <td>EngineerRoom</td>
+        </tr>
+        <tr>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+            <td>Habitat</td>
+            <td>Habitat</td>
+        </tr>
+        <tr>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+            <td>Atena</td>
+            <td>Atena</td>
+        </tr>
+        <tr>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+            <td>LandingPlaform</td>
+            <td>LandingPlaform</td>
+        </tr>
+    </table>
+    <!--
+        <p class= "boardered-SG">
+            SmallShip
+            ===============
+            Hull
+            Frame
+            Air
+            Cockpit
+            Sensor
+            Wings
+            Thruster
+            Turrents
+        </p>
 
         MediumShip
         ==============
@@ -85,6 +268,7 @@
         Storage
         LightSpeedDrive
 
+        <p class= "boardered-SG">
         LargeShip
         ==============
         Hull
@@ -103,7 +287,8 @@
         Atena
         Sensor
         LandingPlaform
-
+        </p>
+        -->
         Bay
         ==============
         Shuttle
@@ -115,7 +300,7 @@
         Teleporter
         MaterialPrinter
 
-
+        <p class= "boardered-SG">
         Parts/Fuels
         ===============
         AtmosphereThruster/Propellant-ImpulseThruster/HydrogenThruster
@@ -136,6 +321,7 @@
         Vents
         Cables
         Interior
+        </p>
 
         ShipDamage
         ===============
@@ -146,6 +332,7 @@
         Pressure
         AirLevel
 
+        <p class= "boardered-SG">
         SpaceShips Types
         ================================
         Pod
@@ -158,6 +345,7 @@
         Bombers
         Fighters
         Drones
+        </p>
 
         Basic Schematics
         --------------------------------
@@ -180,6 +368,7 @@
         Elevator - Change Floors
         Barrack - Soldiers Rest
 
+        <p class= "boardered-SG">
         Ship Components
         --------------------------------
         Shield - Energy Field
@@ -190,6 +379,7 @@
         Generator - Powers Shield
         Reactor - Powers Ship
         WarpDrive - Warps Ship
+        </p>
 
         DRONES
         ======================================================
@@ -203,6 +393,7 @@
 
         ScoutDrones(SD) - Search Areas
 
+        <p class= "boardered-SG">
         SMALL SHIPS
         ======================================================
         Pod
@@ -226,6 +417,7 @@
         BomberShip
         --------------------------------
         StandardBomber(SB) - 2-seat ship normal speed and normal armor
+        </p>
 
         MEDIUM SHIPS
         ======================================================
@@ -237,6 +429,7 @@
 
         TransportBusShuttle(TBS) - 8-seater ship fast speed but weak armor
 
+        <p class= "boardered-SG">
         Freighter
         --------------------------------
         StandardFreighterShip(SFS) - 15-seat ship normal speed and armored bays-2
@@ -244,6 +437,7 @@
         Crusier
         --------------------------------
         StandardCrusier - 25-seat ship slow and armored landingpad-4
+        </p>
 
         LARGE SHIPS
         ======================================================
@@ -255,12 +449,13 @@
         --------------------------------
         StandardFleet - 100-seat ship slow speed and armored docks-2|landingpad-8each
 
+        <p class= "boardered-SG">
         STATIONS
         ======================================================
         Station
         --------------------------------
         StandardStation - 1000-seat Orbits docks-8 including large ships
-
+        </p>
     </p>
 
 </body>
