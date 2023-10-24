@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>ExamplePage</title>
+        <link rel="stylesheet" href="styles/buttons.css">
+    </head>
+    <nav>
+        <button onclick="document.location='examplepage.html'">
+            ExamplePage
+        </button>
+    </nav>
+
+    <body onload="get()">
+        <p id="savedText"> </P>
+        <p id="openedText"> </P>
+
+        <input type="text" id="input"/>
+        <button onclick="save()"> SAVE </button>
+    </body>
+
+    <script>
+
+    var storedItem = localStorage.getItem("storedItem");
+
+    fuction save(){
+        var Item = document.getElementById("input").value;
+
+        localStorage.setItem("storedItem", Item);
+        document.getElementById("savedText").innerHTML = Item + " SAVED";
+    }
+
+    fuction get(){
+        localStorage.getItem("storedItem");
+        document.getElementById("openedText").innerHTML = storedItem + " OPENED";
+    }
+    </script>
+</html>
