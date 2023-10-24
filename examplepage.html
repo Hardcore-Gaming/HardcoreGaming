@@ -3,9 +3,74 @@
 <head>
     <title>ExamplePage</title>
     <link rel="stylesheet" href="styles/buttons.css">
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 20px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: right;
+  width: 20%;
+  height: 300px; /* only for demonstration, should be removed */
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 80%;
+  background-color: #f1f1f1;
+  height: 300px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+  align: right;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
 </head>
 <body>
-    <button onclick="document.location='index.html'">
+    <button onclick="document.location='./examples.html'">
         Home
     </button>
 
@@ -21,144 +86,32 @@
         Tweet
     </button>
 
-    <p>
-        Start a character in a game where you can explore, build, craft, economy ,
-    </p>
+    <h2>CSS Layout Float</h2>
+<p>In this example, we have created a header, two columns/boxes and a footer. On smaller screens, the columns will stack on top of each other.</p>
+<p>Resize the browser window to see the responsive effect (you will learn more about this in our next chapter - HTML Responsive.)</p>
 
-    <p>
-        Sign-up or Login
-        Username
-        Password
-        First Name
-        Last Name
-        Date of  Birth
-        E-mail
-        Phone #
-        Gender
-        Terms
+<header>
+  <h2>Games</h2>
+</header>
 
-        Starting Game
-        Install game
-        Sign-in or Register an Account
-        Play game
-        Select Singleplayer or Multiplayer
-        Create Character
-        Create or Join a World
-
-        Tutorial
-        Move, View inventory, Actions, Menu
-        Get money or task
-        Purchase Gear or Property
-        Join Group
-    </p>
-
-    <p>
-        PLAY
-        Singleplayer
-        -campaign
-        -custom
-        Co-Op
-        -same as singleplayer
-        Multiplayer
-        -same as singleplayer
-        -pvp gamemodes
-        Servers
-        -same as singleplayer
-        -pvp gamemodes
-
-        PROFILE
-        Name
-        Level
-        Inventory
-        Character
-        Stats
-        Ranks
-        Leaderboard
-
-        CONTENT
-        Buy
-        Create
-        Download
-
-        OPTIONS
-        Audio
-        -sound
-        -music
-        Display
-        Controls
-        -keyboard
-        -controller
-
-        ABOUT
-        Credits
-
-        EXIT
-    </p>
-
-    <p>
-        Introduction
-        Start Game
-        Chapters
-        Basics
-        Story
-        Expansions
-        Characters
-        Inventory
-        Weapons & Armor
-        Classes
-        Skills
-        Mastery
-        Levels
-        Prestige
-        Quest
-        Task
-        Objectives
-        Map
-        Areas
-        NPC
-        Traits
-        Items
-        Multiplayer
-        Settings
-    </p>
-
-    <p>
-        Speed-ups Rate Extra Boost Instant
-        Experience Resource Character Stats Item
-        Packages
-        Protection
-
-        Subscriber Only Servers Non-paytowin
-        Creator
-        Skins
-    </p>
-
-    <a href="https://www.youtube.com/" target="_blank">
-        Link to Youtube
-    </a>
-
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Country</th>
-        </tr>
-        <tr>
-            <td>Chrus Kosco</td>
-            <td>25</td>
-            <td>United States</td>
-        </tr>
-        <tr>
-            <td>Centro comercial Moctezuma</td>
-            <td>Francisco Chang</td>
-            <td>Mexico</td>
-        </tr>
-    </table>
-
+<section>
+  <nav>
     <ul>
-        <li>Coffee</li>
-        <li>Tea</li>
-        <li>Milk</li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Games</a></li>
+      <li><a href="#">Servers</a></li>
     </ul>
+  </nav>
+  
+  <article>
+    <h1>What is this?</h1>
+    <p>Where i can find my games</p>
+    <p>Example</p>
+  </article>
+</section>
+
+<footer>
+  <p>Footer</p>
+</footer>
 </body>
 </html>
