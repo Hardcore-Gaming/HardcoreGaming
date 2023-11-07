@@ -5,6 +5,8 @@
 <style>
     <title>ExamplePage</title>
     <link rel="stylesheet" href="styles/buttons.css">
+.error {color: #FF0000;}
+
 * {
   box-sizing: border-box;
 }
@@ -216,5 +218,51 @@
         <dt>Website</dt>
         <dd>Site on the internet</dd>
     </dl>
+
+    <h2>PHP Form Validation Example</h2>
+    <p><span class="error">* required field</span></p>
+    <form method="post"> <?php echo htmlspecialchars($_SERVER["welcome"]);?>
+    Name: <input type="text" name="name"> <?php echo $name;?>
+    <span class="error">* <?php echo $nameErr;?></span>
+    <br><br>
+    E-mail: <input type="text" name="email"> <?php echo $email;?>
+    <span class="error">* <?php echo $emailErr;?></span>
+    <br><br>
+    Website: <input type="text" name="website"> <?php echo $website;?>
+    <span class="error"><?php echo $websiteErr;?></span>
+    <br><br>
+    Comment: <textarea name="comment" rows="5" cols="40"> </textarea> <?php echo $comment;?>
+    <br><br>
+    Gender:
+    <input type="radio" name="gender"> <?php if (isset($gender) && $gender=="female") echo "checked";?> Female
+    <input type="radio" name="gender"> <?php if (isset($gender) && $gender=="male") echo "checked";?> Male
+    <input type="radio" name="gender"> <?php if (isset($gender) && $gender=="other") echo "checked";?> Other
+    <span class="error">* <?php echo $genderErr;?></span>
+    <br><br>
+    <input type="submit" name="submit" value="Submit">
+    </form>
+
+    <form method="get"> <?php echo htmlspecialchars($_SERVER["welcome"]);?>
+        Name: <?php echo $name;?>
+        <br>
+        E-mail: <?php echo $email;?>
+        <br>
+        Website: <?php echo $website;?>
+        <br>
+        Comment: <?php echo $comment;?>
+        <br><br>
+        Gender:
+        <?php if (isset($gender) && $gender=="female") echo "checked";?>
+        <?php if (isset($gender) && $gender=="male") echo "checked";?>
+        <?php if (isset($gender) && $gender=="other") echo "checked";?>
+    </form>
+
+    <p> DIFFERENT FORUM</p>
+
+    <form action="welcome.php" method="post">
+        Name: <input type="text" name="name"><br>
+        E-mail: <input type="text" name="email"><br>
+        <input type="submit">
+    </form>
 </body>
 </html>
