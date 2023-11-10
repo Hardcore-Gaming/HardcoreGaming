@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <link rel="stylesheet" href="styles/index.css">
-    <link rel="stylesheet" href="styles/profile.css">
 </head>
 <body>
     <h1 class="tittle">
@@ -12,8 +13,10 @@
 
     <p>
         By Hardcore Gaming
+    <p>
+        Pages
     </p>
-
+    <!--Pages-->
     <nav>
         <button class="buttons" onclick="document.location='index.html'">
             Home
@@ -31,64 +34,15 @@
             Forum
         </button>
 
-        <button class="buttons" onclick="document.location='aboutus.html'">
+        <button class="buttons" onclick="document.location='profile.html'">
+            Profile
+        </button>
+
+        <<button class="buttons" onclick="document.location='aboutus.html'">
             About Us
         </button>
-
-        <button class="buttons" onclick="document.location='profile.html'">
-            Profiles
-        </button>
-
-        <button class="buttons" onclick="document.location='general.html'">
-            General
-        </button>
-
-        <button class="buttons" onclick="document.location='examplepage.html'">
-            TestButton
-        </button>
     </nav>
-
-
-    <?php
-    echo "Hello World!";
-    ?>
-
-    <p>
-    <button class="buttons" onclick="document.location='./profiles/register.html'">
-        Register
-    </button>
-</p>
-
-
-<form action="action_page.php" method="post">
-    <div class="imgcontainer">
-        <img src="/images/User/avatar.png" alt="Avatar" class="avatar">
-    </div>
-
-    <div class="container">
-
-        <label for="user"><b>User</b></label>
-        <input type="text" placeholder="Emter Username" name="user" required>
-
-        <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Emter Email" name="email" required>
-
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-
-        <label for="psw-repeat"><b>Confirm Password</b></label>
-        <input type="password" placeholder="Confirm Password" name="psw-repeat" required>
-
-        <button type="submit">Login</button>
-        <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-        <button type="button" class="cancelbtn">Cancel</button>
-        <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-</form>
+    <!--Content-->
+    <p>Profile</p>
 </body>
 </html>

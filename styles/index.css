@@ -58,19 +58,3 @@
 .IA {width: 0%; background-color: #2196F3;}
 .MP {width: 0%; background-color: #f44336;}
 .SV {width: 0%; background-color: #808080;}
-/*
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ol {
-    float: right;
-    width: 70%;
-}
-
-section::after {
-    content: "";
-    display: table;
-    clear: both;
-}
