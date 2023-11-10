@@ -2,69 +2,111 @@
     text-align: center;
     color: black;
 }
+/* Buy Games */
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+    }
 
-.buttons-LS {
-    background-color: lightblue;
-    height: 40px;
-    width: 100px;
-    color: green;
-    font-weight: bold;
-}
+    .price {
+      color: grey;
+      font-size: 22px;
+    }
 
-.buttons-FE {
-    background-color: orange;
-    height: 40px;
-    width: 100px;
-    color: indianred;
-    font-weight: bold;
-}
+    .card button {
+      border: none;
+      outline: 0;
+      padding: 12px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+    }
 
-.buttons-ME {
-    background-color: saddlebrown;
-    height: 40px;
-    width: 100px;
-    color: lightgrey;
-    font-weight: bold;
-}
+    .card button:hover {
+      opacity: 0.7;
+    }
 
-.buttons-OW {
-    background-color: grey;
-    height: 40px;
-    width: 100px;
-    font-weight: bold;
-}
+    ul{
+        display: inline;
+        list-style-type: none;
+        margin: 0px;
+        padding: 0;
+        float: left;
+    }
+    li{
+        float: left;
+        margin: 50px;
+    }
+/* Buttons */
 
-.buttons-SG {
-    background-color: black;
-    height: 40px;
-    width: 100px;
-    color: white;
-    font-weight: bold;
-}
+    .buttons-LS {
+        background-color: lightblue;
+        height: 40px;
+        width: 100px;
+        color: green;
+        font-weight: bold;
+    }
 
-.buttons-IA {
-    background-color: greenyellow;
-    height: 40px;
-    width: 100px;
-    color: red;
-    font-weight: bold;
-}
+    .buttons-FE {
+        background-color: orange;
+        height: 40px;
+        width: 100px;
+        color: indianred;
+        font-weight: bold;
+    }
 
-.buttons-SV {
-    background-color: red;
-    height: 40px;
-    width: 100px;
-    color: gold;
-    font-weight: bold;
-}
+    .buttons-ME {
+        background-color: saddlebrown;
+        height: 40px;
+        width: 100px;
+        color: lightgrey;
+        font-weight: bold;
+    }
 
-.buttons-MP {
-    background-color: mediumpurple;
-    height: 40px;
-    width: 100px;
-    color: pink;
-    font-weight: bold;
-}
+    .buttons-OW {
+        background-color: grey;
+        height: 40px;
+        width: 100px;
+        font-weight: bold;
+    }
+
+    .buttons-SG {
+        background-color: black;
+        height: 40px;
+        width: 100px;
+        color: white;
+        font-weight: bold;
+    }
+
+    .buttons-IA {
+        background-color: greenyellow;
+        height: 40px;
+        width: 100px;
+        color: red;
+        font-weight: bold;
+    }
+
+    .buttons-SV {
+        background-color: red;
+        height: 40px;
+        width: 100px;
+        color: gold;
+        font-weight: bold;
+    }
+
+    .buttons-MP {
+        background-color: mediumpurple;
+        height: 40px;
+        width: 100px;
+        color: pink;
+        font-weight: bold;
+    }
 
 .Description {
     width: 500px;
