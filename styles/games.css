@@ -108,6 +108,14 @@
         font-weight: bold;
     }
 
+    .buttons-TEMP {
+        background-color: gray;
+        height: 40px;
+        width: 100px;
+        color: black;
+        font-weight: bold;
+    }
+
 .Description {
     width: 500px;
     margin: auto;

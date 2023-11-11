@@ -1,41 +1,40 @@
 ﻿<!DOCTYPE html>
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
     <title>Life Style</title>
     <link rel="stylesheet" href="../../styles/games.css">
     <style>
-    * {
-    box-sizing: border-box;
-    }
+        * {
+          box-sizing: border-box;
+        }
 
-    .left {
-    background-color: #2196F3;
-    padding: 20px;
-    float: left;
-    width: 33%; /* The width is 30%, by default */
-    }
+        .left {
+          background-color: #2196F3;
+          padding: 20px;
+          float: left;
+          width: 30%; /* The width is 30%, by default */
+        }
 
-    .main {
-    background-color: #f1f1f1;
-    padding: 20px;
-    float: left;
-    width: 33%; /* The width is 30%, by default */
-    }
+        .main {
+          background-color: #f1f1f1;
+          padding: 20px;
+          float: left;
+          width: 30%; /* The width is 30%, by default */
+        }
 
-    .right {
-    background-color: #04AA6D;
-    padding: 20px;
-    float: left;
-    width: 33%; /* The width is 30%, by default */
-    }
+        .right {
+          background-color: #04AA6D;
+          padding: 20px;
+          float: left;
+          width: 30%; /* The width is 30%, by default */
+        }
 
-    /* Use a media query to add a break point at 800px: */
-    @media screen and (max-width: 800px) {
-    .left, .main, .right {
-        width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
-    }
-    </style>
+        /* Use a media query to add a break point at 800px: */
+        @media screen and (max-width: 800px) {
+          .left, .main, .right {
+            width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+          }
+      </style>
 </head>
 <body>
     <h1 class="tittle">
@@ -45,6 +44,7 @@
     <p>
         Page Content
     </p>
+
     <!-- Pages Catagorize -->
     <nav>
         <button class="buttons-LS" onclick="document.location='../lifestyle.html'">
@@ -53,10 +53,6 @@
 
         <button class="buttons-LS" onclick="document.location='character.html'">
             Character
-        </button>
-
-        <button class="buttons-LS" onclick="document.location='people.html'">
-            People
         </button>
 
         <button class="buttons-LS" onclick="document.location='items.html'">
@@ -96,153 +92,20 @@
         </button>
     </nav>
 
-    <h2>Character</h2>
+    <p>
+        City
+    </p>
 
     <p>
         <div class="right">
-        Start a New Character for Player<br>
-        --------------<br>
-        Create Character<br>
-        -Head<br>
-        -Body<br>
-
-        Set Details<br>
-        -Name<br>
-        -Age<br>
-
-        Register with City Goverment<br>
-        -ID<br>
-
-        Objectives<br>
-        --------------<br>
-        Get a Job<br>
-        -Apply<br>
-
-        Learn higher Career<br>
-        -Deploma<br>
-        -Degree<br>
-
-        Start Buisness/Company<br>
-        -Buisness<br>
-        -Company<br>
-
-        Start a City<br>
-        -Land<br>
-        -Streets<br>
-        -Buildings<br>
-        -Facilities<br>
-
-        Manage a Government<br>
-        -Mayor<br>
-        -Council<br>
+        BuildingZones
         </div>
         <div class="main">
-        Personalize<br>
-        --------------<br>
-        Inventory<br>
-        -Pockets<br>
-        -Backpack<br>
-        -Phone<br>
-        -Wallet<br>
-        -Keys<br>
-        -Money<br>
-        -Itemsa<br>
-
-        Accessories<br>
-        -Clothes<br>
-        -Jewelery<br>
-        -Bag<br>
-
-        Apartment<br>
-        -Rent<br>
-        -House<br>
-        -Land<br>
-
-        Ownership<br>
-        -Animals<br>
-        -Vechicle<br>
-        -Property<br>
-        -Items<br>
+        Building
         </div>
         <div class="left">
-        Health<br>
-        --------------<br>
-        Body<br>
-        -Viatals<br>
-        -Hunger<br>
-        -Thirst<br>
-        -Stamina<br>
-        -Energy<br>
-        -Bladder<br>
-        -Tempature<br>
-
-        Conditions<br>
-        -Pain<br>
-        -BloodType<br>
-        -Illnesses<br>
-        -Relationship<br>
-        -Jobs/Carreers<br>
-
-        Care<br>
-        -Fat<br>
-        -Social<br>
-        -Fun<br>
-        -Hygiene<br>
-        -Vitiman<br>
-
-        Abillity<br>
-        -Strength<br>
-        -Intelligence<br>
-        -Dexterity<br>
-
-        Skill<br>
-        -Fighting<br>
-        -Shooting<br>
-        -Stealth<br>
-        -Flying<br>
-        -Driving<br>
-        -LungCapacity<br>
+        Function
         </div>
-        Blood- goes down then you die from being unconscious or be not stable<br>
-        +Revive -Died -TimeDrain<br>
-        Health- goes down then damaged to Blood which means you either fell down or dying<br>
-        +Meds -Damage +TimeRegen(DependingFood/Liquid)<br>
-        Armor- take some damage instead of health<br>
-        +Armor +BulletDamageReducing<br>
-        Stanima- energy used from running, jumping, oxygen<br>
-        -OnMovementUsed(BesideWalking) +RegenUnused +Parkour +Vaulting<br>
-        Hunger- amount of food needed to not starve to deahth and keep your health healing<br>
-        +EatFood -TimeDrain -LowerHealthAt#<br>
-        Thirst- amount of liquids needed stay hydrated keep stantima up and not die from dehydration<br>
-        +DrinkLiquid -TimeDrain -LowerHealthAt#<br>
-        Energy- keeps track of time awake until needed sleep and away from drowsiness, fatigue, reactiontime<br>
-        +SleepBed -TimeUp&StanimaUsed<br>
-        Bladder- amount of food/liquid intake until need to use restroom<br>
-        -UseRestroom +ConsumedFoodLiquid<br>
-        Tempature- Keeps track of heat and cold to hot can make you passout to cold can also unitl death<br>
-        -ColdTemp NormalTemp +HotTemp<br>
-    </p>
-        Blood- +Revive -Died -TimeDrain<br>
-        Health- +Meds -Damage +TimeRegen(DependingFood/Liquid)<br>
-        Armor- +Armor +BulletDamageReducing<br>
-        Stanima- -OnMovementUsed(BesideWalking) +RegenUnused +Parkour +Vaulting<br>
-        Hunger- +EatFood -TimeDrain -LowerHealthAt#<br>
-        Thirst- +DrinkLiquid -TimeDrain -LowerHealthAt#<br>
-        Energy- +SleepBed -TimeUp&StanimaUsed<br>
-        Bladder- -UseRestroom +ConsumedFoodLiquid<br>
-        Tempature- -ColdTemp NormalTemp +HotTemp<br>
-
-        the armor to health to blood when health is down then a crawl status and revive<br>
-        stanima goes down when using jump/sprint and drains energy on use per action sleep<br>
-        for time to fill energy food and water to have health naturally regen bladder filled<br>
-        per food/water consumed and pee button to consume more food/water last the tempature<br>
-        cold or hot per zone with too much of either can make you unconscious to die<br>
-    </p>
-        Start in an empty apartment leave outside to city get a job
-        get money buy clothes vechicle play other game buy a place to
-        live and build make more money start a buissness and building.
-    </p>
-        Pets(Dogs/Cat/Other)- Food,Water,Exercise,Attention
     <!--
         create city,select empty or premade,pay constuction for streets/plots & Essentails HumanResource-forJobs/RealEstate-rent/purchase<br>
         placeOrproperty/Bank-startAccount&Buisness,<br>
