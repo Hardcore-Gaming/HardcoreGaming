@@ -13,3 +13,8 @@ th {
 td {
     text-align: center;
 }
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
