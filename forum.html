@@ -5,6 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forum</title>
     <link rel="stylesheet" href="styles/index.css">
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, h3, ul, li, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Basic Styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+            header nav ul {
+                list-style: none;
+            }
+
+                header nav ul li {
+                    display: inline;
+                    margin-right: 20px;
+                }
+
+                    header nav ul li a {
+                        color: #fff;
+                        text-decoration: none;
+                    }
+
+        main {
+            padding: 20px 0;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        .forum-categories ul,
+        .recent-posts ul {
+            list-style: none;
+        }
+
+            .forum-categories ul li a,
+            .recent-posts ul li a {
+                text-decoration: none;
+                color: #333;
+            }
+
+                .forum-categories ul li a:hover,
+                .recent-posts ul li a:hover {
+                    text-decoration: underline;
+                }
+
+    </style>
 </head>
 <body>
     <h1 class="tittle">
@@ -44,5 +111,62 @@
     </nav>
     <!--Content-->
     <p>Hardcore Gaming Forums</p>
+
+    <p>
+            <header>
+                <div class="container">
+                    <h1>Welcome to My Forum</h1>
+                    <nav>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Categories</a></li>
+                            <li><a href="#">Login</a></li>
+                            <li><a href="#">Register</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+
+            <main>
+                <div class="container">
+                    <!-- Forum Categories -->
+                    <section class="forum-categories">
+                        <h2>Categories</h2>
+                        <ul>
+                            <li><a href="#">Category 1</a></li>
+                            <li><a href="#">Category 2</a></li>
+                            <li><a href="#">Category 3</a></li>
+                            <!-- Add more categories -->
+                        </ul>
+                    </section>
+
+                    <!-- Recent Posts -->
+                    <section class="recent-posts">
+                        <h2>Recent Posts</h2>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <h3>Post Title 1</h3>
+                                    <p>Posted by User123 in Category 1</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h3>Post Title 2</h3>
+                                    <p>Posted by User456 in Category 2</p>
+                                </a>
+                            </li>
+                            <!-- Add more recent posts -->
+                        </ul>
+                    </section>
+                </div>
+            </main>
+
+            <footer>
+                <div class="container">
+                    <p>&copy; 2023 My Forum</p>
+                </div>
+            </footer>
+    </p>
 </body>
 </html>

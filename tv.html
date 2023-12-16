@@ -3,8 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servers</title>
+    <title>TV</title>
     <link rel="stylesheet" href="styles/index.css">
+
+    <style>
+        /* Basic styling for demonstration purposes */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .tv-program {
+            display: flex;
+            flex-direction: column;
+            width: 600px;
+            margin: auto;
+        }
+
+        .channel {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+
+        .channel-name {
+            font-weight: bold;
+        }
+
+        .program {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            cursor: pointer;
+        }
+
+        .program-time {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .program-title {
+            font-weight: bold;
+        }
+
+        .screen {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .selected-program {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .video-container {
+            margin-top: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 315px; /* Adjust height based on your video's aspect ratio */
+        }
+    </style>
 </head>
 <body>
     <h1 class="tittle">
@@ -50,14 +112,166 @@
 
     <p>
         Public Games Servers
-    <p id="screen">
+    </p>
+
+    <p>
+        <div class="tv-program" id="tvProgram"></div>
+
+        <div class="screen" id="programScreen">
+            <div class="selected-program">Selected Program</div>
+            <div id="selectedProgramDetails"></div>
+        </div>
+
+        <div class="video-container" id="videoContainer">
+            <h2>Program Video</h2>
+            <iframe id="programVideo" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <script>
+            // Sample data representing TV program schedule with associated videos and commercials
+            const programData = [
+                {
+                    channel: "Channel 1",
+                    programs: [
+                        {
+                            time: "10:00 AM - 11:00 AM",
+                            title: "Morning Show",
+                            details: "A fun morning show featuring games and guests.",
+                            videoId: "vUAih3c2vuI" // Replace with the YouTube video ID for the Morning Show
+                        },
+                        {
+                            time: "11:00 AM - 12:30 PM",
+                            title: "Cooking Masterclass",
+                            details: "Learn advanced cooking techniques from top chefs.",
+                            videoId: "VIDEO_ID_2" // Replace with the YouTube video ID for the Cooking Masterclass
+                        },
+                        // Add more programs for Channel 1
+                    ],
+                    commercials: [
+                        {
+                            title: "Commercial 1",
+                            videoId: "COMMERCIAL_ID_1" // Replace with the YouTube video ID for Commercial 1
+                        },
+                        {
+                            title: "Commercial 2",
+                            videoId: "COMMERCIAL_ID_2" // Replace with the YouTube video ID for Commercial 2
+                        }
+                        // Add more commercials for Channel 1
+                    ]
+                },
+                // Add more channels with programs and commercials
+            ];
+
+            let currentChannelIndex = 0;
+            let currentProgramIndex = 0;
+            let currentCommercialIndex = 0;
+            let isCommercial = false;
+            let programInterval;
+
+            function generateProgramGuide(data) {
+                const tvProgram = document.getElementById("tvProgram");
+
+                data.forEach(channelData => {
+                    const channelDiv = document.createElement("div");
+                    channelDiv.classList.add("channel");
+
+                    const channelName = document.createElement("span");
+                    channelName.classList.add("channel-name");
+                    channelName.textContent = channelData.channel;
+                    channelDiv.appendChild(channelName);
+
+                    channelData.programs.forEach(program => {
+                        const programDiv = document.createElement("div");
+                        programDiv.classList.add("program");
+                        programDiv.addEventListener('click', () => showProgramDetails(program));
+
+                        const programTime = document.createElement("span");
+                        programTime.classList.add("program-time");
+                        programTime.textContent = program.time;
+
+                        const programTitle = document.createElement("span");
+                        programTitle.classList.add("program-title");
+                        programTitle.textContent = program.title;
+
+                        programDiv.appendChild(programTime);
+                        programDiv.appendChild(programTitle);
+                        channelDiv.appendChild(programDiv);
+                    });
+
+                    tvProgram.appendChild(channelDiv);
+                });
+            }
+
+            function showProgramDetails(program) {
+                const selectedProgramDetails = document.getElementById("selectedProgramDetails");
+                selectedProgramDetails.innerHTML = `<strong>Time:</strong> ${program.time}<br><strong>Title:</strong> ${program.title}<br><strong>Details:</strong> ${program.details}`;
+
+                const programVideo = document.getElementById("programVideo");
+                programVideo.src = `https://www.youtube.com/embed/${program.videoId}`;
+
+                isCommercial = false;
+            }
+
+            function playCommercial() {
+                const selectedChannel = programData[currentChannelIndex];
+                const commercials = selectedChannel.commercials;
+
+                if (currentCommercialIndex >= commercials.length) {
+                    currentCommercialIndex = 0;
+                }
+
+                const commercialVideo = document.getElementById("programVideo");
+                commercialVideo.src = `https://www.youtube.com/embed/${commercials[currentCommercialIndex].videoId}`;
+
+                isCommercial = true;
+                currentCommercialIndex++;
+            }
+
+            function playProgramsAndCommercials() {
+                const selectedChannel = programData[currentChannelIndex];
+                const programs = selectedChannel.programs;
+
+                if (isCommercial) {
+                    showProgramDetails(programs[currentProgramIndex]);
+                    currentProgramIndex++;
+
+                    if (currentProgramIndex >= programs.length) {
+                        currentProgramIndex = 0;
+                        playCommercial();
+                    }
+                } else {
+                    showProgramDetails(programs[currentProgramIndex]);
+                    currentProgramIndex++;
+
+                    if (currentProgramIndex >= programs.length) {
+                        currentProgramIndex = 0;
+                        currentChannelIndex++;
+
+                        if (currentChannelIndex >= programData.length) {
+                            currentChannelIndex = 0;
+                        }
+
+                        playCommercial();
+                    }
+                }
+            }
+
+            generateProgramGuide(programData);
+
+            programInterval = setInterval(playProgramsAndCommercials, 50000); // Autoplay interval in milliseconds
+        </script>
+
+    </p>
+
+
+    <!--p id="screen">
         <iframe width="100%" height="750px"
                 src="https://www.youtube.com/embed/lhjO-DtLb-Q?list=PLz8YL4HVC87UaE_8TAXo5FM3Ai7UW2vQG&loop=1">
         </iframe>
-    </p>
+    </!--p>
 
-    <button onclick="document.getElementById('screen').iframe='https://www.youtube.com/embed/lhjO-DtLb-Q?list=PLz8YL4HVC87UaE_8TAXo5FM3Ai7UW2vQG&loop=1'">GDQ</button>
+    <button onclick="document.getElementById('screen').src='https://www.youtube.com/embed/Kk-QSBphsUo?list=PLdyfkSi1hGfo54bQv2eWAXQgU7_dLSzju&loop=1'">Tarkov</button>
 
-    <button onclick="document.getElementById('screen').iframe='https://www.youtube.com/embed/uPbCiSowcmg&list=PLzRo7TRvMT3yLk3JAa1CdD87dfiavxuw2&loop=1'">GAMEBOLT</button>
+    <button onclick="document.getElementById('screen').src='https://www.youtube.com/embed/uPbCiSowcmg&list=PLzRo7TRvMT3yLk3JAa1CdD87dfiavxuw2&loop=1'">GAMEBOLT</button-->
 </body>
 </html>

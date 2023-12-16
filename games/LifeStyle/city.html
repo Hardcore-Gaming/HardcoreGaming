@@ -8,6 +8,33 @@
           box-sizing: border-box;
         }
 
+        /* Tooltip container */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+        }
+
+            /* Tooltip text */
+            .tooltip .tooltiptext {
+                visibility: hidden;
+                width: 120px;
+                background-color: black;
+                color: #fff;
+                text-align: center;
+                padding: 5px 0;
+                border-radius: 6px;
+                /* Position the tooltip text - see examples below! */
+                position: absolute;
+                z-index: 1;
+            }
+
+            /* Show the tooltip text when you mouse over the tooltip container */
+            .tooltip:hover .tooltiptext {
+                visibility: visible;
+            }
+
+
         .left {
           background-color: #2196F3;
           padding: 20px;
@@ -98,10 +125,38 @@
 
     <p>
         <div class="right">
-        BuildingZones
+            BuildingZones<br>
+            =============<br>
+            <span style="color: white;">Empty(white)</span><br>
+            <span style="color: green;">Residental(green)</span><br>
+            <span style="color: red;">Government(red)</span><br>
+            <span style="color: yellow;">Buisness(yellow)</span><br>
+            <span style="color: blue;">Store(blue)</span><br>
+            <span style="color: orange;">Factory(orange)</span><br>
+            <span style="color: brown;">Anchor(brown)</span><br>
+            <span style="color: pink;">Park(pink)</span><br>
+            <span style="color: purple;">Hotel(purple)</span><br>
+            <span style="color: cyan;">Mall(cyan)</span><br>
+            <span style="color: gray;">Wilderness(gray)</span><br>
         </div>
         <div class="main">
-        Building
+            Building<br>
+            <div class="tooltip">
+                Hover over me
+                <span class="tooltiptext">Tooltip text</span>
+            </div><br>
+            <div class="tooltip">
+                Hover over me
+                <span class="tooltiptext">Tooltip text</span>
+            </div><br>
+            <div class="tooltip">
+                Hover over me
+                <span class="tooltiptext">Tooltip text</span>
+            </div><br>
+            <div class="tooltip">
+                Hover over me
+                <span class="tooltiptext">Tooltip text</span>
+            </div><br>
         </div>
         <div class="left">
         Function
