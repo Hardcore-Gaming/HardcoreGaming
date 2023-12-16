@@ -13,6 +13,10 @@
             background-color: #f4f4f4;
             margin: 0;
             padding: 20px;
+            background-image: url(background.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
         }
 
         .tv-program {
@@ -64,7 +68,7 @@
 
         iframe {
             width: 100%;
-            height: 315px; /* Adjust height based on your video's aspect ratio */
+            height: 700px; /* Adjust height based on your video's aspect ratio */
         }
     </style>
 </head>
@@ -92,6 +96,14 @@
             Servers
         </button>
 
+        <button class="buttons" onclick="document.location='tv.html'">
+            TV
+        </button>
+
+        <button class="buttons" onclick="document.location='tabletop.html'">
+            TableTop
+        </button>
+
         <button class="buttons" onclick="document.location='forum.html'">
             Forum
         </button>
@@ -103,10 +115,6 @@
         <button class="buttons" onclick="document.location='aboutus.html'">
             About Us
         </button>
-
-        <button class="buttons" onclick="document.location='tv.html'">
-            TV
-        </button>
     </nav>
     <!--Content-->
 
@@ -115,16 +123,16 @@
     </p>
 
     <p>
+        <div class="video-container" id="videoContainer">
+            <h2>Program Video</h2>
+            <iframe id="programVideo" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+
         <div class="tv-program" id="tvProgram"></div>
 
         <div class="screen" id="programScreen">
             <div class="selected-program">Selected Program</div>
             <div id="selectedProgramDetails"></div>
-        </div>
-
-        <div class="video-container" id="videoContainer">
-            <h2>Program Video</h2>
-            <iframe id="programVideo" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
         </div>
 
         <script>
@@ -155,6 +163,77 @@
                         {
                             title: "Commercial 2",
                             videoId: "COMMERCIAL_ID_2" // Replace with the YouTube video ID for Commercial 2
+                        }
+                        // Add more commercials for Channel 1
+                    ]
+                },
+                {
+                    channel: "Channel 2",
+                    programs: [
+                        {
+                            time: "10:00 AM - 11:00 AM",
+                            title: "LF4 DeadAir",
+                            details: "A fun morning show featuring games and guests.",
+                            videoId: "vUAih3c2vuI" // Replace with the YouTube video ID for the Morning Show
+                        },
+                        {
+                            time: "11:00 AM - 12:00 PM",
+                            title: "LF4 DeadToll",
+                            details: "Learn advanced cooking techniques from top chefs.",
+                            videoId: "md2BullvCdE" // Replace with the YouTube video ID for the Cooking Masterclass
+                        },
+                        {
+                            time: "12:00 PM - 1:00 PM",
+                            title: "LF4 BloodHarvest",
+                            details: "Learn advanced cooking techniques from top chefs.",
+                            videoId: "pPZN3JSDQR8" // Replace with the YouTube video ID for the Cooking Masterclass
+                        },
+                        {
+                            time: "1:00 PM - 2:00 PM",
+                            title: "LF4 The Sacrifice",
+                            details: "Learn advanced cooking techniques from top chefs.",
+                            videoId: "q26Nddobewk" // Replace with the YouTube video ID for the Cooking Masterclass
+                        },
+                        {
+                            time: "2:00 PM - 3:00 PM",
+                            title: "LF4 Crash Course",
+                            details: "Learn advanced cooking techniques from top chefs.",
+                            videoId: "V0ZdGZTabfg" // Replace with the YouTube video ID for the Cooking Masterclass
+                        },
+                        {
+                            time: "3:00 PM - 4:00 PM",
+                            title: "LF4 No Mercy",
+                            details: "Learn advanced cooking techniques from top chefs.",
+                            videoId: "Gt-J9h44HhE" // Replace with the YouTube video ID for the Cooking Masterclass
+                        },
+                        {
+                            time: "4:00 PM - 5:00 PM",
+                            title: "LF4 DeadCenter",
+                            details: "Learn advanced cooking techniques from top chefs.",
+                            videoId: "Z_gF8aWrs_8" // Replace with the YouTube video ID for the Cooking Masterclass
+                        },
+                        {
+                            time: "5:00 PM - 6:00 PM",
+                            title: "LF4 The Passing",
+                            details: "Learn advanced cooking techniques from top chefs.",
+                            videoId: "ffv-du-cXF4" // Replace with the YouTube video ID for the Cooking Masterclass
+                        },
+                        {
+                            time: "6:00 PM - 7:00 PM",
+                            title: "LF4 PVP",
+                            details: "Learn advanced cooking techniques from top chefs.",
+                            videoId: "QwPF6uKRU7U" // Replace with the YouTube video ID for the Cooking Masterclass
+                        },
+                        // Add more programs for Channel 1
+                    ],
+                    commercials: [
+                        {
+                            title: "My New Game",
+                            videoId: "vweLYSfEMZY" // Replace with the YouTube video ID for Commercial 1
+                        },
+                        {
+                            title: "Minecraft Server",
+                            videoId: "xqCHEvlqrpU" // Replace with the YouTube video ID for Commercial 2
                         }
                         // Add more commercials for Channel 1
                     ]

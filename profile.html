@@ -6,6 +6,14 @@
     <title>Profile</title>
     <link rel="stylesheet" href="styles/index.css">
     <!--link rel="stylesheet" href="styles/profile.css"-->
+    <style>
+        body {
+            background-image: url(background.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
 </head>
 <body>
     <h1 class="tittle">
@@ -31,6 +39,14 @@
             Servers
         </button>
 
+        <button class="buttons" onclick="document.location='tv.html'">
+            TV
+        </button>
+
+        <button class="buttons" onclick="document.location='tabletop.html'">
+            TableTop
+        </button>
+
         <button class="buttons" onclick="document.location='forum.html'">
             Forum
         </button>
@@ -39,7 +55,7 @@
             Profile
         </button>
 
-        <<button class="buttons" onclick="document.location='aboutus.html'">
+        <button class="buttons" onclick="document.location='aboutus.html'">
             About Us
         </button>
     </nav>
@@ -47,74 +63,74 @@
     <p>Profile</p>
 
 
-            <title>Registration Form</title>
-        </head>
-        <body>
+    <title>Registration Form</title>
+    </head>
+    <body>
 
-            <h1>Registration Form</h1>
+        <h1>Registration Form</h1>
 
-            <form id="registrationForm">
-                <div>
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" required>
-                </div>
-                <div>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div>
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <div>
-                    <label for="confirmPassword">Confirm Password:</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword" required>
-                </div>
-                <div>
-                    <input type="submit" value="Register">
-                </div>
-            </form>
+        <form id="registrationForm">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div>
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            <div>
+                <input type="submit" value="Register">
+            </div>
+        </form>
 
-            <script>
-                document.getElementById('registrationForm').addEventListener('submit', function (event) {
-                    event.preventDefault();
+        <script>
+            document.getElementById('registrationForm').addEventListener('submit', function (event) {
+                event.preventDefault();
 
-                    const username = document.getElementById('username').value;
-                    const email = document.getElementById('email').value;
-                    const password = document.getElementById('password').value;
-                    const confirmPassword = document.getElementById('confirmPassword').value;
+                const username = document.getElementById('username').value;
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
 
-                    if (password !== confirmPassword) {
-                        alert("Passwords do not match");
-                        return;
-                    }
+                if (password !== confirmPassword) {
+                    alert("Passwords do not match");
+                    return;
+                }
 
-                    // Send data to the server-side for storage in the SQLite database.
-                    // This part requires server-side scripting using Node.js or other backend technology.
+                // Send data to the server-side for storage in the SQLite database.
+                // This part requires server-side scripting using Node.js or other backend technology.
 
-                    // Example AJAX call to send data to the server:
-                     const data = { username, email, password };
-                     fetch('/register', {
-                       method: 'POST',
-                       headers: {
-                         'Content-Type': 'application/json'
-                       },
-                       body: JSON.stringify(data)
-                     })
-                     .then(response => {
-                       // Handle the response from the server
-                     })
-                     .catch(error => {
-                       // Handle errors
-                     });
+                // Example AJAX call to send data to the server:
+                const data = { username, email, password };
+                fetch('/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                    .then(response => {
+                        // Handle the response from the server
+                    })
+                    .catch(error => {
+                        // Handle errors
+                    });
 
-                    // This code is for demonstration purposes only and doesn't interact with an actual server.
-                    console.log("Sending data to server:", { username, email, password });
-                });
-            </script>
+                // This code is for demonstration purposes only and doesn't interact with an actual server.
+                console.log("Sending data to server:", { username, email, password });
+            });
+        </script>
 
-        </body>
-    </html>
+    </body>
+</html>
 
     </body>
 </html>

@@ -36,7 +36,10 @@
     transition: opacity 0.15s;
 }
 
-* {box-sizing: border-box}
+* {
+    color: gray;
+    box-sizing: border-box;
+}
 
 .container {
   width: 100%;
