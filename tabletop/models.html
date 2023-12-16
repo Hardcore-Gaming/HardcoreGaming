@@ -5,17 +5,28 @@
     <meta name="author" content="Chris Cunningham">
     <meta name="description" content="Hardcore Gaming Playing Games">
     <meta charset="UTF-8">
-    <title>Hardcore Gaming</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <title>Models</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
     <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/games.css">
+    <style>
+        * {
+            color: gray;
+        }
+
+        body {
+            background-image: url(../background.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
 </head>
 <body>
-    <h1 class="tittle">
-        TableTop
+    <h1 span style="color: gray;" class="tittle">
+        Models
     </h1>
 
-    <p>
-        By Chrus Kosco
     <p>
         Pages
     </p>
@@ -25,6 +36,40 @@
             Home
         </button>
 
+        <button class="buttons" onclick="document.location='../games.html'">
+            Games
+        </button>
+
+        <button class="buttons" onclick="document.location='../servers.html'">
+            Servers
+        </button>
+
+        <button class="buttons" onclick="document.location='../tv.html'">
+            TV
+        </button>
+
+        <button class="buttons" onclick="document.location='../store.html'">
+            Store
+        </button>
+
+        <button class="buttons" onclick="document.location='../forum.html'">
+            Forum
+        </button>
+
+        <button class="buttons" onclick="document.location='../profile.html'">
+            Profile
+        </button>
+
+        <button class="buttons" onclick="document.location='../aboutus.html'">
+            About Us
+        </button>
+    </nav>
+
+    <p>
+        Catagories
+    </p>
+    <!--Catagories-->
+    <nav>
         <button class="buttons" onclick="document.location='tabletop.html'">
             TableTop
         </button>
@@ -41,7 +86,9 @@
             Models
         </button>
     </nav>
-
+    <p>
+        Page Content
+    </p>
     <!-- Pages Catagorize -->
     <nav>
         <button class="buttons-LS" onclick="document.location='../index.html'">
@@ -96,11 +143,6 @@
     <!--Content-->
     <p>
         Welcome to Hardcore Gaming where you can find information on Hardcoregaming.
-    <p>
-        <video width="100%" height="100%" controls autoplay muted>
-            <source src="gamevideo.mp4" type="video/mp4">
-            <source src="gamevideo.ogg" type="video/ogg">
-        </video>
     <p>
         MEDIEVAL AGE<br>
         medieval FPS RPG MMO Game
