@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿1<!DOCTYPE html>
 <html>
 <head>
     <title>Life Style</title>
@@ -28,6 +28,25 @@
   float: left;
   width: 33%; /* The width is 30%, by default */
 }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+        z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
 
 /* Use a media query to add a break point at 800px: */
 @media screen and (max-width: 800px) {
@@ -106,134 +125,386 @@
         Weapons
     </p>
     <div class="left">
-    <p>
-        Fruit-<br>
-    kiwi<br>
-    pineapple<br>
-    berry<br>
-    avocado<br>
-    strawberry<br>
-    pear<br>
-    orange<br>
+        <p>
+            Fruit-<br>
+            kiwi<br>
+            pineapple<br>
+            berry<br>
+            avocado<br>
+            strawberry<br>
+            pear<br>
+            orange<br>
 
-    Vegetables-<br>
-    cauliflower<br>
-    celery<br>
-    aspragus<br>
-    mushroom<br>
-    carrot<br>
-    garlic<br>
-    </p>
-    Others<br>
-    apple<br>
-    potato<br>
-    cherry<br>
-    grape<br>
-    tamato<br>
-    wheat<br>
-    lettuce<br>
-    cabbage<br>
-    corn<br>
-    pea<br>
-    lemon<br>
-    punkin<br>
-    watermelon<br>
-    canalope<br>
-    peach<br>
-    cocnut<br>
-    broccoli<br>
-    turnip<br>
-    radish<br>
-    cucumber<br>
-    lime<br>
-    bellpepper(red,green.yellow,orange)<br>
-    hotpepper<br>
-    onion<br>
-    spinage<br>
-    beet<br>
-    eggplant<br>
-    squash<br>
-    kale<br>
-    zucchini<br>
+            Vegetables-<br>
+            cauliflower<br>
+            celery<br>
+            aspragus<br>
+            mushroom<br>
+            carrot<br>
+            garlic<br>
+        </p>
+        Others<br>
+        apple<br>
+        potato<br>
+        cherry<br>
+        grape<br>
+        tamato<br>
+        wheat<br>
+        lettuce<br>
+        cabbage<br>
+        corn<br>
+        pea<br>
+        lemon<br>
+        punkin<br>
+        watermelon<br>
+        canalope<br>
+        peach<br>
+        cocnut<br>
+        broccoli<br>
+        turnip<br>
+        radish<br>
+        cucumber<br>
+        lime<br>
+        bellpepper(red,green.yellow,orange)<br>
+        hotpepper<br>
+        onion<br>
+        spinage<br>
+        beet<br>
+        eggplant<br>
+        squash<br>
+        kale<br>
+        zucchini<br>
+        Breakfast-<br>
+        milk<br>
+        juice<br>
+        egg<br>
+        cookie<br>
+        ham<br>
+        nut<br>
+        seed<br>
+        peanut<br>
+        oat<br>
+        bread<br>
+        coffee<br>
+        cereal<br>
+        honey<br>
+        jam<br>
+        yogurt<br>
+        <p>
+            Dairy-<br>
+            energybar<br>
+            cheese<br>
+            sugar<br>
+            salt<br>
+            pepper<br>
+            pasta<br>
+            sauce<br>
+            tea<br>
+            cookingoil<br>
+            herb<br>
+            spice<br>
+            rice<br>
+            vinegar<br>
+            flour<br>
+            bakingsoda<br>
+            beer<br>
+            wine<br>
+            snack<br>
+            butter<br>
+            mustard<br>
+            ketchup<br>
+
+            Meat-<br>
+            turkey<br>
+            tendrion<br>
+            pork<br>
+            chicken<br>
+            beef<br>
+            steak<br>
+            veal<br>
+            duck<br>
+            bacon<br>
+            rib<br>
+            sasauge<br>
+            meat<br>
+            lamb<br>
+            brisket<br>
+            wing<br>
+        <p>
+            Seafood-<br>
+            shrimp<br>
+            scollop<br>
+            tuna<br>
+            lobster<br>
+            crab<br>
+            clam<br>
+            salmon<br>
+        </p>
+        <section>
+            <img src="../../images/Items/chipsNwater.png" alt="Bag of Chips & Water Bottle" style="width:128px;height:128px">
+            <img src="../../images/Items/coins.png" alt="Penny, Nickle, Dime, and Quarters" style="width:128px;height:128px">
+            <img src="../../images/Items/creditcard.png" alt="Credit Card" style="width:128px;height:128px">
+            <img src="../../images/Items/money.png" alt="1,2,5,10,20,50,and 100$ Bills" style="width:128px;height:128px">
+        </section>
     </div>
+
     <div class="main">
-    Breakfast-<br>
-    milk<br>
-    juice<br>
-    egg<br>
-    cookie<br>
-    ham<br>
-    nut<br>
-    seed<br>
-    peanut<br>
-    oat<br>
-    bread<br>
-    coffee<br>
-    cereal<br>
-    honey<br>
-    jam<br>
-    yogurt<br>
-    <p>
-    Dairy-<br>
-    energybar<br>
-    cheese<br>
-    sugar<br>
-    salt<br>
-    pepper<br>
-    pasta<br>
-    sauce<br>
-    tea<br>
-    cookingoil<br>
-    herb<br>
-    spice<br>
-    rice<br>
-    vinegar<br>
-    flour<br>
-    bakingsoda<br>
-    beer<br>
-    wine<br>
-    snack<br>
-    butter<br>
-    mustard<br>
-    ketchup<br>
-    </p>
+        Money<br>
+        -penny<br>
+        -nickel<br>
+        -dime<br>
+        -quarter<br>
+        -goldcoin<br>
+        -dallor<br>
+        -five<br>
+        -ten<br>
+        -twenty<br>
+        -fiffty<br>
+        -hundred<br>
+        -creditcard<br>
+
+        Tools<br>
+        -hammer<br>
+        -shear<br>
+        -bucket<br>
+        -shovel<br>
+        -axe<br>
+        -pickaxe<br>
+        -mark<br>
+        -screwdriver<br>
+        -wirecutter<br>
+        -spraycan<br>
+        -pencil<br>
+
+        Material<br>
+        -Ore(Iron,Copper,Silver,Gold)<br>
+        -Stone(Bauxite,Lime,Granite,Basalt,Chalk,Slate,Marble,Sand,Asphalt)<br>
+        -Wood<br>
+        -Fur<br>
+        -Clay<br>
+        -Wool<br>
+        -Latex<br>
+        -CrudeOil<br>
+        -Resin<br>
+        -Sand<br>
+        -Paper<br>
+
+        Refined<br>
+        -Wood Plank<br>
+        -Stone Brick<br>
+        -Creamic<br>
+        -Cement<br>
+        -Rubber<br>
+        -Paint(colors)<br>
+        -Plastic<br>
+        -Metal Plate<br>
+        -Leather<br>
+        -Cloth<br>
+        -Bronze Ingot<br>
+        -Iron Ingot<br>
+        -Steel Ingot<br>
+        -Copper Ingot<br>
+        -Sliver Ingot<br>
+        -Gold Ingot<br>
+
+        Parts<br>
+        -Screw<br>
+        -Nail<br>
+        -Bolt<br>
+        -Tape<br>
+        -Thread<br>
+        -Sandpaper<br>
+        -Glue<br>
+        -Cable<br>
+        -Glass<br>
+        -String<br>
+        -Cardboard<br>
+
+        Building<br>
+        -Foundation<br>
+        -Ceilling<br>
+        -Stairs<br>
+        -Walls<br>
+        -Floor<br>
+        -Window<br>
+        -Frame<br>
+        -Tile<br>
+        -Door<br>
+        -Insulation<br>
+        -Plaster<br>
+        -Roof<br>
+        -<br>
+
+        Plumbing<br>
+        -Pipe[Copper,Brass,Plastic,PVC,Hose,Rubber](Straight,Tee,Union,Elbow,Cross)<br>
+        -Valve<br>
+        -Fitting<br>
+        -Plug<br>
+        -Clamp<br>
+        -Coupler<br>
+        -Mixer<br>
+        -Clamp<br>
+        -Reducer<br>
+        -<br>
+
+        Electronic<br>
+        -Led(colors)<br>
+        -Fuse<br>
+        -Capacitor<br>
+        -Motherboard<br>
+        -Curcuit<br>
+        -Switch<br>
+        -Relay<br>
+        -Motor<br>
+        -Meter<br>
+        -Amplifier<br>
+        -Module<br>
+        -Tube<br>
+        -Wire<br>
+        -Battery(A,Car)<br>
+        -Antenna<br>
+        -Microphone<br>
+        -Speaker<br>
+        -Resistor<br>
+        -Inductor<br>
+        -Transformer<br>
+        -Translator<br>
+        -Rectifier<br>
+        -Diode<br>
+        -Memmory<br>
+        -Processor<br>
+        -Ram<br>
+        -SimChip<br>
+
+        Car<br>
+        -Frame(TypeOfVehicle)<br>
+        -Engine<br>
+        -Transmission<br>
+        -Battery<br>
+        -Alternator<br>
+        -Radiator<br>
+        -FrontAxle<br>
+        -FrontSteering<br>
+        -FrontSuspension<br>
+        -Brakes<br>
+        -CatalyticConverter<br>
+        -Muffler<br>
+        -Tailpipe<br>
+        -FuelTank<br>
+        -RearAxle<br>
+        -RearSuspeion<br>
+        -Mirror<br>
+        -Hood<br>
+        -Door<br>
+        -Bumper<br>
+        -Lights<br>
+        -Trunk<br>
+        -Windows<br>
+        -Wheels<br>
+        -Oil<br>
+        -Coolant<br>
+        -Brakefluid<br>
+        -Steeringfluid<br>
+        -Transmissionfluid<br>
+        -Brakedisk<br>
+        -Powerbelt<br>
+        -Filter<br>
+        -Tire<br>
+        -Hose<br>
+        -Dipstick<br>
+        -Cap<br>
+        -Fusebox<br>
+        (1.Cigarettelighter 2.Radio 3.HeaterRelay 4.Belt 5.TurnSignal 6.Meters 7.Horn 8.Wiper 9.Sunroof 10.IgnitionSwitch<br>
+        11.CoolingFan 12.PowerRelay 13.Starter 14.AntilockBrake 15.Defrost 16.ChargingSystem 17.Fuelpump 18.AirSupension<br>
+        19.AuxillaryPower 20.Outlet 21.Sensor 22.Cruise 23.IntiorLights 24.Autostart 25.DoorLock 26.Windows 27.A/C 28.automatic<br>
+        29.Manual 30.Pumps 31.SpeedGague 32.FuelGague Name Altitudes Miles Passengers)<br>
+
+        Furniture<br>
+        -bench(RoomIngredient)<br>
+        -chair(RoomIngredient)<br>
+        -table(RoomIngredient)<br>
+        -workbench(CraftingRequirment)<br>
+        -grinder(Sharpen)<br>
+        -fence(FarmIngredient)<br>
+        -bed(RoomIngredient)<br>
+        -tanner(Leather)<br>
+        -loon(Cloth)<br>
+        -anvil(CraftingRequirment)<br>
+        -furance(Smelt)<br>
+
+        Storage(No Furniture)<br>
+        -chest(All(excpt.Weapons,Armor)<br>
+        -barrel(Water,Liquor)<br>
+        -sack(Food,)<br>
+        -crate(Items)<br>
+        -trunk(Weapons,Armor)<br>
+        -armorstand(Armor)<br>
+        -weaponrack(Weapon)<br><br>
+        -shelf(Books)<br>
+
+        Misc<br>
+        -book(learn)<br>
+        -tabbaco<br>
+        -liquor<br>
+        -weed<br>
+
     </div>
     <div class="right">
-    Meat-<br>
-    turkey<br>
-    tendrion<br>
-    pork<br>
-    chicken<br>
-    beef<br>
-    steak<br>
-    veal<br>
-    duck<br>
-    bacon<br>
-    rib<br>
-    sasauge<br>
-    meat<br>
-    lamb<br>
-    brisket<br>
-    wing<br>
+        Camera<br>
+        WaterGun<br>
+        Fireworks<br>
+        Balloon<br>
+        GlowStick<br>
+        Speaker<br>
+        [X]Phone<br>
+        [X]Wallet<br>
+        [X]Money<br>
+        [X]Coins<br>
+        Trophies<br>
+        [X]Dice<br>
+        [X]Cards<br>
+        boardgames<br>
+        [X]SprayPaint<br>
+        Chalk<br>
+        [X]Marker/[ ]Pen/[X]Pencil<br>
+        Paintbrush<br>
+        (+18)Drugs,Other<br>
+
+        Disc<br>
+        Book<br>
+        Blueprint<br>
+        PillBottle<br>
+        Vial<br>
+        MonitorCamera<br>
+        Towel<br>
+        Cloth<br>
+        PaperBag<br>
+        Barrel<br>
+
+        Cookware- Pot, Pan, Spattula, Dishes<br>
+
+        Tools- piler, wrench, hammer, axe<br>
+
+        Material- plank, ingot, wool, wires<br>
+
+        Drugs- weed, crack, cocain<br>
+
+        StreetSigns- Stop, Lights, Railroad, Crossing,<br>
+
+        ID<br>
+        <div class="dropdown">
+            <span>Liceness</span>
+            <div class="dropdown-content">
+                <p> Driver<br>
+                    Taxi<br>
+                    Construction<br>
+                    Elecetricion<br>
+                    Plumber<br>
+                    Bus<br>
+                    Flight<br>
+                </p>
+            </div>
+        </div><br>
     </div>
-    <p>
-
-    Seafood-<br>
-    shrimp<br>
-    scollop<br>
-    tuna<br>
-    lobster<br>
-    crab<br>
-    clam<br>
-    salmon<br>
-
-    </p>
-
-    <section>
-        <img src="../../images/Items/chipsNwater.png" alt="Bag of Chips & Water Bottle" style="width:128px;height:128px">
-        <img src="../../images/Items/coins.png" alt="Penny, Nickle, Dime, and Quarters" style="width:128px;height:128px">
-        <img src="../../images/Items/creditcard.png" alt="Credit Card" style="width:128px;height:128px">
-        <img src="../../images/Items/money.png" alt="1,2,5,10,20,50,and 100$ Bills" style="width:128px;height:128px">
-    </section>
 </body>
 </html>
