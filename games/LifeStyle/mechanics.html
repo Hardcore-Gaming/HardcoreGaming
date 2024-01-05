@@ -23,6 +23,14 @@
             Character
         </button>
 
+        <button class="buttons-LS" onclick="document.location='people.html'">
+            People
+        </button>
+
+        <button class="buttons-LS" onclick="document.location='animals.html'">
+            Animals
+        </button>
+
         <button class="buttons-LS" onclick="document.location='items.html'">
             Items
         </button>
@@ -67,22 +75,38 @@
     <p>
         INTERNET<br>
         websites darkweb onlinepcgames
+    </p>
+    COMPUTER|LAPTOP<br>
+    ethernet/wifi pcgames<br>
     </P>
-        COMPUTER|LAPTOP<br>
-        ethernet/wifi pcgames<br>
-    </P>
-        PHONE<br>
-        wifi/data phonegames call/message/voicemail/contact<br>
-        Snaptoplace-placeobject<br>
-        buildingplan- place a greenplan turn blue fill with required<br>
-        Rotate,Move,<br>
-    </P>
+    PHONE<br>
+    wifi/data phonegames call/message/voicemail/contact<br>
+    Snaptoplace-placeobject<br>
+    buildingplan- place a greenplan turn blue fill with required<br>
+    Rotate,Move,<br>
+    <P>
         Foundation<br>
 
         Walls-Roof-Floor<br>
 
         Window-Garage<br>
-    </P>
+        create city,select empty or premade,pay constuction for streets/plots & Essentails HumanResource-forJobs/RealEstate-rent/purchase<br>
+        placeOrproperty/Bank-startAccount&Buisness,<br>
+        Food,Water,Exercise,Attention<br>
+        Dogs/Cat/Fish/Hamsters/Other<br>
+        Vist city,invest in live there,look for job go to human resources,rent/purchase place to stay,work for more money,<br>
+        purchase Items, start a buissness,purchase property for a business,buy phone,<br>
+        Blood Health Hunger Thirst Stamina Energy Bladder Tempature<br>
+        Fighting Shooting Stealth Flying Driving LungCapacity<br>
+        Fat Bladder Social Fun Hygiene Vitiman<br>
+        Strength Intelligence Dexterity<br>
+        Pain BloodType Illnesses Relationship Jobs/Carreers<br>
+        Vist city<br>
+        invest in live there<br>
+        look for job go to human resources<br>
+        go to RealEstate rent/purchase place to stay<br>
+        vist buisness and purchase items<br>
+    <P>
         Blood- goes down then you die from being unconscious or be not stable<br>
         +Revive -Died -TimeDrain<br>
         Health- goes down then damaged to Blood which means you either fell down or dying<br>
@@ -102,181 +126,274 @@
         Tempature- Keeps track of heat and cold to hot can make you passout to cold can also unitl death<br>
         -ColdTemp NormalTemp +HotTemp<br>
     </P>
-        Blood- +Revive -Died -TimeDrain<br>
-        Health- +Meds -Damage +TimeRegen(DependingFood/Liquid)<br>
-        Armor- +Armor +BulletDamageReducing<br>
-        Stanima- -OnMovementUsed(BesideWalking) +RegenUnused +Parkour +Vaulting<br>
-        Hunger- +EatFood -TimeDrain -LowerHealthAt#<br>
-        Thirst- +DrinkLiquid -TimeDrain -LowerHealthAt#<br>
-        Energy- +SleepBed -TimeUp&StanimaUsed<br>
-        Bladder- -UseRestroom +ConsumedFoodLiquid<br>
-        Tempature- -ColdTemp NormalTemp +HotTemp<br>
+    Blood- +Revive -Died -TimeDrain<br>
+    Health- +Meds -Damage +TimeRegen(DependingFood/Liquid)<br>
+    Armor- +Armor +BulletDamageReducing<br>
+    Stanima- -OnMovementUsed(BesideWalking) +RegenUnused +Parkour +Vaulting<br>
+    Hunger- +EatFood -TimeDrain -LowerHealthAt#<br>
+    Thirst- +DrinkLiquid -TimeDrain -LowerHealthAt#<br>
+    Energy- +SleepBed -TimeUp&StanimaUsed<br>
+    Bladder- -UseRestroom +ConsumedFoodLiquid<br>
+    Tempature- -ColdTemp NormalTemp +HotTemp<br>
 
-        the armor to health to blood when health is down then a crawl status and revive<br>
-        stanima goes down when using jump/sprint and drains energy on use per action sleep<br>
-        for time to fill energy food and water to have health naturally regen bladder filled<br>
-        per food/water consumed and pee button to consume more food/water last the tempature<br>
-        cold or hot per zone with too much of either can make you unconscious to die<br>
+    the armor to health to blood when health is down then a crawl status and revive<br>
+    stanima goes down when using jump/sprint and drains energy on use per action sleep<br>
+    for time to fill energy food and water to have health naturally regen bladder filled<br>
+    per food/water consumed and pee button to consume more food/water last the tempature<br>
+    cold or hot per zone with too much of either can make you unconscious to die<br>
     </P>
-        Pockets- Usable Items<br>
-        Equipment- Slots of Clothes,Gear, and Equipment<br>
-        Backpack- Grid based slotted inventory<br>
-        Phone- Contact people and use apps<br>
-        Wallet- Carry Money,Card,ID<br>
+    Pockets- Usable Items<br>
+    Equipment- Slots of Clothes,Gear, and Equipment<br>
+    Backpack- Grid based slotted inventory<br>
+    Phone- Contact people and use apps<br>
+    Wallet- Carry Money,Card,ID<br>
     </P>
-        Inventory System<br>
+    Movement Inputs - Hold/Toggle/DoubleTap<br>
+    =======================<br>
+    [x]W-move forward<br>
+    [x]S-move backward<br>
+    [x]A-move left<br>
+    [x]D-move right<br>
+    [x]Q-peak left<br>
+    [x]E-peak right<br>
+    [ ]CapsLock-Move Quietly<br>
+    [x]Move+Shift-Run<br>
+    [x]C-Crouch<br>
+    [x]Z-Prone<br>
+    [x]Space-Jump<br>
+    [ ]Hold.Space-Parkour<br>
+    [ ]Space-R.Click-Jump Attack<br>
+    [ ]X-Kick<br>
+    [ ]Hold.X-MeleeMode<br>
+    [ ]I-Inventory<br>
+    [ ]P-playerInfo<br>
+    [x]F-Pickup/Use/Place<br>
+    [ ]Hold.F- Flashlight/Laser<br>
+    [ ]N-Nightvision<br>
+    [x]R-Reload<br>
+    [ ]Hold.R-Holster/Equip Weapon.Select<br>
+    [ ]G-Grab<br>
+    [ ]Hold.G-Grenade<br>
+    [ ]V-Bash					MeleeMode:<br>
+    [ ]Hold.V-Shove					MeleeMode:DrawMeleeWeapon<br>
+    [ ]RightClick-Aim/ShootSecondHand		MeleeMode:RightAttack<br>
+    [x]LeftClick-Fire				MeleeMode:LeftAttack<br>
+    [ ]L.R.Click-Block<br>
+    [ ]Alt+Direction+L.Click-BlindFire<br>
+    [ ]NPCommand/Chat/Emote<br>
+    [ ]Console<br>
 
-        Player (Independent of backpack inventory)<br>
-        • Containers<br>
-        Sizes, MaxSlots,<br>
-        • Clothing<br>
-        Wearing<br>
-        • Armour<br>
-        Equipment<br>
-        • Weapon<br>
-        Selection Wheel<br>
-        • HolsterSlots<br>
-        Primary-Seconday-Sidearm-Melee<br>
+    Inventory System<br>
 
-        • Containers<br>
-        Backpack-Crate-Rack-Bundle-Case<br>
-        • InventorySlots<br>
-        Material-Weapons-Clothes-Gear-Medical<br>
-        • Pockets<br>
-        ExtraSlots<br>
-        ClipforSmallContainers<br>
+    Player (Independent of backpack inventory)<br>
+    • Containers<br>
+    Sizes, MaxSlots,<br>
+    • Clothing<br>
+    Wearing<br>
+    • Armour<br>
+    Equipment<br>
+    • Weapon<br>
+    Selection Wheel<br>
+    • HolsterSlots<br>
+    Primary-Seconday-Sidearm-Melee<br>
+
+    • Containers<br>
+    Backpack-Crate-Rack-Bundle-Case<br>
+    • InventorySlots<br>
+    Material-Weapons-Clothes-Gear-Medical<br>
+    • Pockets<br>
+    ExtraSlots<br>
+    ClipforSmallContainers<br>
     </P>
-        Features<br>
-        • Backpack can be swapped<br>
-        • Each backpack has a separate pockets slot<br>
-        • Item types - food, potions, armor etc.<br>
-        • Item tooltip<br>
-        • Item info and usage menu<br>
-        • Drag and drop<br>
-        • Stacking<br>
+    Features<br>
+    • Backpack can be swapped<br>
+    • Each backpack has a separate pockets slot<br>
+    • Item types - food, potions, armor etc.<br>
+    • Item tooltip<br>
+    • Item info and usage menu<br>
+    • Drag and drop<br>
+    • Stacking<br>
+
+    <p>
+        Conversations<br>
+        -talk<br>
+        introduce<br>
+        question<br>
+        gossip<br>
+        -relation<br>
+        partner<br>
+        friend<br>
+        family<br>
+        -buisness<br>
+        hire<br>
+        job<br>
+        -social<br>
+        hangout<br>
+        Singleplayer spawn in empty world create roads and buildings<br>
+        Multiplayer go to the airport to join other cities<br>
+        Relationship-Stranger,Knowface,Introduced,Acquaintance,Friend<br>
+
+        Friendship-Presents,Introduce,Opportunities,Favors,<br>
+
+        Citizens-walk the streets and become customers/workers<br>
+        ===================================<br>
+        Customer<br>
+        Traveler<br>
+        Shopper<br>
+        Buissness<br>
+        Worker<br>
+        Cop<br>
+        Crinimal<br>
+        Homeless<br>
+        DrugAddic<br>
+        College<br>
+        School<br>
+        Play<br>
+        Wandering<br>
+        Driver<br>
+        Security<br>
+        Constructor<br>
+
+        Gossip-<br>
+        you hear about [person] heard [options].<br>
+
+        Questions-<br>
+        what is your name?Name > AskersName<br>
+        where is [options] at?Place > QuickDetialed<br>
+
+        Riddles-<br>
+        what is an item that look different depending on who looks at it?Mirror<br>
+    </p>
+    idle-walk-jog-rushing<br>
+
+    buy-windowshop-sell<br>
+
+    food-entertainment-relax-sports-recreational-work<br>
+
+    realestate-shopping-buisness-relationship-reputation<br>
+
+    Paying- pullout money with options to select ammount and place/give for paying<br>
+
+    Paperwork- fillout paper and give/turnin<br>
+
+    Bills- send money to pay bills to services<br>
+
+    Pockets- Usable Items<br>
+    Depending on gear get slots for hotbar wheel to select item to use or equip<br>
+
+    Equipment- Slots for Clothes,Gear, and Equipment<br>
+    Clothes is Cosmetic<br>
+    Gear is Backpack,Holster,Equipment<br>
+    Equipment is stuff that give UI or Stats<br>
+
+    Backpack- Grid based slotted inventory<br>
+    button slots that are arranged in a layout by #slotsWidex#slotsHigh Example:4x4<br>
+    items can take 1-# slots arranged as a tetris block<br>
+
+    Holster- Hold weapons/other<br>
+    if weapon is equipped can use to quickly grab waepon from inventory<br>
+
+    Wheel (1-6Slots)<br>
+    Menu,Phone,Character,Inventory,Wallet,Backpack,Pocket,Tools,Equipment,Holster,Clothe,<br>
     </P>
-        Paying- pullout money with options to select ammount and place/give for paying<br>
-
-        Paperwork- fillout paper and give/turnin<br>
-
-        Bills- send money to pay bills to services<br>
-
-        Pockets- Usable Items<br>
-        Depending on gear get slots for hotbar wheel to select item to use or equip<br>
-
-        Equipment- Slots for Clothes,Gear, and Equipment<br>
-        Clothes is Cosmetic<br>
-        Gear is Backpack,Holster,Equipment<br>
-        Equipment is stuff that give UI or Stats<br>
-
-        Backpack- Grid based slotted inventory<br>
-        button slots that are arranged in a layout by #slotsWidex#slotsHigh Example:4x4<br>
-        items can take 1-# slots arranged as a tetris block<br>
-
-        Holster- Hold weapons/other<br>
-        if weapon is equipped can use to quickly grab waepon from inventory<br>
-
-        Wheel (1-6Slots)<br>
-        Menu,Phone,Character,Inventory,Wallet,Backpack,Pocket,Tools,Equipment,Holster,Clothe,<br>
+    CLOTHES/EQUIPMENT<br>
+    Head- hats,helmet<br>
+    Ear-earpiece,jewelery<br>
+    Face-facemask,gasmask<br>
+    Neck- Bandana,Jewelry<br>
+    Shoulder- Carry,Weapon<br>
+    Chest- Shirt<br>
+    Overall- Coat,Armor<br>
+    Wrist- Watch<br>
+    Back- Backpack<br>
+    Hand- Gloves<br>
+    Belt- Leather<br>
+    Pant- Jean,Shorts<br>
+    Knee- Pads<br>
+    Ankle- Monitor<br>
+    Sock- Socks<br>
+    Shoe- Hightop,Highheels<br>
     </P>
-        CLOTHES/EQUIPMENT<br>
-        Head- hats,helmet<br>
-        Ear-earpiece,jewelery<br>
-        Face-facemask,gasmask<br>
-        Neck- Bandana,Jewelry<br>
-        Shoulder- Carry,Weapon<br>
-        Chest- Shirt<br>
-        Overall- Coat,Armor<br>
-        Wrist- Watch<br>
-        Back- Backpack<br>
-        Hand- Gloves<br>
-        Belt- Leather<br>
-        Pant- Jean,Shorts<br>
-        Knee- Pads<br>
-        Ankle- Monitor<br>
-        Sock- Socks<br>
-        Shoe- Hightop,Highheels<br>
+    POCKETS<br>
+    Pants-4Slots<br>
+    Toolbelt-6Slot<br>
+    Utilitybelt-8Slots<br>
     </P>
-        POCKETS<br>
-        Pants-4Slots<br>
-        Toolbelt-6Slot<br>
-        Utilitybelt-8Slots<br>
+    INVENTORY<br>
+    #by# size backpack with Items like tetris blocks<br>
     </P>
-        INVENTORY<br>
-        #by# size backpack with Items like tetris blocks<br>
+    Plague<br>
+    Hypothermia<br>
+    Heatstroke<br>
+    Virus<br>
+    Deases<br>
+    Dehydration<br>
+    Starvation<br>
+    Drown<br>
+    BrokenBone<br>
+    Burns<br>
+    Flu<br>
+    Allergy<br>
     </P>
-        Plague<br>
-        Hypothermia<br>
-        Heatstroke<br>
-        Virus<br>
-        Deases<br>
-        Dehydration<br>
-        Starvation<br>
-        Drown<br>
-        BrokenBone<br>
-        Burns<br>
-        Flu<br>
-        Allergy<br>
+    sinkhole<br>
+    wildifre<br>
+    Tornado<br>
+    Blizzard<br>
+    Metor<br>
+    Avalanche<br>
+    Heatwave<br>
+    VolcanoEruption<br>
+    Landslide<br>
+    Tsunami<br>
+    Typhoon<br>
+    Earthquake<br>
+    Flood<br>
     </P>
-        sinkhole<br>
-        wildifre<br>
-        Tornado<br>
-        Blizzard<br>
-        Metor<br>
-        Avalanche<br>
-        Heatwave<br>
-        VolcanoEruption<br>
-        Landslide<br>
-        Tsunami<br>
-        Typhoon<br>
-        Earthquake<br>
-        Flood<br>
+    *DESIGNS*<br>
+    Beat Maker -<br>
+
+    Clothes -<br>
+
+    Furinture -<br>
+
+    Hair -<br>
+
+    Jewelry -<br>
+
+    Painting -<br>
+    Color-Trim<br>
+    Shape-Sticker<br>
+    misc<br>
+
+    Tatto -<br>
     </P>
-        *DESIGNS*<br>
-        Beat Maker -<br>
+    Buy<br>
 
-        Clothes -<br>
+    Subscriptions- FREE Newspaper/Magazines, ClubMembership,<br>
 
-        Furinture -<br>
+    Lifetime- FREE Supplie, Rentfree, Dividends,<br>
 
-        Hair -<br>
+    Inherited- better start FREE money,house,car,clothe,equipment,buissness,city,<br>
 
-        Jewelry -<br>
+    Quick Licenses- FREE licenses without test or training<br>
 
-        Painting -<br>
-        Color-Trim<br>
-        Shape-Sticker<br>
-        misc<br>
-
-        Tatto -<br>
+    Irl $1.00 = In-game $10.00(In-game $1 = Irl $0.01)<br>
     </P>
-        Buy<br>
-
-        Subscriptions- FREE Newspaper/Magazines, ClubMembership,<br>
-
-        Lifetime- FREE Supplie, Rentfree, Dividends,<br>
-
-        Inherited- better start FREE money,house,car,clothe,equipment,buissness,city,<br>
-
-        Quick Licenses- FREE licenses without test or training<br>
-
-        Irl $1.00 = In-game $10.00(In-game $1 = Irl $0.01)<br>
+    SkinCrates- LockedCrate Needs Key<br>
+    SportEquipment	Furniture	Building	Car	Weapons		Clothes		Emotes		Server<br>
     </P>
-        SkinCrates- LockedCrate Needs Key<br>
-        SportEquipment	Furniture	Building	Car	Weapons		Clothes		Emotes		Server<br>
+    *FuturePlans*<br>
+    DLCs-Space(Spaceship,Planets),Jurassic(Dinosaurs),Horror(Slashers,Ghost,Monster),Scifi(Hover,Jetpack),<br>
+    Medieval(Sword,Armor),Western(Gunslinger),Fantasy(Races,Magic),Superhero(Superpower,Sidekick/Henchmen),<br>
+    Cops/Robebers(Swat,Cartel),Gangsters(Mafia,Yukaza,Cholo),Worldwar(90s-Clothes,Weapons)<br>
     </P>
-        *FuturePlans*<br>
-        DLCs-Space(Spaceship,Planets),Jurassic(Dinosaurs),Horror(Slashers,Ghost,Monster),Scifi(Hover,Jetpack),<br>
-        Medieval(Sword,Armor),Western(Gunslinger),Fantasy(Races,Magic),Superhero(Superpower,Sidekick/Henchmen),<br>
-        Cops/Robebers(Swat,Cartel),Gangsters(Mafia,Yukaza,Cholo),Worldwar(90s-Clothes,Weapons)<br>
-    </P>
-        OpenIRLCasino (IRL$500k Required)<br>
+    OpenIRLCasino (IRL$500k Required)<br>
 
-        In-Game Money to Real Money (IRL$1M Goal)<br>
+    In-Game Money to Real Money (IRL$1M Goal)<br>
     </P>
-        E-Everyone<br>
-        (Cuttout Content)<br>
-        A(o)-AdultsOnly-Language,Blood/Gore,Violence,Gambling,Nudity,Humor,Substances,<br>s
+    E-Everyone<br>
+    (Cuttout Content)<br>
+    A(o)-AdultsOnly-Language,Blood/Gore,Violence,Gambling,Nudity,Humor,Substances,<br>s
     </p>
 </body>
 </html>
