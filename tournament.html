@@ -1,136 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
-    <link rel="stylesheet" href="styles/index.css">
-    <!--link rel="stylesheet" href="styles/profile.css"-->
-    <style>
-        body {
-            background-image: url(background.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-        }
-    </style>
+    <title>Tournament Tracker</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1 class="tittle">
-        My Profile
-    </h1>
-
-    <p>
-        By Hardcore Gaming
-    <p>
-        Pages
-    </p>
-    <!--Pages-->
-    <nav>
-        <button class="buttons" onclick="document.location='index.html'">
-            Home
-        </button>
-
-        <button class="buttons" onclick="document.location='games.html'">
-            Games
-        </button>
-
-        <button class="buttons" onclick="document.location='servers.html'">
-            Servers
-        </button>
-
-        <button class="buttons" onclick="document.location='tv.html'">
-            TV
-        </button>
-
-        <button class="buttons" onclick="document.location='store.html'">
-            Store
-        </button>
-
-        <button class="buttons" onclick="document.location='forum.html'">
-            Forum
-        </button>
-
-        <button class="buttons" onclick="document.location='profile.html'">
-            Profile
-        </button>
-
-        <button class="buttons" onclick="document.location='aboutus.html'">
-            About Us
-        </button>
-    </nav>
-    <!--Content-->
-    <p>Profile</p>
-
-
-    <title>Registration Form</title>
-    </head>
-    <body>
-
-        <h1>Registration Form</h1>
-
-        <form id="registrationForm">
-            <div>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
+    <h1>Team Tournament Tracker</h1>
+    
+    <div class="bracket">
+        <div class="round round-1">
+            <div class="match" id="match1">
+                <div class="team" onclick="selectWinner('match1', 'team1')">Team A</div>
+                <div class="team" onclick="selectWinner('match1', 'team2')">Team B</div>
             </div>
-            <div>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+            <div class="match" id="match2">
+                <div class="team" onclick="selectWinner('match2', 'team3')">Team C</div>
+                <div class="team" onclick="selectWinner('match2', 'team4')">Team D</div>
             </div>
-            <div>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
+        </div>
+        <div class="round round-2">
+            <div class="match" id="final">
+                <div class="team" id="finalist1">Winner of Match 1</div>
+                <div class="team" id="finalist2">Winner of Match 2</div>
             </div>
-            <div>
-                <label for="confirmPassword">Confirm Password:</label>
-                <input type="password" id="confirmPassword" name="confirmPassword" required>
-            </div>
-            <div>
-                <input type="submit" value="Register">
-            </div>
-        </form>
+        </div>
+    </div>
 
-        <script>
-            document.getElementById('registrationForm').addEventListener('submit', function (event) {
-                event.preventDefault();
-
-                const username = document.getElementById('username').value;
-                const email = document.getElementById('email').value;
-                const password = document.getElementById('password').value;
-                const confirmPassword = document.getElementById('confirmPassword').value;
-
-                if (password !== confirmPassword) {
-                    alert("Passwords do not match");
-                    return;
-                }
-
-                // Send data to the server-side for storage in the SQLite database.
-                // This part requires server-side scripting using Node.js or other backend technology.
-
-                // Example AJAX call to send data to the server:
-                const data = { username, email, password };
-                fetch('/register', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                })
-                    .then(response => {
-                        // Handle the response from the server
-                    })
-                    .catch(error => {
-                        // Handle errors
-                    });
-
-                // This code is for demonstration purposes only and doesn't interact with an actual server.
-                console.log("Sending data to server:", { username, email, password });
-            });
-        </script>
-
-    </body>
-</html>
-
-    </body>
+    <script src="script.js"></script>
+</body>
 </html>
