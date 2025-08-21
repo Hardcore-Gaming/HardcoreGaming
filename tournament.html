@@ -1,10 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.bracket {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.round {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.match {
+    border: 1px solid #333;
+    padding: 10px;
+    border-radius: 5px;
+    width: 150px;
+}
+
+.team {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.team.winner {
+    background-color: #4CAF50;
+    color: white;
+}
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tournament Tracker</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Tournament </title>
 </head>
 <body>
     <h1>Team Tournament Tracker</h1>
