@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+        body {
+            font-family: Arial,sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #333;
+            color: white;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin: 2px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: #0066cc;
+            color: white;
+        }
+
+            button:hover {
+                background: #004999;
+            }
+
+        .delete-btn {
+            background: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin Panel</h1>
+    <button onclick="logout()">Logout</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Display Name</th>
+                <th>Rank</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="usersTable"></tbody>
+    </table>
+
+    <script>
+        const OWNER_USERNAME = "ChrusKosco";
+        let user = JSON.parse(localStorage.getItem("loggedInUser"));
+        if (!user) { alert("Please login!"); window.location.href = "accounts.html"; }
+        // Force Owner
+        if (user.username === OWNER_USERNAME) { user.isAdmin = true; user.rank = "Owner"; user.status = "Active"; localStorage.setItem("loggedInUser", JSON.stringify(user)); }
+
+        if (!user.isAdmin) { alert("Access Denied!"); window.location.href = "forum.html"; }
+
+        function loadUsers() {
+            const users = JSON.parse(localStorage.getItem("users"));
+            document.getElementById("usersTable").innerHTML = users.map(u => `
+            <tr>
+                <td>${u.username}${u.username === OWNER_USERNAME ? ' ⭐Owner' : ''}</td>
+                <td>${u.profile.displayName}</td>
+                <td>${u.rank}</td>
+                <td>${u.status}</td>
+                <td>
+                    <button onclick="viewUser('${u.username}')">View</button>
+                    ${u.username !== OWNER_USERNAME ? `<button onclick="promote('${u.username}')">Promote</button>` : ''}
+                    ${u.username !== OWNER_USERNAME ? `<button onclick="demote('${u.username}')">Demote</button>` : ''}
+                    ${u.username !== OWNER_USERNAME ? `<button onclick="ban('${u.username}')">Ban</button>` : ''}
+                </td>
+            </tr>
+        `).join("");
+        }
+
+        function viewUser(username) {
+            localStorage.setItem("viewUserAdmin", username);
+            window.location.href = "admin_user.html";
+        }
+
+        function promote(username) {
+            const users = JSON.parse(localStorage.getItem("users"));
+            const u = users.find(x => x.username === username);
+            if (!u) return;
+            if (u.rank === "Fresh") u.rank = "Normal";
+            else if (u.rank === "Normal") u.rank = "VIP";
+            else if (u.rank === "VIP") u.rank = "Staff";
+            else if (u.rank === "Staff") u.rank = "Moderator";
+            localStorage.setItem("users", JSON.stringify(users));
+            loadUsers();
+        }
+
+        function demote(username) {
+            const users = JSON.parse(localStorage.getItem("users"));
+            const u = users.find(x => x.username === username);
+            if (!u || u.username === OWNER_USERNAME) return;
+            if (u.rank === "Moderator") u.rank = "Staff";
+            else if (u.rank === "Staff") u.rank = "VIP";
+            else if (u.rank === "VIP") u.rank = "Normal";
+            else if (u.rank === "Normal") u.rank = "Fresh";
+            localStorage.setItem("users", JSON.stringify(users));
+            loadUsers();
+        }
+
+        function ban(username) {
+            const users = JSON.parse(localStorage.getItem("users"));
+            const u = users.find(x => x.username === username);
+            if (!u || u.username === OWNER_USERNAME) return;
+            u.status = "Banned";
+            localStorage.setItem("users", JSON.stringify(users));
+            loadUsers();
+        }
+
+        function logout() {
+            localStorage.removeItem("loggedInUser");
+            window.location.href = "index.html";
+        }
+
+        loadUsers();
+    </script>
+</body>
+</html>

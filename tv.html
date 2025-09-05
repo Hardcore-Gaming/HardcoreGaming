@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles/index.css">
 
     <style>
-        /* Basic styling for demonstration purposes */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -33,6 +32,8 @@
 
         .channel-name {
             font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
         }
 
         .program {
@@ -41,6 +42,10 @@
             padding: 5px 0;
             cursor: pointer;
         }
+
+            .program:hover {
+                background: rgba(0,0,0,0.05);
+            }
 
         .program-time {
             font-size: 14px;
@@ -55,6 +60,7 @@
             margin-top: 20px;
             border: 1px solid #ccc;
             padding: 10px;
+            background: #fff;
         }
 
         .selected-program {
@@ -68,289 +74,134 @@
 
         iframe {
             width: 100%;
-            height: 700px; /* Adjust height based on your video's aspect ratio */
+            height: 700px;
         }
     </style>
 </head>
 <body>
-    <h1 class="tittle">
-        Server List
-    </h1>
+    <h1 class="tittle">Server List</h1>
+    <p>By Hardcore Gaming</p>
 
-    <p>
-        By Hardcore Gaming
-    <p>
-        Pages
-    </p>
-    <!--Pages-->
+    <!-- Navigation -->
     <nav>
-        <button class="buttons" onclick="document.location='index.html'">
-            Home
-        </button>
-
-        <button class="buttons" onclick="document.location='games.html'">
-            Games
-        </button>
-
-        <button class="buttons" onclick="document.location='servers.html'">
-            Servers
-        </button>
-
-        <button class="buttons" onclick="document.location='tv.html'">
-            TV
-        </button>
-
-        <button class="buttons" onclick="document.location='store.html'">
-            Store
-        </button>
-
-        <button class="buttons" onclick="document.location='forum.html'">
-            Forum
-        </button>
-
-        <button class="buttons" onclick="document.location='profile.html'">
-            Profile
-        </button>
-
-        <button class="buttons" onclick="document.location='aboutus.html'">
-            About Us
-        </button>
+        <button onclick="document.location='index.html'">Home</button>
+        <button onclick="document.location='games.html'">Games</button>
+        <button onclick="document.location='servers.html'">Servers</button>
+        <button onclick="document.location='tv.html'">TV</button>
+        <button onclick="document.location='store.html'">Store</button>
+        <button onclick="document.location='forum.html'">Forum</button>
+        <button onclick="document.location='profile.html'">Profile</button>
+        <button onclick="document.location='aboutus.html'">About Us</button>
     </nav>
-    <!--Content-->
 
-    <p>
-        Public Games Servers
-    </p>
+    <h2>Public Game Servers</h2>
 
-    <p>
-        <div class="video-container" id="videoContainer">
-            <h2>Program Video</h2>
-            <iframe id="programVideo" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
-        </div>
+    <!-- Video Player -->
+    <div class="video-container">
+        <h2>Program Video</h2>
+        <iframe id="programVideo" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
 
-        <div class="tv-program" id="tvProgram"></div>
+    <!-- TV Program Guide -->
+    <div class="tv-program" id="tvProgram"></div>
 
-        <div class="screen" id="programScreen">
-            <div class="selected-program">Selected Program</div>
-            <div id="selectedProgramDetails"></div>
-        </div>
+    <!-- Selected Program Details -->
+    <div class="screen">
+        <div class="selected-program">Selected Program</div>
+        <div id="selectedProgramDetails"></div>
+    </div>
 
-        <script>
-            // Sample data representing TV program schedule with associated videos and commercials
-            const programData = [
-                {
-                    channel: "Channel 1",
-                    programs: [
-                        {
-                            time: "10:00 AM - 11:00 AM",
-                            title: "Morning Show",
-                            details: "A fun morning show featuring games and guests.",
-                            videoId: "vUAih3c2vuI" // Replace with the YouTube video ID for the Morning Show
-                        },
-                        {
-                            time: "11:00 AM - 12:30 PM",
-                            title: "Cooking Masterclass",
-                            details: "Learn advanced cooking techniques from top chefs.",
-                            videoId: "VIDEO_ID_2" // Replace with the YouTube video ID for the Cooking Masterclass
-                        },
-                        // Add more programs for Channel 1
-                    ],
-                    commercials: [
-                        {
-                            title: "Commercial 1",
-                            videoId: "COMMERCIAL_ID_1" // Replace with the YouTube video ID for Commercial 1
-                        },
-                        {
-                            title: "Commercial 2",
-                            videoId: "COMMERCIAL_ID_2" // Replace with the YouTube video ID for Commercial 2
-                        }
-                        // Add more commercials for Channel 1
-                    ]
-                },
-                {
-                    channel: "Channel 2",
-                    programs: [
-                        {
-                            time: "10:00 AM - 11:00 AM",
-                            title: "LF4 DeadAir",
-                            details: "A fun morning show featuring games and guests.",
-                            videoId: "vUAih3c2vuI" // Replace with the YouTube video ID for the Morning Show
-                        },
-                        {
-                            time: "11:00 AM - 12:00 PM",
-                            title: "LF4 DeadToll",
-                            details: "Learn advanced cooking techniques from top chefs.",
-                            videoId: "md2BullvCdE" // Replace with the YouTube video ID for the Cooking Masterclass
-                        },
-                        {
-                            time: "12:00 PM - 1:00 PM",
-                            title: "LF4 BloodHarvest",
-                            details: "Learn advanced cooking techniques from top chefs.",
-                            videoId: "pPZN3JSDQR8" // Replace with the YouTube video ID for the Cooking Masterclass
-                        },
-                        {
-                            time: "1:00 PM - 2:00 PM",
-                            title: "LF4 The Sacrifice",
-                            details: "Learn advanced cooking techniques from top chefs.",
-                            videoId: "q26Nddobewk" // Replace with the YouTube video ID for the Cooking Masterclass
-                        },
-                        {
-                            time: "2:00 PM - 3:00 PM",
-                            title: "LF4 Crash Course",
-                            details: "Learn advanced cooking techniques from top chefs.",
-                            videoId: "V0ZdGZTabfg" // Replace with the YouTube video ID for the Cooking Masterclass
-                        },
-                        {
-                            time: "3:00 PM - 4:00 PM",
-                            title: "LF4 No Mercy",
-                            details: "Learn advanced cooking techniques from top chefs.",
-                            videoId: "Gt-J9h44HhE" // Replace with the YouTube video ID for the Cooking Masterclass
-                        },
-                        {
-                            time: "4:00 PM - 5:00 PM",
-                            title: "LF4 DeadCenter",
-                            details: "Learn advanced cooking techniques from top chefs.",
-                            videoId: "Z_gF8aWrs_8" // Replace with the YouTube video ID for the Cooking Masterclass
-                        },
-                        {
-                            time: "5:00 PM - 6:00 PM",
-                            title: "LF4 The Passing",
-                            details: "Learn advanced cooking techniques from top chefs.",
-                            videoId: "ffv-du-cXF4" // Replace with the YouTube video ID for the Cooking Masterclass
-                        },
-                        {
-                            time: "6:00 PM - 7:00 PM",
-                            title: "LF4 PVP",
-                            details: "Learn advanced cooking techniques from top chefs.",
-                            videoId: "QwPF6uKRU7U" // Replace with the YouTube video ID for the Cooking Masterclass
-                        },
-                        // Add more programs for Channel 1
-                    ],
-                    commercials: [
-                        {
-                            title: "My New Game",
-                            videoId: "vweLYSfEMZY" // Replace with the YouTube video ID for Commercial 1
-                        },
-                        {
-                            title: "Minecraft Server",
-                            videoId: "xqCHEvlqrpU" // Replace with the YouTube video ID for Commercial 2
-                        }
-                        // Add more commercials for Channel 1
-                    ]
-                },
-                // Add more channels with programs and commercials
-            ];
+    <script>
+        const programData = [
+            {
+                channel: "Channel 1",
+                programs: [
+                    { time: "10:00 AM - 11:00 AM", title: "Morning Show", details: "A fun morning show featuring games and guests.", videoId: "vUAih3c2vuI" },
+                    { time: "11:00 AM - 12:30 PM", title: "Cooking Masterclass", details: "Learn advanced cooking techniques from top chefs.", videoId: "md2BullvCdE" }
+                ],
+                commercials: [
+                    { title: "Commercial 1", videoId: "vweLYSfEMZY" },
+                    { title: "Commercial 2", videoId: "xqCHEvlqrpU" }
+                ]
+            },
+            {
+                channel: "Channel 2",
+                programs: [
+                    { time: "10:00 AM - 11:00 AM", title: "LF4 DeadAir", details: "Gameplay program.", videoId: "vUAih3c2vuI" },
+                    { time: "11:00 AM - 12:00 PM", title: "LF4 DeadToll", details: "Gameplay program.", videoId: "md2BullvCdE" },
+                    { time: "12:00 PM - 1:00 PM", title: "LF4 BloodHarvest", details: "Gameplay program.", videoId: "pPZN3JSDQR8" }
+                ],
+                commercials: [
+                    { title: "My New Game", videoId: "vweLYSfEMZY" },
+                    { title: "Minecraft Server", videoId: "xqCHEvlqrpU" }
+                ]
+            }
+        ];
 
-            let currentChannelIndex = 0;
-            let currentProgramIndex = 0;
-            let currentCommercialIndex = 0;
-            let isCommercial = false;
-            let programInterval;
+        let currentChannelIndex = 0;
+        let currentProgramIndex = 0;
+        let currentCommercialIndex = 0;
+        let showingCommercial = false;
 
-            function generateProgramGuide(data) {
-                const tvProgram = document.getElementById("tvProgram");
+        function generateProgramGuide(data) {
+            const tvProgram = document.getElementById("tvProgram");
+            tvProgram.innerHTML = "";
 
-                data.forEach(channelData => {
-                    const channelDiv = document.createElement("div");
-                    channelDiv.classList.add("channel");
+            data.forEach(channel => {
+                const channelDiv = document.createElement("div");
+                channelDiv.classList.add("channel");
 
-                    const channelName = document.createElement("span");
-                    channelName.classList.add("channel-name");
-                    channelName.textContent = channelData.channel;
-                    channelDiv.appendChild(channelName);
+                const channelName = document.createElement("span");
+                channelName.classList.add("channel-name");
+                channelName.textContent = channel.channel;
+                channelDiv.appendChild(channelName);
 
-                    channelData.programs.forEach(program => {
-                        const programDiv = document.createElement("div");
-                        programDiv.classList.add("program");
-                        programDiv.addEventListener('click', () => showProgramDetails(program));
-
-                        const programTime = document.createElement("span");
-                        programTime.classList.add("program-time");
-                        programTime.textContent = program.time;
-
-                        const programTitle = document.createElement("span");
-                        programTitle.classList.add("program-title");
-                        programTitle.textContent = program.title;
-
-                        programDiv.appendChild(programTime);
-                        programDiv.appendChild(programTitle);
-                        channelDiv.appendChild(programDiv);
-                    });
-
-                    tvProgram.appendChild(channelDiv);
+                channel.programs.forEach(program => {
+                    const programDiv = document.createElement("div");
+                    programDiv.classList.add("program");
+                    programDiv.innerHTML = `<span class="program-time">${program.time}</span><span class="program-title">${program.title}</span>`;
+                    programDiv.onclick = () => showProgramDetails(program);
+                    channelDiv.appendChild(programDiv);
                 });
-            }
 
-            function showProgramDetails(program) {
-                const selectedProgramDetails = document.getElementById("selectedProgramDetails");
-                selectedProgramDetails.innerHTML = `<strong>Time:</strong> ${program.time}<br><strong>Title:</strong> ${program.title}<br><strong>Details:</strong> ${program.details}`;
+                tvProgram.appendChild(channelDiv);
+            });
+        }
 
-                const programVideo = document.getElementById("programVideo");
-                programVideo.src = `https://www.youtube.com/embed/${program.videoId}`;
+        function showProgramDetails(program) {
+            document.getElementById("selectedProgramDetails").innerHTML =
+                `<strong>Time:</strong> ${program.time}<br><strong>Title:</strong> ${program.title}<br><strong>Details:</strong> ${program.details}`;
+            document.getElementById("programVideo").src = `https://www.youtube.com/embed/${program.videoId}?autoplay=1`;
+            showingCommercial = false;
+        }
 
-                isCommercial = false;
-            }
+        function showCommercial(channel) {
+            const commercial = channel.commercials[currentCommercialIndex % channel.commercials.length];
+            document.getElementById("programVideo").src = `https://www.youtube.com/embed/${commercial.videoId}?autoplay=1`;
+            document.getElementById("selectedProgramDetails").innerHTML = `<strong>Commercial:</strong> ${commercial.title}`;
+            currentCommercialIndex++;
+            showingCommercial = true;
+        }
 
-            function playCommercial() {
-                const selectedChannel = programData[currentChannelIndex];
-                const commercials = selectedChannel.commercials;
-
-                if (currentCommercialIndex >= commercials.length) {
-                    currentCommercialIndex = 0;
-                }
-
-                const commercialVideo = document.getElementById("programVideo");
-                commercialVideo.src = `https://www.youtube.com/embed/${commercials[currentCommercialIndex].videoId}`;
-
-                isCommercial = true;
-                currentCommercialIndex++;
-            }
-
-            function playProgramsAndCommercials() {
-                const selectedChannel = programData[currentChannelIndex];
-                const programs = selectedChannel.programs;
-
-                if (isCommercial) {
-                    showProgramDetails(programs[currentProgramIndex]);
-                    currentProgramIndex++;
-
-                    if (currentProgramIndex >= programs.length) {
-                        currentProgramIndex = 0;
-                        playCommercial();
-                    }
-                } else {
-                    showProgramDetails(programs[currentProgramIndex]);
-                    currentProgramIndex++;
-
-                    if (currentProgramIndex >= programs.length) {
-                        currentProgramIndex = 0;
-                        currentChannelIndex++;
-
-                        if (currentChannelIndex >= programData.length) {
-                            currentChannelIndex = 0;
-                        }
-
-                        playCommercial();
-                    }
+        function autoPlay() {
+            const channel = programData[currentChannelIndex];
+            if (!showingCommercial) {
+                const program = channel.programs[currentProgramIndex % channel.programs.length];
+                showProgramDetails(program);
+                currentProgramIndex++;
+                showingCommercial = true;
+            } else {
+                showCommercial(channel);
+                showingCommercial = false;
+                if (currentProgramIndex >= channel.programs.length) {
+                    currentProgramIndex = 0;
+                    currentChannelIndex = (currentChannelIndex + 1) % programData.length;
                 }
             }
+        }
 
-            generateProgramGuide(programData);
-
-            programInterval = setInterval(playProgramsAndCommercials, 50000); // Autoplay interval in milliseconds
-        </script>
-
-    </p>
-
-
-    <!--p id="screen">
-        <iframe width="100%" height="750px"
-                src="https://www.youtube.com/embed/lhjO-DtLb-Q?list=PLz8YL4HVC87UaE_8TAXo5FM3Ai7UW2vQG&loop=1">
-        </iframe>
-    </!--p>
-
-    <button onclick="document.getElementById('screen').src='https://www.youtube.com/embed/Kk-QSBphsUo?list=PLdyfkSi1hGfo54bQv2eWAXQgU7_dLSzju&loop=1'">Tarkov</button>
-
-    <button onclick="document.getElementById('screen').src='https://www.youtube.com/embed/uPbCiSowcmg&list=PLzRo7TRvMT3yLk3JAa1CdD87dfiavxuw2&loop=1'">GAMEBOLT</button-->
+        generateProgramGuide(programData);
+        setInterval(autoPlay, 60000); // autoplay every 60s
+    </script>
 </body>
 </html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thread</title>
+    <style>
+        body {
+            font-family: Arial,sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+            header a {
+                color: white;
+                margin: 0 10px;
+                text-decoration: none;
+            }
+
+                header a:hover {
+                    text-decoration: underline;
+                }
+
+        .comment {
+            padding: 10px;
+            margin: 5px 0;
+            background: white;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin: 2px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: #0066cc;
+            color: white;
+        }
+
+            button:hover {
+                background: #004999;
+            }
+
+        .delete-btn {
+            background: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!--Pages-->
+    <nav>
+        <button class="buttons" onclick="document.location='index.html'">
+            Home
+        </button>
+
+        <button class="buttons" onclick="document.location='games.html'">
+            Games
+        </button>
+
+        <button class="buttons" onclick="document.location='servers.html'">
+            Servers
+        </button>
+
+        <button class="buttons" onclick="document.location='tv.html'">
+            TV
+        </button>
+
+        <button class="buttons" onclick="document.location='store.html'">
+            Store
+        </button>
+
+        <button class="buttons" onclick="document.location='forum.html'">
+            Forum
+        </button>
+
+        <button class="buttons" onclick="document.location='account.html'">
+            Account
+        </button>
+
+        <button class="buttons" onclick="document.location='aboutus.html'">
+            About Us
+        </button>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Thread</h1>
+            <a href="threads.html">Back to Threads</a> |
+            <a href="profile.html">Profile</a> |
+            <a href="#" onclick="logout()">Logout</a>
+        </header>
+
+        <h2 id="threadTitle"></h2>
+        <p id="threadContent"></p>
+        <p>Author: <span id="threadAuthor"></span></p>
+
+        <h3>Comments</h3>
+        <div id="commentsContainer"></div>
+
+<textarea id="commentText" placeholder="Write a comment..." style="width:100%;padding:10px;"></textarea>
+        <button onclick="addComment()">Post Comment</button>
+    </div>
+
+    <script>
+        const user = JSON.parse(localStorage.getItem("loggedInUser"));
+        if (!user) { alert("Please login"); window.location.href = "accounts.html"; }
+        let currentTopicId = JSON.parse(localStorage.getItem("currentTopic"));
+        let currentThreadIndex = JSON.parse(localStorage.getItem("currentThread"));
+        const topics = JSON.parse(localStorage.getItem("topics"));
+        const topic = topics.find(t => t.id === currentTopicId);
+        let thread = topic.threads[currentThreadIndex];
+
+        document.getElementById("threadTitle").innerText = thread.title;
+        document.getElementById("threadContent").innerText = thread.content;
+        document.getElementById("threadAuthor").innerHTML = `<span style="color:blue;cursor:pointer;" onclick="viewUser(event,'${thread.author}')">${thread.authorDisplay}</span>`;
+
+        function loadComments() {
+            document.getElementById("commentsContainer").innerHTML = (thread.comments || []).map((c, i) => `
+                <div class="comment">
+                    <b><span style="color:blue;cursor:pointer;" onclick="viewUser(event,'${c.author}')">${c.authorDisplay}</span>:</b> ${c.text}
+                    ${user.isAdmin ? `<button class="delete-btn" onclick="deleteComment(${i})">Delete</button>` : ''}
+                </div>
+            `).join("");
+        }
+
+        function addComment() {
+            const text = document.getElementById("commentText").value.trim();
+            if (!text) return alert("Write something!");
+            thread.comments.push({ text, author: user.username, authorDisplay: user.profile.displayName });
+            localStorage.setItem("topics", JSON.stringify(topics));
+            document.getElementById("commentText").value = "";
+            loadComments();
+        }
+
+        function deleteComment(i) {
+            if (!user.isAdmin) return;
+            thread.comments.splice(i, 1);
+            localStorage.setItem("topics", JSON.stringify(topics));
+            loadComments();
+        }
+
+        function viewUser(event, username) {
+            event.stopPropagation();
+            if (!user.isAdmin) return;
+            localStorage.setItem("viewUserAdmin", username);
+            window.location.href = "admin_user.html";
+        }
+
+        function logout() {
+            localStorage.removeItem("loggedInUser");
+            window.location.href = "index.html";
+        }
+
+        loadComments();
+    </script>
+</body>
+</html>

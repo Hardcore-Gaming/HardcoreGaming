@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threads</title>
+    <style>
+        <link rel="stylesheet" href="styles/index.css" >
+        <style >
+        * {
+            color: gray;
+        }
+
+        body {
+            background-image: url(background.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+            header a {
+                color: white;
+                margin: 0 10px;
+                text-decoration: none;
+            }
+
+                header a:hover {
+                    text-decoration: underline;
+                }
+
+        .thread {
+            padding: 15px;
+            margin: 10px 0;
+            background: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            .thread:hover {
+                background: #eee;
+            }
+
+        button {
+            padding: 5px 10px;
+            margin: 2px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: #0066cc;
+            color: white;
+        }
+
+            button:hover {
+                background: #004999;
+            }
+    </style>
+</head>
+<body>
+    <!--Pages-->
+    <nav>
+        <button class="buttons" onclick="document.location='index.html'">
+            Home
+        </button>
+
+        <button class="buttons" onclick="document.location='games.html'">
+            Games
+        </button>
+
+        <button class="buttons" onclick="document.location='servers.html'">
+            Servers
+        </button>
+
+        <button class="buttons" onclick="document.location='tv.html'">
+            TV
+        </button>
+
+        <button class="buttons" onclick="document.location='store.html'">
+            Store
+        </button>
+
+        <button class="buttons" onclick="document.location='forum.html'">
+            Forum
+        </button>
+
+        <button class="buttons" onclick="document.location='account.html'">
+            Account
+        </button>
+
+        <button class="buttons" onclick="document.location='aboutus.html'">
+            About Us
+        </button>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Threads</h1>
+            <a href="forum.html">Back to Topics</a> |
+            <a href="profile.html">Profile</a> |
+            <a href="#" onclick="logout()">Logout</a>
+        </header>
+
+        <div id="threadsContainer"></div>
+
+        <button onclick="createThread()">Create New Thread</button>
+    </div>
+
+    <script>
+        const user = JSON.parse(localStorage.getItem("loggedInUser"));
+        if (!user) { alert("Please login"); window.location.href = "accounts.html"; }
+
+        let currentTopic = JSON.parse(localStorage.getItem("currentTopic"));
+        if (!currentTopic) window.location.href = "forum.html";
+
+        function loadThreads() {
+            const topics = JSON.parse(localStorage.getItem("topics"));
+            const topic = topics.find(t => t.id === currentTopic);
+            document.getElementById("threadsContainer").innerHTML = (topic.threads || []).map((th, i) => `
+                <div class="thread" onclick="openThread(${i})">
+                    <h3>${th.title}</h3>
+                    <p>by <span style="color:blue;cursor:pointer;" onclick="viewUser(event,'${th.author}')">${th.authorDisplay}</span></p>
+                </div>
+            `).join("");
+        }
+
+        function createThread() {
+            let title = prompt("Thread title:");
+            if (!title) return;
+            let content = prompt("Thread content:");
+            if (!content) return;
+            const topics = JSON.parse(localStorage.getItem("topics"));
+            const topic = topics.find(t => t.id === currentTopic);
+            const thread = {
+                title, content, author: user.username, authorDisplay: user.profile.displayName, comments: []
+            };
+            topic.threads.push(thread);
+            localStorage.setItem("topics", JSON.stringify(topics));
+            loadThreads();
+        }
+
+        function openThread(index) {
+            localStorage.setItem("currentThread", index);
+            window.location.href = "thread.html";
+        }
+
+        function viewUser(event, username) {
+            event.stopPropagation();
+            if (!user.isAdmin) return;
+            localStorage.setItem("viewUserAdmin", username);
+            window.location.href = "admin_user.html";
+        }
+
+        function logout() {
+            localStorage.removeItem("loggedInUser");
+            window.location.href = "index.html";
+        }
+
+        loadThreads();
+    </script>
+</body>
+</html>

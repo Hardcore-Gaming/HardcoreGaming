@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin User</title>
+    <style>
+        body {
+            font-family: Arial,sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+        }
+
+        button {
+            padding: 10px;
+            margin-top: 5px;
+            background: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+            button:hover {
+                background: #004999;
+            }
+    </style>
+</head>
+<body>
+    <h1>User Profile (Admin View)</h1>
+    <button onclick="back()">Back</button>
+
+    <div>
+        <label>Username</label>
+        <input id="username" disabled>
+        <label>Display Name</label>
+        <input id="displayName">
+        <label>Email</label>
+        <input id="email">
+        <label>Phone</label>
+        <input id="phone">
+        <label>Address</label>
+        <input id="address">
+        <label>Birthdate</label>
+        <input id="birthdate" type="date">
+        <label>Gender</label>
+        <select id="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <label>Rank</label>
+        <input id="rank" disabled>
+        <label>Status</label>
+        <input id="status" disabled>
+        <label>Join Date</label>
+        <input id="joinDate" disabled>
+        <label>Time on Website</label>
+        <input id="timeOnWebsite" disabled>
+        <button onclick="saveChanges()">Save Changes</button>
+    </div>
+
+    <script>
+        const OWNER_USERNAME = "ChrusKosco";
+        let loggedUser = JSON.parse(localStorage.getItem("loggedInUser"));
+        if (!loggedUser) { alert("Please login!"); window.location.href = "accounts.html"; }
+
+        // Force Owner
+        if (loggedUser.username === OWNER_USERNAME) { loggedUser.isAdmin = true; loggedUser.rank = "Owner"; loggedUser.status = "Active"; localStorage.setItem("loggedInUser", JSON.stringify(loggedUser)); }
+
+        if (!loggedUser.isAdmin) { alert("Access Denied!"); window.location.href = "forum.html"; }
+
+        const viewUsername = localStorage.getItem("viewUserAdmin");
+        let users = JSON.parse(localStorage.getItem("users"));
+        let user = users.find(u => u.username === viewUsername);
+
+        function loadUser() {
+            document.getElementById("username").value = user.username + (user.username === OWNER_USERNAME ? " ⭐Owner" : "");
+            document.getElementById("displayName").value = user.profile.displayName;
+            document.getElementById("email").value = user.profile.email;
+            document.getElementById("phone").value = user.profile.phone;
+            document.getElementById("address").value = user.profile.address;
+            document.getElementById("birthdate").value = user.profile.birthdate;
+            document.getElementById("gender").value = user.profile.gender;
+            document.getElementById("rank").value = user.rank;
+            document.getElementById("status").value = user.status;
+            document.getElementById("joinDate").value = user.joinDate;
+            document.getElementById("timeOnWebsite").value = user.timeOnWebsite;
+        }
+
+        function saveChanges() {
+            // Prevent changes to Owner account
+            if (user.username === OWNER_USERNAME) {
+                alert("Cannot modify Owner account!");
+                loadUser();
+                return;
+            }
+            user.profile.displayName = document.getElementById("displayName").value;
+            user.profile.email = document.getElementById("email").value;
+            user.profile.phone = document.getElementById("phone").value;
+            user.profile.address = document.getElementById("address").value;
+            user.profile.birthdate = document.getElementById("birthdate").value;
+            user.profile.gender = document.getElementById("gender").value;
+            localStorage.setItem("users", JSON.stringify(users));
+            alert("Changes saved!");
+            loadUser();
+        }
+
+        function back() {
+            window.location.href = "admin.html";
+        }
+
+        loadUser();
+    </script>
+</body>
+</html>

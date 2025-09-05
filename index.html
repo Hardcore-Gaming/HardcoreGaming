@@ -56,8 +56,8 @@
                 Forum
             </button>
 
-            <button class="buttons" onclick="document.location='profile.html'">
-                Profile
+            <button class="buttons" onclick="document.location='account.html'">
+                Account
             </button>
 
             <button class="buttons" onclick="document.location='aboutus.html'">
@@ -65,9 +65,14 @@
             </button>
         </nav>
     <!--Content-->
-    <p>
-        Welcome to Hardcore Gaming where you can find information on Hardcoregaming.
-    <p>
+        <p>
+            <header>
+                <h1>Topics</h1>
+                <a href="profile.html">Profile</a> |
+                <a href="#" onclick="logout()">Logout</a>
+            </header>
+            Welcome to Hardcore Gaming where you can find information on Hardcoregaming.
+<p>
         <video width="100%" height="100%" controls autoplay muted>
             <source src="gamevideo.mp4" type="video/mp4">
             <source src="gamevideo.ogg" type="video/ogg">
@@ -97,8 +102,28 @@
         MYTHICAL PLANES<br>
         fantasy FPS RPG MMO Game
     <p>
-    <div span style="border: none;" class="gfm-embed" data-url="https://www.gofundme.com/f/graphic-mechanics-legal-and-launch/widget/large"></div>
-    <script defer src="https://www.gofundme.com/static/js/embed.js"></script>
+
+        <div id="chatbox">
+            <div id="messages"></div>
+            <input id="userInput" placeholder="Type a message..." />
+            <button onclick="sendMessage()">Send</button>
+        </div>
+
+        <script>
+            async function sendMessage() {
+                const userInput = document.getElementById('userInput').value;
+                const response = await fetch('/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: userInput })
+                });
+                const data = await response.json();
+                document.getElementById('messages').innerHTML += `<div>User: ${userInput}</div><div>Bot: ${data.reply}</div>`;
+            }
+        </script>
+
+
+
     </p>
 </body>
 </html>

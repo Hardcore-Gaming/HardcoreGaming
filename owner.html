@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Dashboard</title>
+    <style>
+        body {
+            font-family: Arial,sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        button.tab {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background: #0066cc;
+            color: white;
+            cursor: pointer;
+        }
+
+            button.tab:hover {
+                background: #004999;
+            }
+
+            button.tab.active {
+                background: #004499;
+            }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #333;
+            color: white;
+        }
+
+        .scrollable {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        button.manage {
+            padding: 5px 10px;
+            margin: 2px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: #0066cc;
+            color: white;
+        }
+
+            button.manage:hover {
+                background: #004999;
+            }
+
+        button.delete {
+            background: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Owner Dashboard</h1>
+    <!--Pages-->
+    <nav>
+        <button class="buttons" onclick="document.location='index.html'">
+            Home
+        </button>
+
+        <button class="buttons" onclick="document.location='games.html'">
+            Games
+        </button>
+
+        <button class="buttons" onclick="document.location='servers.html'">
+            Servers
+        </button>
+
+        <button class="buttons" onclick="document.location='tv.html'">
+            TV
+        </button>
+
+        <button class="buttons" onclick="document.location='store.html'">
+            Store
+        </button>
+
+        <button class="buttons" onclick="document.location='forum.html'">
+            Forum
+        </button>
+
+        <button class="buttons" onclick="document.location='account.html'">
+            Account
+        </button>
+
+        <button class="buttons" onclick="document.location='aboutus.html'">
+            About Us
+        </button>
+    </nav>
+    <button onclick="logout()">Logout</button>
+
+    <div style="margin-top:10px;">
+        <button class="tab active" onclick="switchTab('profile')">Profile Info</button>
+        <button class="tab" onclick="switchTab('pages')">Pages Info</button>
+        <button class="tab" onclick="switchTab('social')">Social Info</button>
+        <button class="tab" onclick="switchTab('sitePages')">Manage Site Pages</button>
+    </div>
+
+    <table>
+        <thead id="tableHead"></thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+
+    <script>
+        const OWNER_USERNAME = "ChrusKosco";
+
+        // Check logged in user
+        let loggedUser = JSON.parse(localStorage.getItem("loggedInUser"));
+        if (!loggedUser) { alert("Please login!"); window.location.href = "accounts.html"; }
+
+        // Force Owner
+        if (loggedUser.username === OWNER_USERNAME) {
+            loggedUser.isAdmin = true;
+            loggedUser.rank = "Owner";
+            loggedUser.status = "Active";
+            localStorage.setItem("loggedInUser", JSON.stringify(loggedUser));
+        } else {
+            alert("Access Denied! Only Owner can access this page.");
+            window.location.href = "forum.html";
+        }
+
+        // Load users and site pages
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+        let sitePages = JSON.parse(localStorage.getItem("sitePages")) || [
+            { name: "index.html", rank: "Fresh", currentlyOn: [] },
+            { name: "forum.html", rank: "Fresh", currentlyOn: [] },
+            { name: "profile.html", rank: "Fresh", currentlyOn: [] }
+        ];
+
+        function saveSitePages() { localStorage.setItem("sitePages", JSON.stringify(sitePages)); }
+
+        // Track live page visit for logged user
+        if (loggedUser) {
+            users.forEach(u => {
+                if (!u.visitedPages) u.visitedPages = [];
+                if (u.username === loggedUser.username) {
+                    u.visitedPages.push({ page: window.location.pathname, timestamp: new Date().toISOString() });
+                }
+            });
+            localStorage.setItem("users", JSON.stringify(users));
+        }
+
+        // Example: social activity
+        users.forEach(u => { if (!u.socialActivity) u.socialActivity = 0; });
+
+        let currentTab = 'profile';
+
+        function switchTab(tab) {
+            currentTab = tab;
+            document.querySelectorAll('button.tab').forEach(b => b.classList.remove('active'));
+            document.querySelector(`button.tab[onclick="switchTab('${tab}')"]`).classList.add('active');
+            loadTable();
+        }
+
+        function loadTable() {
+            let headHTML = '';
+            let bodyHTML = '';
+
+            if (currentTab === 'profile') {
+                headHTML = `<tr>
+                    <th>Username</th><th>Display Name</th><th>Email</th><th>Phone</th><th>Address</th>
+                    <th>Birthdate</th><th>Gender</th><th>Rank</th><th>Status</th><th>Join Date</th><th>Time on Website</th><th>Actions</th>
+                </tr>`;
+                bodyHTML = users.map(u => `
+                    <tr>
+                        <td>${u.username}${u.username === OWNER_USERNAME ? ' ⭐Owner' : ''}</td>
+                        <td>${u.profile.displayName}</td>
+                        <td>${u.profile.email}</td>
+                        <td>${u.profile.phone}</td>
+                        <td>${u.profile.address}</td>
+                        <td>${u.profile.birthdate}</td>
+                        <td>${u.profile.gender}</td>
+                        <td>${u.rank}</td>
+                        <td>${u.status}</td>
+                        <td>${u.joinDate}</td>
+                        <td>${u.timeOnWebsite}</td>
+                        <td>${u.username !== OWNER_USERNAME ? `<button onclick="deleteUser('${u.username}')">Delete</button>` : ''}</td>
+                    </tr>
+                `).join('');
+            }
+
+            if (currentTab === 'pages') {
+                headHTML = `<tr><th>Username</th><th>Visited Pages (with timestamps)</th></tr>`;
+                bodyHTML = users.map(u => `
+                    <tr>
+                        <td>${u.username}${u.username === OWNER_USERNAME ? ' ⭐Owner' : ''}</td>
+                        <td class="scrollable">
+                            ${u.visitedPages ? u.visitedPages.map(v => `${v.page} (${new Date(v.timestamp).toLocaleString()})`).join('<br>') : "-"}
+                        </td>
+                    </tr>
+                `).join('');
+            }
+
+            if (currentTab === 'social') {
+                headHTML = `<tr><th>Username</th><th>Messages/Posts Sent</th></tr>`;
+                bodyHTML = users.map(u => `
+                    <tr>
+                        <td>${u.username}${u.username === OWNER_USERNAME ? ' ⭐Owner' : ''}</td>
+                        <td>${u.socialActivity || 0}</td>
+                    </tr>
+                `).join('');
+            }
+
+            if (currentTab === 'sitePages') {
+                headHTML = `<tr><th>Page Name</th><th>Permission (Rank)</th><th>Currently On (#Users)</th><th>Actions</th></tr>`;
+                bodyHTML = sitePages.map((p, i) => `
+                    <tr>
+                        <td>${p.name}</td>
+                        <td>${p.rank}</td>
+                        <td>${p.currentlyOn ? p.currentlyOn.length : 0}</td>
+                        <td>
+                            <button class="manage" onclick="editPage(${i})">Edit</button>
+                            <button class="delete" onclick="deletePage(${i})">Delete</button>
+                        </td>
+                    </tr>
+                `).join('');
+                bodyHTML += `<tr>
+                    <td colspan="4"><button class="manage" onclick="addPage()">Add New Page</button></td>
+                </tr>`;
+            }
+
+            document.getElementById("tableHead").innerHTML = headHTML;
+            document.getElementById("tableBody").innerHTML = bodyHTML;
+        }
+
+        function deleteUser(username) {
+            if (username === OWNER_USERNAME) { alert("Cannot delete Owner!"); return; }
+            if (confirm(`Are you sure you want to delete ${username}?`)) {
+                users = users.filter(u => u.username !== username);
+                localStorage.setItem("users", JSON.stringify(users));
+                loadTable();
+            }
+        }
+
+        function addPage() {
+            const name = prompt("Page filename (e.g., about.html):");
+            if (!name) return;
+            const rank = prompt("Minimum rank to open page (Fresh, Normal, VIP, Staff, Moderator, Owner):", "Fresh");
+            sitePages.push({ name, rank, currentlyOn: [] });
+            saveSitePages();
+            loadTable();
+        }
+
+        function editPage(index) {
+            const name = prompt("Edit page filename:", sitePages[index].name);
+            if (!name) return;
+            const rank = prompt("Minimum rank to open page:", sitePages[index].rank);
+            sitePages[index].name = name;
+            sitePages[index].rank = rank;
+            saveSitePages();
+            loadTable();
+        }
+
+        function deletePage(index) {
+            if (confirm(`Delete page ${sitePages[index].name}?`)) {
+                sitePages.splice(index, 1);
+                saveSitePages();
+                loadTable();
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem("loggedInUser");
+            window.location.href = "index.html";
+        }
+
+        loadTable();
+    </script>
+</body>
+</html>

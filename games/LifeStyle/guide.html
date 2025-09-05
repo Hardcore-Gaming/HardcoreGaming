@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Style</title>
+    <link rel="stylesheet" href="../../styles/games.css">
+    <link rel="stylesheet" href="../../styles/lifestyle.css">
+    <style>
+        #content {
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            max-width: 800px;
+        }
+
+        #page-number {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+            .btn:hover {
+                background-color: #0056b3;
+            }
+    </style>
+</head>
+<body>
+    <h1 class="tittle">
+        Life Style
+    </h1>
+
+    <p>
+        Page Content
+    </p>
+    <!-- Pages Catagorize -->
+    <nav>
+        <button class="buttons-LS" onclick="document.location='../lifestyle.html'">
+            Main
+        </button>
+
+        <button class="buttons-LS" onclick="document.location='character.html'">
+            Character
+        </button>
+
+        <button class="buttons-LS" onclick="document.location='people.html'">
+            People
+        </button>
+
+        <button class="buttons-LS" onclick="document.location='animals.html'">
+            Animals
+        </button>
+
+        <button class="buttons-LS" onclick="document.location='items.html'">
+            Items
+        </button>
+
+        <button class="buttons-LS" onclick="document.location='vechicles.html'">
+            Vechicles
+        </button>
+
+        <button class="buttons-LS" onclick="document.location='building.html'">
+            Building
+        </button>
+
+        <button class="buttons-LS" onclick="document.location='city.html'">
+            City
+        </button>
+
+        <button class="buttons-LS" onclick="document.location='buisness.html'">
+            Buisness
+        </button>
+
+        <button class="buttons-LS" onclick="document.location='sports.html'">
+            Sports
+        </button>
+
+        <button class="buttons-LS" onclick="document.location='minigames.html'">
+            Minigames
+        </button>
+
+        <button class="buttons-LS" onclick="document.location='events.html'">
+            Events
+        </button>
+
+        <button class="buttons-LS" onclick="document.location='guide.html'">
+            Guide
+        </button>
+
+        <button class="buttons-LS" onclick="document.location='mechanics.html'">
+            Mechanics
+        </button>
+    </nav>
+
+    <p>
+        Guide
+    </p>
+
+    <div id="content">
+        <h1>Book Pages</h1>
+        <div id="page-number">Page 1</div>
+        <div id="page-content">
+            <!-- Content will be updated dynamically here -->
+        </div>
+        <div>
+            <button class="btn" id="prevBtn">Previous Page</button>
+            <button class="btn" id="nextBtn">Next Page</button>
+        </div>
+    </div>
+
+    <script>
+        const pages = [
+            `<h2>List of Chapters</h2>
+            <p>
+                1.Starting<br>
+                a.begin<br>
+                b.characters<br>
+                c.jobs<br>
+                d.property<br>
+                2.Buildings<br>
+                a.goverment<br>
+                b.store<br>
+                c.utillies<br>
+                d.apartment<br>
+                3.Cities<br>
+                a.wood, stone, food, gold/silver<br>
+                4.Buissness<br>
+                b.<br>
+            </p>`,
+            `<h2>Chapter 1: Starting</h2>
+            <p>
+                1.Character<br>
+                Main Character<br>
+                a.starting<br>
+                Players Character enters game in townhall talk to clerk to get ID to apply for jobs and<br>
+                rent apartment. Get paid for jobs and buy other things like phone, car, internet, clothes<br>
+                to get more money get a carrer and promotions. apply for licessnes like car, plane, boat to<br>
+                buy or rent vehicles. character need water and food to stay alive buy water bottles or chips<br>
+                from stores you can also storage food in fridges or cabinets.<br>
+                b.characters<br>
+                Characters Need Experience(XP) to Lvl up and gain more skills/stats/knowlege to aquire xp<br>
+                go collect, trade, kill, deliver, tax, ect then you can unlock stuff you havent been able to do<br>
+                Upgrade your Camp to a House using a more resource, upgrades, lvl, and more work to have other players<br>
+                or build it yourself may take more character to do this in a faster time by recuiting others or buying<br>
+                other player/npc and giving them orders build the house up<br>
+                c.<br>
+                Equip your Character with Weapon Armor and Other Items to Defend yourself or a hire guards with daily<br>
+                wages and do jobs like deliveries, kill bandits, or even take over towns with enought hire guards and<br>
+                mercenarys<br>
+                d.<br>
+                Check out market by players or npc prices go up and down depending on who your trading with and go<br>
+                buy builds for buissness endevors like HoeHouse, Pubs, ect to make money from customers beware<br>
+                who and where you do buissness they can rob or take over your buisnesses<br>
+                e.<br>
+                Creating a Party by recuiting other players or npcs and then you'll have more actions to commit<br>
+                like war partys, manage buisnesses, and govern a Town all at once and when you main die you have<br>
+                other characters to be unless you delete character they become netural again<br>
+                g.<br>
+                Creating a Guild by recuiting other partys do defend and attack large lands you couldnt do alone<br>
+                and keep track of who is your ally and foes but gain and loss benfits for entering eachothers<br>
+                terriortys<br>
+                h.<br>
+                Create a Alliance Once you have claimed a decent amount of lands, a Castle and Guild you can<br>
+                make your self a King to all the known land of your guilds and can claim Dominion over NPC<br>
+                in Guild Controlled Regions and give NPC City Commands<br>
+                i.<br>
+                1 Year ingame is every 24 hours that Pass average Character lives 50 year or 50 irl days<br>
+                j.<br>
+                Upgrade from House to a Fort or Village and recuit partys to progress to bigger Fort/Village<br>
+                to upgrade to a Town then parties well come and go or even stay with descions made by the town<br>
+                owner<br>
+                k.<br>
+                From a Town you can recuit guilds and start the progress to castle after a sertant amount of guild<br>
+                that join then eventaully start a Alliance<br>
+                l.<br>
+                Go to Other Player/NPC settlements to interact with trade and converations beware not all settlements<br>
+                are friendly tho<br>
+            </p>`,
+            `<h2>2.Map</h2>
+            <p>
+                a. Enter a city or fly to one.<br>
+                b.contient>county>state>city<br>
+                Fire<br>
+                Tools<br>
+                Weapons<br>
+                Clothes<br>
+                Farm<br>
+                Communication<br>
+                Tame<br>
+                Settlement<br>
+                Leader<br>
+                Animals<br>
+                Breed<br>
+                Disease<br>
+            </p>`,
+            // Add more content for additional pages here
+        ];
+
+        let currentPage = 0; // Initial page number
+
+        // Function to display the current page content
+        function displayPage(page) {
+            const pageNumberElement = document.getElementById('page-number');
+            const contentElement = document.getElementById('page-content');
+
+            pageNumberElement.textContent = `Page ${page + 1}`;
+            contentElement.innerHTML = pages[page];
+        }
+
+        // Function to handle the "Previous Page" button click
+        document.getElementById('prevBtn').addEventListener('click', function () {
+            if (currentPage > 0) {
+                currentPage--;
+                displayPage(currentPage);
+            }
+        });
+
+        // Function to handle the "Next Page" button click
+        document.getElementById('nextBtn').addEventListener('click', function () {
+            if (currentPage < pages.length - 1) {
+                currentPage++;
+                displayPage(currentPage);
+            }
+        });
+
+        // Display the initial page
+        displayPage(currentPage);
+    </script>
+    <!--
+    <p>
+        List of Chapters<br>
+        ================================================================<br>
+        1.Starting<br>
+        a.begin<br>
+        b.characters<br>
+        c.jobs<br>
+        d.property<br>
+        2.Buildings<br>
+        a.goverment<br>
+        b.store<br>
+        c.utillies<br>
+        d.apartment<br>
+        3.Cities<br>
+        a.wood, stone, food, gold/silver<br>
+        4.Buissness<br>
+        b.<br>
+        =================================================================<br>
+        <main>
+            <h1>Lifestyle Guide</h1>
+
+            <section>
+                <h2>Chapter 1: Starting</h2>
+                <p>
+                    1.Character<br>
+                    Main Character<br>
+                    a.starting<br>
+                    Players Character enters game in townhall talk to clerk to get ID to apply for jobs and<br>
+                    rent apartment. Get paid for jobs and buy other things like phone, car, internet, clothes<br>
+                    to get more money get a carrer and promotions. apply for licessnes like car, plane, boat to<br>
+                    buy or rent vehicles. character need water and food to stay alive buy water bottles or chips<br>
+                    from stores you can also storage food in fridges or cabinets.<br>
+                    b.characters<br>
+                    Characters Need Experience(XP) to Lvl up and gain more skills/stats/knowlege to aquire xp<br>
+                    go collect, trade, kill, deliver, tax, ect then you can unlock stuff you havent been able to do<br>
+                    Upgrade your Camp to a House using a more resource, upgrades, lvl, and more work to have other players<br>
+                    or build it yourself may take more character to do this in a faster time by recuiting others or buying<br>
+                    other player/npc and giving them orders build the house up<br>
+                    c.<br>
+                    Equip your Character with Weapon Armor and Other Items to Defend yourself or a hire guards with daily<br>
+                    wages and do jobs like deliveries, kill bandits, or even take over towns with enought hire guards and<br>
+                    mercenarys<br>
+                    d.<br>
+                    Check out market by players or npc prices go up and down depending on who your trading with and go<br>
+                    buy builds for buissness endevors like HoeHouse, Pubs, ect to make money from customers beware<br>
+                    who and where you do buissness they can rob or take over your buisnesses<br>
+                    e.<br>
+                    Creating a Party by recuiting other players or npcs and then you'll have more actions to commit<br>
+                    like war partys, manage buisnesses, and govern a Town all at once and when you main die you have<br>
+                    other characters to be unless you delete character they become netural again<br>
+                    g.<br>
+                    Creating a Guild by recuiting other partys do defend and attack large lands you couldnt do alone<br>
+                    and keep track of who is your ally and foes but gain and loss benfits for entering eachothers<br>
+                    terriortys<br>
+                    h.<br>
+                    Create a Alliance Once you have claimed a decent amount of lands, a Castle and Guild you can<br>
+                    make your self a King to all the known land of your guilds and can claim Dominion over NPC<br>
+                    in Guild Controlled Regions and give NPC City Commands<br>
+                    i.<br>
+                    1 Year ingame is every 24 hours that Pass average Character lives 50 year or 50 irl days<br>
+                    j.<br>
+                    Upgrade from House to a Fort or Village and recuit partys to progress to bigger Fort/Village<br>
+                    to upgrade to a Town then parties well come and go or even stay with descions made by the town<br>
+                    owner<br>
+                    k.<br>
+                    From a Town you can recuit guilds and start the progress to castle after a sertant amount of guild<br>
+                    that join then eventaully start a Alliance<br>
+                    l.<br>
+                    Go to Other Player/NPC settlements to interact with trade and converations beware not all settlements<br>
+                    are friendly tho<br>
+                </p>
+            </section>
+
+            <section>
+                <h2>Chapter 2: Main Content</h2>
+                <p>
+                    2.Map<br>
+                    a. Enter a city or fly to one.<br>
+                    b.contient>county>state>city<br>
+
+                    Fire<br>
+                    Tools<br>
+                    Weapons<br>
+                    Clothes<br>
+                    Farm<br>
+                    Communication<br>
+                    Tame<br>
+                    Settlement<br>
+                    Leader<br>
+                    Animals<br>
+                    Breed<br>
+                    Disease<br>
+                </p>
+            </section>
+        </main>
+    </p>
+        -->
+</body>
+</html>

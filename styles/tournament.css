@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.bracket {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.round {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.match {
+    border: 1px solid #333;
+    padding: 10px;
+    border-radius: 5px;
+    width: 150px;
+}
+
+.team {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.team.winner {
+    background-color: #4CAF50;
+    color: white;
+}
