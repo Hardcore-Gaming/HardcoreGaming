@@ -12,6 +12,19 @@
             background-size: cover;
             background-attachment: fixed;
         }
+         
+    table {
+      width: 80%;
+      margin: auto;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #333;
+      text-align: center;
+    }
+    .online { color: green; }
+    .offline { color: red; }
     </style>
 </head>
 <body>
@@ -59,7 +72,23 @@
         </button>
     </nav>
     <!--Content-->
+    <p>
+        <h1 style="text-align:center;">Server Tracker</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Server Name</th>
+        <th>Status</th>
+        <th>Players</th>
+        <th>IP / URL</th>
+      </tr>
+    </thead>
+    <tbody id="server-table">
+      <!-- Server rows will go here -->
+    </tbody>
+  </table>
 
+  <script src="script.js"></script>
     <p>
         Public Games Servers
     <p>
