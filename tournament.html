@@ -13,11 +13,48 @@
         * {
             color: gray;
         }
+
         body {
             background-image: url(background.png);
             background-repeat: no-repeat;
             background-size: cover;
             background-attachment: fixed;
+        }
+        .bracket {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+            margin-top: 20px;
+            overflow-x: auto;
+            padding: 10px;
+        }
+
+        .round {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            min-width: 150px;
+        }
+
+        .match {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 8px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+
+            .match span {
+                display: block;
+                padding: 4px;
+                margin: 2px 0;
+            }
+
+        #nextMatchBoard button {
+            margin: 5px;
+            width: 120px;
         }
     </style>
 </head>
@@ -74,29 +111,172 @@
         Welcome to Hardcore Gaming where you can find information on Hardcoregaming.
     <p>
         <h2>Team Tournament Tracker</h2>
-    
-    <div class="bracket">
-        <div class="round round-1">
-            <div class="match" id="match1">
-                <div class="team" onclick="selectWinner('match1', 'team1')">Team A</div>
-                <div class="team" onclick="selectWinner('match1', 'team2')">Team B</div>
-            </div>
-            <div class="match" id="match2">
-                <div class="team" onclick="selectWinner('match2', 'team3')">Team C</div>
-                <div class="team" onclick="selectWinner('match2', 'team4')">Team D</div>
-            </div>
-        </div>
-        <div class="round round-2">
-            <div class="match" id="final">
-                <div class="team" id="finalist1">Winner of Match 1</div>
-                <div class="team" id="finalist2">Winner of Match 2</div>
-            </div>
-        </div>
-    </div>
 
-    <script src="script.js"></script>
+        <!-- Tournament Teams -->
+        <div class="panel">
+            <h3>Tournament</h3>
+            <ul id="teamsList"></ul>
+            <input type="text" id="newTeam" placeholder="Team Name">
+            <button onclick="addTeam()">Add Team</button>
+            <button onclick="startTournament()">Start Tournament</button>
 
-    <p>
+            <!-- Next Match Board -->
+            <div id="nextMatchBoard" class="panel" style="margin-top:20px; display:none;">
+                <h4>Next Match</h4>
+                <p id="matchTeams"></p>
+                <button id="winner0" onclick="">Winner: </button>
+                <button id="winner1" onclick="">Winner: </button>
+            </div>
+
+            <!-- Visual Bracket -->
+            <div id="tournamentBracket" class="bracket" style="margin-top:20px;"></div>
+        </div>
+
+        <script>
+            loggedUser.teams = loggedUser.teams || [];
+            let tournamentRounds = [];
+            let currentRound = 0;
+            let currentMatch = 0;
+
+            // Render teams list
+            function renderTeams() {
+                const list = document.getElementById("teamsList");
+                list.innerHTML = "";
+                loggedUser.teams.forEach(t => {
+                    let li = document.createElement("li");
+                    li.textContent = t;
+                    list.appendChild(li);
+                });
+            }
+            renderTeams();
+
+            // Add team
+            function addTeam() {
+                const name = document.getElementById("newTeam").value;
+                if (!name) return;
+                loggedUser.teams.push(name);
+                saveUser();
+                renderTeams();
+                document.getElementById("newTeam").value = "";
+            }
+
+            // Start tournament
+            function startTournament() {
+                if (loggedUser.teams.length < 2) {
+                    alert("Need at least 2 teams!");
+                    return;
+                }
+
+                const shuffled = [...loggedUser.teams].sort(() => Math.random() - 0.5);
+
+                tournamentRounds = [];
+                currentRound = 0;
+                currentMatch = 0;
+
+                // Build first round
+                let firstRound = [];
+                for (let i = 0; i < shuffled.length; i += 2) {
+                    if (shuffled[i + 1]) firstRound.push([shuffled[i], shuffled[i + 1]]);
+                    else firstRound.push([shuffled[i]]); // bye
+                }
+                tournamentRounds.push(firstRound);
+
+                renderBracket();
+                showNextMatch();
+            }
+
+            // Show next match
+            function showNextMatch() {
+                const board = document.getElementById("nextMatchBoard");
+                const match = tournamentRounds[currentRound][currentMatch];
+                if (!match) {
+                    // Move to next round
+                    currentRound++;
+                    currentMatch = 0;
+                    if (!tournamentRounds[currentRound] || tournamentRounds[currentRound].length === 0) {
+                        alert("Tournament finished!");
+                        return;
+                    }
+                    showNextMatch();
+                    return;
+                }
+
+                if (match.length === 1) {
+                    advanceWinner(currentRound, currentMatch, match[0]);
+                    currentMatch++;
+                    showNextMatch();
+                    return;
+                }
+
+                board.style.display = "block";
+                document.getElementById("matchTeams").textContent = `${match[0]} vs ${match[1]}`;
+                const btn0 = document.getElementById("winner0");
+                const btn1 = document.getElementById("winner1");
+                btn0.textContent = `Winner: ${match[0]}`;
+                btn1.textContent = `Winner: ${match[1]}`;
+                btn0.onclick = () => { advanceWinner(currentRound, currentMatch, match[0]); nextMatch(); };
+                btn1.onclick = () => { advanceWinner(currentRound, currentMatch, match[1]); nextMatch(); };
+            }
+
+            // Advance winner to next round
+            function advanceWinner(roundIndex, matchIndex, winner) {
+                if (!tournamentRounds[roundIndex + 1]) tournamentRounds[roundIndex + 1] = [];
+                const nextRound = tournamentRounds[roundIndex + 1];
+                const nextMatchIndex = Math.floor(matchIndex / 2);
+                if (!nextRound[nextMatchIndex]) nextRound[nextMatchIndex] = [];
+                nextRound[nextMatchIndex].push(winner);
+            }
+
+            // Move to next match
+            function nextMatch() {
+                currentMatch++;
+                // Check if round complete
+                if (currentMatch >= tournamentRounds[currentRound].length) {
+                    currentRound++;
+                    currentMatch = 0;
+                }
+                // Check if tournament finished
+                if (currentRound >= tournamentRounds.length) {
+                    const champion = tournamentRounds[tournamentRounds.length - 1][0][0];
+                    document.getElementById("tournamentBracket").innerHTML = `<h3>🏆 Champion: ${champion} 🏆</h3>`;
+                    document.getElementById("nextMatchBoard").style.display = "none";
+                    return;
+                }
+                renderBracket();
+                showNextMatch();
+            }
+
+            // Render visual bracket
+            function renderBracket() {
+                const bracketDiv = document.getElementById("tournamentBracket");
+                bracketDiv.innerHTML = "";
+                tournamentRounds.forEach((round, roundIndex) => {
+                    const roundDiv = document.createElement("div");
+                    roundDiv.className = "round";
+                    roundDiv.innerHTML = `<h4>Round ${roundIndex + 1}</h4>`;
+
+                    round.forEach(match => {
+                        let matchDiv = document.createElement("div");
+                        matchDiv.className = "match";
+                        matchDiv.innerHTML = match.join(" vs ");
+                        roundDiv.appendChild(matchDiv);
+                    });
+                    bracketDiv.appendChild(roundDiv);
+                });
+            }
+
+            // Save user
+            function saveUser() {
+                let users = JSON.parse(localStorage.getItem("users")) || [];
+                const idx = users.findIndex(u => u.username === loggedUser.username);
+                if (idx > -1) {
+                    users[idx] = loggedUser;
+                    localStorage.setItem("users", JSON.stringify(users));
+                    localStorage.setItem("loggedInUser", JSON.stringify(loggedUser));
+                }
+            }
+        </script>
+<p>
         MEDIEVAL AGE<br>
         medieval FPS RPG MMO Game
     <p>
@@ -141,8 +321,6 @@ For inquiries or licensing requests, contact: chruskosco@gmail.com
         property of Christopher Jordan Sidney Cunningham.
         Unauthorized use is prohibited.”
     <p>
-    <div span style="border: none;" class="gfm-embed" data-url="https://www.gofundme.com/f/graphic-mechanics-legal-and-launch/widget/large"></div>
-    <script defer src="https://www.gofundme.com/static/js/embed.js"></script>
     </p>
 </body>
 

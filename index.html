@@ -31,54 +31,54 @@
         Pages
     </p>
     <!--Pages-->
-        <nav>
-            <button class="buttons" onclick="document.location='index.html'">
-                Home
-            </button>
+    <nav>
+        <button class="buttons" onclick="document.location='index.html'">
+            Home
+        </button>
 
-            <button class="buttons" onclick="document.location='games.html'">
-                Games
-            </button>
+        <button class="buttons" onclick="document.location='games.html'">
+            Games
+        </button>
 
-            <button class="buttons" onclick="document.location='servers.html'">
-                Servers
-            </button>
+        <button class="buttons" onclick="document.location='servers.html'">
+            Servers
+        </button>
 
-            <button class="buttons" onclick="document.location='tv.html'">
-                TV
-            </button>
+        <button class="buttons" onclick="document.location='tv.html'">
+            TV
+        </button>
 
-            <button class="buttons" onclick="document.location='store.html'">
-                Store
-            </button>
+        <button class="buttons" onclick="document.location='store.html'">
+            Store
+        </button>
 
-            <button class="buttons" onclick="document.location='forum.html'">
-                Forum
-            </button>
+        <button class="buttons" onclick="document.location='forum.html'">
+            Forum
+        </button>
 
-            <button class="buttons" onclick="document.location='account.html'">
-                Account
-            </button>
+        <button class="buttons" onclick="document.location='account.html'">
+            Account
+        </button>
 
-            <button class="buttons" onclick="document.location='aboutus.html'">
-                About Us
-            </button>
-        </nav>
+        <button class="buttons" onclick="document.location='aboutus.html'">
+            About Us
+        </button>
+    </nav>
     <!--Content-->
-        <p>
-            <header>
-                <h1>Topics</h1>
-                <a href="profile.html">Profile</a> |
-                <a href="#" onclick="logout()">Logout</a>
-            </header>
-            Welcome to Hardcore Gaming where you can find information on Hardcoregaming.
-            <iframe width="1560" height="750" src="https://www.youtube.com/embed/U6Tz814F7sE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <p>
-    <!--<video width="100%" height="100%" controls autoplay muted>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/U6Tz814F7sE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <source src="gamevideo.mp4" type="video/mp4">
-        <source src="gamevideo.ogg" type="video/ogg">
-    </video>-->
+        <header>
+            <h1>Topics</h1>
+            <a href="profile.html">Profile</a> |
+            <a href="#" onclick="logout()">Logout</a>
+        </header>
+        Welcome to Hardcore Gaming where you can find information on Hardcoregaming.
+        <iframe width="1560" height="750" src="https://www.youtube.com/embed/U6Tz814F7sE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <p>
+        <!--<video width="100%" height="100%" controls autoplay muted>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/U6Tz814F7sE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <source src="gamevideo.mp4" type="video/mp4">
+            <source src="gamevideo.ogg" type="video/ogg">
+        </video>-->
     <p>
         MEDIEVAL AGE<br>
         medieval FPS RPG MMO Game
@@ -105,27 +105,67 @@
         fantasy FPS RPG MMO Game
     <p>
 
-        <div id="chatbox">
-            <div id="messages"></div>
-            <input id="userInput" placeholder="Type a message..." />
-            <button onclick="sendMessage()">Send</button>
-        </div>
-
         <script>
-            async function sendMessage() {
-                const userInput = document.getElementById('userInput').value;
-                const response = await fetch('/chat', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: userInput })
+            // Initialize Firebase
+            const app = firebase.initializeApp({
+                apiKey: "AIzaSyDG7sDxuTUYXhE-q0JwE_qMbL7FimjfwHs",
+                authDomain: "hardcoregamin.firebaseapp.com",
+                databaseURL: "https://hardcoregamin-default-rtdb.firebaseio.com",
+                projectId: "hardcoregamin",
+                storageBucket: "hardcoregamin.firebasestorage.app",
+                messagingSenderId: "27414918674",
+                appId: "1:27414918674:web:fcf977bb696db676a78acb",
+            });
+
+            const auth = firebase.auth();
+            const database = firebase.database();
+            const storage = firebase.storage();
+
+            const app = initializeApp(firebaseConfig);
+            const db = getDatabase(app);
+
+            function saveProfile(userId, username) {
+                set(ref(db, 'users/' + userId), { username });
+            }
+
+            // Sign up with email
+            function signUp(email, password) {
+                auth.createUserWithEmailAndPassword(email, password)
+                    .then(userCredential => {
+                        console.log("User signed up:", userCredential.user.uid);
+                    })
+                    .catch(error => console.error(error));
+            }
+
+            // Sign in
+            function signIn(email, password) {
+                auth.signInWithEmailAndPassword(email, password)
+                    .then(userCredential => {
+                        console.log("Signed in:", userCredential.user.uid);
+                    })
+                    .catch(error => console.error(error));
+            }
+
+            // Save a profile
+            function saveProfile(userId, username) {
+                database.ref('users/' + userId).set({
+                    username: username
                 });
-                const data = await response.json();
-                document.getElementById('messages').innerHTML += `<div>User: ${userInput}</div><div>Bot: ${data.reply}</div>`;
+            }
+
+            // Read a profile
+            function loadProfile(userId) {
+                database.ref('users/' + userId).once('value')
+                    .then(snapshot => console.log(snapshot.val()));
             }
         </script>
 
+        <!-- Firebase App (always required) -->
+        <script src="https://www.gstatic.com/firebasejs/10.16.0/firebase-app.js"></script>
 
-
-    </p>
+        <!-- Firebase services you need -->
+        <script src="https://www.gstatic.com/firebasejs/10.16.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.16.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.16.0/firebase-storage.js"></script>
 </body>
 </html>

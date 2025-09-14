@@ -30,6 +30,52 @@
             button:hover {
                 background: #004999;
             }
+
+        .panel {
+            background: white;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            max-width: 500px;
+        }
+
+        h3 {
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 8px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .status {
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .online {
+            color: green;
+        }
+
+        .offline {
+            color: gray;
+        }
+
+        .busy {
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -71,6 +117,8 @@
     <form id="profileForm">
         <input type="text" id="displayName" placeholder="Display Name" required>
         <input type="email" id="email" placeholder="Email" required>
+        <!-- Profile Picture -->
+        <input type="file" id="profilePicture" accept="image/*">
         <input type="text" id="phone" placeholder="Phone">
         <input type="text" id="address" placeholder="Address">
         <input type="date" id="birthdate" placeholder="Birthdate">
@@ -82,17 +130,161 @@
     </form>
     <button onclick="logout()">Logout</button>
 
+    <!-- Profile Display -->
+    <div id="profileDisplay" class="panel">
+        <h3>Profile Info</h3>
+        <img id="profilePicDisplay" src="" alt="Profile Picture" width="120" style="display:block; margin-top:10px;">
+        <p><strong>Display Name:</strong> <span id="showDisplayName"></span></p>
+        <p><strong>Email:</strong> <span id="showEmail"></span></p>
+        <p><strong>Phone:</strong> <span id="showPhone"></span></p>
+        <p><strong>Address:</strong> <span id="showAddress"></span></p>
+        <p><strong>Birthdate:</strong> <span id="showBirthdate"></span></p>
+        <p><strong>Gender:</strong> <span id="showGender"></span></p>
+        <p><strong>Friends:</strong> <span id="friendsList"></span></p>
+        <p><strong>Clan:</strong> <span id="clansList"></span></p>
+    </div>
+
+    <!-- Friends List -->
+    <div class="panel">
+        <h3>Friends</h3>
+        <ul id="friendsList"></ul>
+        <input type="text" id="newFriend" placeholder="Friend Username">
+        <select id="friendStatus">
+            <option value="online">Online</option>
+            <option value="busy">Busy</option>
+            <option value="offline">Offline</option>
+        </select>
+        <button onclick="addFriend()">Add Friend</button>
+    </div>
+
+    <!-- Clan List -->
+    <div class="panel">
+        <h3>Clans</h3>
+        <ul id="clansList"></ul>
+        <input type="text" id="newClan" placeholder="Clan Name">
+        <input type="text" id="clanRole" placeholder="Your Role (Leader/Member)">
+        <button onclick="addClan()">Join Clan</button>
+    </div>
+
+    <!-- Tournament Teams -->
+    <div class="panel">
+        <h3>Tournament</h3>
+        <ul id="teamsList"></ul>
+        <input type="text" id="newTeam" placeholder="Team Name">
+        <button onclick="addTeam()">Add Team</button>
+        <button onclick="startTournament()">Start Tournament</button>
+
+        <div id="tournamentBracket" style="margin-top:15px;"></div>
+    </div>
+
     <script>
         let loggedUser = JSON.parse(localStorage.getItem("loggedInUser"));
         if (!loggedUser) { alert("Login required"); window.location.href = "accounts.html"; }
 
-        document.getElementById("displayName").value = loggedUser.profile.displayName;
-        document.getElementById("email").value = loggedUser.profile.email;
-        document.getElementById("phone").value = loggedUser.profile.phone;
-        document.getElementById("address").value = loggedUser.profile.address;
-        document.getElementById("birthdate").value = loggedUser.profile.birthdate;
-        document.getElementById("gender").value = loggedUser.profile.gender;
+        // Load existing picture
+        document.addEventListener("DOMContentLoaded", () => {
+            if (loggedUser.profile && loggedUser.profile.picture) {
+                document.getElementById("profilePicDisplay").src = loggedUser.profile.picture;
+            }
+        });
 
+        // When user selects a file
+        document.getElementById("profilePicture").addEventListener("change", function (e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                const imageBase64 = event.target.result;
+                // Display image
+                document.getElementById("profilePicDisplay").src = imageBase64;
+                // Save to loggedUser profile
+                loggedUser.profile = loggedUser.profile || {};
+                loggedUser.profile.picture = imageBase64;
+            }
+            reader.readAsDataURL(file);
+        });
+
+        // Defaults
+        loggedUser.friends = loggedUser.friends || [];
+        loggedUser.clans = loggedUser.clans || [];
+
+        // Render Profile
+        function renderProfile() {
+            document.getElementById("showDisplayName").textContent = loggedUser.profile.displayName || "";
+            document.getElementById("showEmail").textContent = loggedUser.profile.email || "";
+            document.getElementById("showPhone").textContent = loggedUser.profile.phone || "";
+            document.getElementById("showAddress").textContent = loggedUser.profile.address || "";
+            document.getElementById("showBirthdate").textContent = loggedUser.profile.birthdate || "";
+            document.getElementById("showGender").textContent = loggedUser.profile.gender || "";
+        }
+
+        // Render Friends
+        function renderFriends() {
+            const list = document.getElementById("friendsList");
+            list.innerHTML = "";
+            loggedUser.friends.forEach(f => {
+                let li = document.createElement("li");
+                li.innerHTML = `
+                        <span><strong>${f.name}</strong></span>
+                        <span class="status ${f.status}">${f.status}</span>
+                    `;
+                list.appendChild(li);
+            });
+        }
+
+        // Render Clans
+        function renderClans() {
+            const list = document.getElementById("clansList");
+            list.innerHTML = "";
+            loggedUser.clans.forEach(c => {
+                let li = document.createElement("li");
+                let members = (c.members || []).join(", ") || "No members yet";
+                li.innerHTML = `
+                        <div>
+                            <strong>${c.name}</strong> - <span class="status">(${c.role})</span>
+                        </div>
+                        <small>Members: ${members}</small>
+                    `;
+                list.appendChild(li);
+            });
+        }
+
+        // Add Friend
+        function addFriend() {
+            const name = document.getElementById("newFriend").value;
+            const status = document.getElementById("friendStatus").value;
+            if (!name) return;
+            loggedUser.friends.push({ name, status });
+            saveUser();
+            renderFriends();
+            document.getElementById("newFriend").value = "";
+        }
+
+        // Add Clan
+        function addClan() {
+            const name = document.getElementById("newClan").value;
+            const role = document.getElementById("clanRole").value || "Member";
+            if (!name) return;
+            loggedUser.clans.push({ name, role, members: [loggedUser.profile.displayName] });
+            saveUser();
+            renderClans();
+            document.getElementById("newClan").value = "";
+            document.getElementById("clanRole").value = "";
+        }
+
+        // Save User
+        function saveUser() {
+            let users = JSON.parse(localStorage.getItem("users")) || [];
+            const idx = users.findIndex(u => u.username === loggedUser.username);
+            if (idx > -1) {
+                users[idx] = loggedUser;
+                localStorage.setItem("users", JSON.stringify(users));
+                localStorage.setItem("loggedInUser", JSON.stringify(loggedUser));
+            }
+        }
+
+        // Profile Form Update
         document.getElementById("profileForm").addEventListener("submit", function (e) {
             e.preventDefault();
             const displayName = document.getElementById("displayName").value;
@@ -106,17 +298,24 @@
             const idx = users.findIndex(u => u.username === loggedUser.username);
             if (idx > -1) {
                 users[idx].profile = { displayName, email, phone, address, birthdate, gender };
-                localStorage.setItem("users", JSON.stringify(users));
                 loggedUser = users[idx];
+                localStorage.setItem("users", JSON.stringify(users));
                 localStorage.setItem("loggedInUser", JSON.stringify(loggedUser));
                 alert("Profile updated!");
             }
+            renderProfile();
         });
 
         function logout() {
             localStorage.removeItem("loggedInUser");
             window.location.href = "index.html";
         }
+
+        // Initial render
+        renderProfile();
+        renderFriends();
+        renderClans();
     </script>
+
 </body>
 </html>
