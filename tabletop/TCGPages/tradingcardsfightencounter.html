@@ -1,0 +1,707 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Chris Cunningham">
+    <meta name="description" content="Hardcore Gaming Playing Games">
+    <meta charset="UTF-8">
+    <title>Trading Cards</title>
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
+    <link rel="stylesheet" href="../../styles/index.css">
+    <link rel="stylesheet" href="../../styles/games.css">
+    <style>
+        /* Reset default margin and padding
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }*/
+
+        body {
+            background-image: url(../../background.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        /* Style for the card container */
+        .card {
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 20px;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+            /* Style for the card image */
+            .card img {
+                width: 100%;
+                height: auto;
+                border-radius: 5px;
+            }
+
+        /* Style for the card information */
+        .card-info {
+            padding: 5px 0;
+        }
+
+            .card-info h2 {
+                font-size: 1.5em;
+                margin-bottom: 5px;
+            }
+
+            .card-info p {
+                font-size: 1em;
+                color: #333;
+            }
+
+        ul {
+            display: inline;
+            list-style-type: none;
+            margin: 0px;
+            padding: 0;
+            float: left;
+        }
+
+        li {
+            float: left;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 span style="color: gray;" class="tittle">
+        Trading Cards
+    </h1>
+
+    <p>
+        Pages
+    </p>
+    <!--Pages-->
+    <nav>
+        <button class="buttons" onclick="document.location='../../index.html'">
+            Home
+        </button>
+
+        <button class="buttons" onclick="document.location='../../games.html'">
+            Games
+        </button>
+
+        <button class="buttons" onclick="document.location='../../servers.html'">
+            Servers
+        </button>
+
+        <button class="buttons" onclick="document.location='../../tv.html'">
+            TV
+        </button>
+
+        <button class="buttons" onclick="document.location='../../store.html'">
+            Store
+        </button>
+
+        <button class="buttons" onclick="document.location='../../forum.html'">
+            Forum
+        </button>
+
+        <button class="buttons" onclick="document.location='../../profile.html'">
+            Profile
+        </button>
+
+        <button class="buttons" onclick="document.location='../../aboutus.html'">
+            About Us
+        </button>
+    </nav>
+
+    <p>
+        Catagories
+    </p>
+    <!--Catagories-->
+    <nav>
+        <button class="buttons" onclick="document.location='../tabletop.html'">
+            TableTop
+        </button>
+
+        <button class="buttons" onclick="document.location='../tradingcards.html'">
+            TradingCard
+        </button>
+
+        <button class="buttons" onclick="document.location='../boardgame.html'">
+            BoardGame
+        </button>
+
+        <button class="buttons" onclick="document.location='../models.html'">
+            Models
+        </button>
+    </nav>
+    <p>
+        Page Content
+    </p>
+    <nav>
+        <button class="buttons-LS" onclick="document.location='tradingcardslifestyle.html'">
+            Lifestyle
+        </button>
+
+        <button class="buttons-FE" onclick="document.location='tradingcardsfightencounter.html'">
+            Fight Encounter
+        </button>
+
+        <button class="buttons-ME" onclick="document.location='tradingcardsmedievalempire.html'">
+            Medieval Empire
+        </button>
+
+        <button class="buttons-OW" onclick="document.location='tradingcardsoperationwarfare.html'">
+            Operation Warfare
+        </button>
+
+        <button class="buttons-SG" onclick="document.location='tradingcardsspacegalaxies.html'">
+            Space Galaxies
+        </button>
+
+        <button class="buttons-IA" onclick="document.location='tradingcardsinfectionapocalypse.html'">
+            Infection Apocalypse
+        </button>
+
+        <button class="buttons-SV" onclick="document.location='tradingcardssuperviglantie.html'">
+            Super Viglantie
+        </button>
+
+        <button class="buttons-MP" onclick="document.location='tradingcardsmythicalplane.html'">
+            Mythical Plane
+        </button>
+    </nav>
+    <h2>Lifestyle</h2>
+    <p>
+        Creating a Trading Card Game (TCG) with different fighting styles involves several key design aspects, including gameplay mechanics, card types, and art style. Here's an overview of how you might structure and develop your TCG concept:
+
+        1. Core Concept and Gameplay Mechanics
+
+        Turn-Based Combat: Players take turns playing cards from their hands, performing actions like attacking, defending, or using special abilities.
+
+        Energy or Mana System: Cards may require resources (like energy points) to play. Managing resources is crucial for strategic gameplay.
+
+        Win Condition: The goal could be to reduce the opponent's life points to zero, control a specific area, or achieve certain objectives through card play.
+
+        2. Fight Styles and Card Types
+
+        Design your cards around different fight styles, each with unique strengths, weaknesses, and mechanics. Here are some possible fight styles:
+
+        Brawlers: Focus on close combat with high attack but low defense. Cards include powerful punches, grapples, and counterattacks.
+
+        Martial Artists: Balanced with speed, precision, and combos. Cards might include stances, counters, and multi-hit moves.
+
+        Weapons Specialists: Use swords, spears, or ranged weapons. Cards include weapon attacks, parries, and armor-piercing moves.
+
+        Magic Users: Focus on spells and enchantments. Cards involve casting spells, summoning creatures, and buffing allies.
+
+        Defenders: High defense and counterattacks, focusing on blocking, armor, and taunting the enemy to absorb damage.
+
+        Agility Fighters: Focus on dodging and fast strikes. Cards include evasive maneuvers, quick jabs, and feints.
+
+        3. Card Types
+
+        Each card type serves a specific function during gameplay:
+
+        Attack Cards: Deal damage to opponents.
+
+        Defense Cards: Reduce or negate incoming damage.
+
+        Ability Cards: Special moves or effects unique to a fighter style.
+
+        Equipment Cards: Weapons, armor, and other gear that provide bonuses or alter stats.
+
+        Support Cards: Buffs, healing, or utility effects that aid the player.
+
+        4. Deck Building
+
+        Players can create decks based on a primary fight style or mix different styles for versatility. Deck size and card limits help balance the game.
+
+        Introduce synergies between cards that enhance playstyles, like combos for martial artists or weapon effects for specialists.
+
+        5. Art Style and Presentation
+
+        The art should reflect the theme and tone of the fighting styles. For instance, martial artists might have dynamic, flowing art, while brawlers have gritty, impactful visuals.
+
+        Design distinct icons and visuals for each fight style to make cards easily recognizable.
+
+        6. Game Balance
+
+        Balancing different fighting styles will be crucial to avoid one style dominating the game. Playtesting with various deck combinations is essential.
+
+        7. Digital or Physical Game
+
+        Digital Version: Unity or other game engines can handle card interactions, animations, and online multiplayer.
+
+        Physical Version: Consider print quality, card layout design, and how players will track stats during gameplay.
+
+        8. Single-Player and Multiplayer Modes
+
+        Single-Player: Offer AI opponents with different decks and difficulty levels.
+
+        Multiplayer: Allow players to challenge each other in ranked or casual matches.
+
+        9. Progression System
+
+        Introduce a progression system where players earn new cards, deck customizations, or cosmetic upgrades through gameplay.
+
+        Would you like more details on a specific aspect, such as mechanics, art direction, or developing the game in Unity?
+    </p>
+    <p>
+        Creating diverse fighter types and group factions adds depth and strategic variety to your TCG. Here's a detailed breakdown of different fighter types and their potential group factions, each with distinct characteristics, fighting styles, and thematic elements.
+
+        Fighter Types
+
+        Brawlers (Brutes)
+
+        Description: Brawlers excel in raw power and close combat. They rely on brute strength, heavy punches, and grappling techniques to overwhelm their opponents.
+
+        Strengths: High attack, health, and crowd control abilities.
+
+        Weaknesses: Slow, low defense against ranged or magic attacks.
+
+        Example Moves: Power Slam, Ground Pound, Knockout Punch.
+
+        Martial Artists (Strikers)
+
+        Description: These fighters are skilled in hand-to-hand combat, using precision, speed, and a variety of stances and techniques.
+
+        Strengths: Speed, combo attacks, counters, and evasion.
+
+        Weaknesses: Moderate attack and defense; relies on chaining moves.
+
+        Example Moves: Dragon Kick, Shadow Step, Counterstrike.
+
+        Weapons Specialists (Bladesmen)
+
+        Description: Mastery of various weapons such as swords, spears, and axes defines these fighters. They strike from a distance with deadly precision.
+
+        Strengths: High damage, versatile range, and armor-piercing attacks.
+
+        Weaknesses: Weak without their weapons, slower than unarmed fighters.
+
+        Example Moves: Blade Flurry, Spear Thrust, Parry and Riposte.
+
+        Magic Users (Mages)
+
+        Description: Mages wield arcane, elemental, or dark magic to control the battlefield, summon creatures, or directly attack enemies.
+
+        Strengths: High versatility, control abilities, AoE spells.
+
+        Weaknesses: Low health, dependent on mana or energy resources.
+
+        Example Moves: Fireball, Ice Barrier, Arcane Blast.
+
+        Defenders (Guardians)
+
+        Description: These fighters are experts in defense, tanking damage, and protecting allies with shields and heavy armor.
+
+        Strengths: High defense, block and counter capabilities, crowd control.
+
+        Weaknesses: Low mobility and attack speed, relies on reactive play.
+
+        Example Moves: Shield Bash, Iron Wall, Defensive Stance.
+
+        Agility Fighters (Rogues)
+
+        Description: Agile and stealthy, these fighters specialize in dodging, quick strikes, and underhanded tactics like poison and traps.
+
+        Strengths: High evasion, fast attacks, stealth abilities.
+
+        Weaknesses: Fragile with low health; relies on speed and positioning.
+
+        Example Moves: Backstab, Poison Dart, Evasion Roll.
+
+        Beastmasters
+
+        Description: Fighters who command animal companions or shapeshift into beasts, blending melee and summoning abilities.
+
+        Strengths: Summon creatures, versatility in attacks, adaptability.
+
+        Weaknesses: Dependent on companions; weaker when isolated.
+
+        Example Moves: Summon Wolf Pack, Beast Form, Command Roar.
+
+        Group Factions
+
+        Factions represent the larger organizations or ideologies behind each fighter type, often defining their lore, card aesthetics, and synergies.
+
+        Iron Fists Clan (Brawlers)
+
+        Theme: An underground faction that thrives on raw power and street fighting.
+
+        Lore: A ruthless gang known for their unyielding strength and territory control.
+
+        Synergies: Boosts to health and attack, gaining power from each successful hit.
+
+        The Lotus Order (Martial Artists)
+
+        Theme: A disciplined group of monks and martial masters dedicated to perfecting their art.
+
+        Lore: They value honor, tradition, and balance, using ancient techniques passed down through generations.
+
+        Synergies: Combos and counters that get stronger with each chain.
+
+        The Black Blades (Weapons Specialists)
+
+        Theme: A mercenary guild of master swordsmen and assassins.
+
+        Lore: They work for the highest bidder, specializing in precise and lethal strikes.
+
+        Synergies: Weapon enhancements, crit hits, and parry mechanics.
+
+        Arcane Circle (Magic Users)
+
+        Theme: A secretive group of wizards, sorcerers, and warlocks who harness ancient and forbidden magic.
+
+        Lore: They aim to control the world’s magic sources, using their power to reshape reality.
+
+        Synergies: High synergy with spell chaining, mana manipulation, and summoning.
+
+        Steel Guard (Defenders)
+
+        Theme: A defensive order of knights and paladins dedicated to protecting the realm.
+
+        Lore: Known as the shield of the people, they value courage, duty, and sacrifice.
+
+        Synergies: Shield-based defense, armor buffs, and damage mitigation.
+
+        Shadow Syndicate (Agility Fighters)
+
+        Theme: A secret network of thieves, spies, and rogues who operate from the shadows.
+
+        Lore: They work in the dark, undermining powers and collecting secrets.
+
+        Synergies: Stealth, poison effects, traps, and backstab mechanics.
+
+        The Wild Hunt (Beastmasters)
+
+        Theme: A primal faction of hunters and shamans who connect deeply with nature and beasts.
+
+        Lore: They seek to restore the natural order, using their bond with animals as their greatest weapon.
+
+        Synergies: Summoning creatures, enhancing beasts, and synergizing with the environment.
+
+        Faction Synergies and Gameplay Impacts
+
+        Faction Abilities: Each faction could have unique passive abilities, like the Iron Fists gaining extra attack power when below 50% health or the Arcane Circle generating extra mana each turn.
+
+        Faction-Specific Cards: Design cards that are exclusive to each faction, providing specialized tools that align with their playstyle.
+
+        Faction Combos: Create synergies between different faction cards that allow cross-faction decks, like a Brawler's brute strength combined with a Defender's blocking abilities.
+
+        Would you like to explore a particular faction or fighter type further, or discuss implementing these ideas in your game?
+    </p>
+    <p>
+        Here are additional fighting types to consider for your Trading Card Game (TCG), each with unique mechanics, themes, and strategic implications:
+
+        Additional Fighting Types
+
+        Elemental Warriors
+
+        Description: Fighters who harness elemental powers (fire, water, earth, air) to enhance their attacks and abilities.
+
+        Strengths: Element-based abilities can exploit enemy weaknesses; versatile strategies based on elemental interactions.
+
+        Weaknesses: Limited effectiveness against certain resistances; may require specific conditions to unleash full potential.
+
+        Example Moves: Fire Blast, Water Shield, Earthquake, Gale Force.
+
+        Defilers (Corruptors)
+
+        Description: Fighters who manipulate dark energies or curses to weaken opponents and gain power through suffering.
+
+        Strengths: Debuffs, life-draining abilities, and control over battlefield conditions.
+
+        Weaknesses: Vulnerable to purifying effects; may suffer backlash from their dark powers.
+
+        Example Moves: Life Drain, Curse of Weakness, Shadow Grasp.
+
+        Ranged Combatants (Gunners)
+
+        Description: Fighters who specialize in using firearms, bows, or other ranged weapons to strike from a distance.
+
+        Strengths: High damage output from afar; can control the battlefield with traps or area denial.
+
+        Weaknesses: Weaker in close combat; often need time to reload or set up shots.
+
+        Example Moves: Sniper Shot, Explosive Trap, Rapid Fire.
+
+        Tacticians
+
+        Description: Fighters who rely on strategy, planning, and battlefield manipulation to control engagements.
+
+        Strengths: Ability to manipulate the turn order, change rules temporarily, or redirect attacks.
+
+        Weaknesses: Requires careful planning; often less effective in direct combat.
+
+        Example Moves: Tactical Retreat, Ambush, Reversal of Fate.
+
+        Acrobats
+
+        Description: Agile fighters who use acrobatics and agility to avoid attacks and strike from unexpected angles.
+
+        Strengths: High mobility, evasion, and the ability to flank opponents.
+
+        Weaknesses: Low health and damage; relies on positioning.
+
+        Example Moves: Aerial Assault, Tumbling Strike, Flanking Maneuver.
+
+        Berserkers
+
+        Description: Fighters who enter a frenzied state, sacrificing defense for a significant boost in attack power.
+
+        Strengths: High damage output and overwhelming attacks when enraged.
+
+        Weaknesses: Low defense and vulnerability during the frenzy; can’t control actions well.
+
+        Example Moves: Rage Attack, Frenzy Strike, Bloodlust Charge.
+
+        Psychic Fighters
+
+        Description: Warriors who utilize mental powers to influence the battlefield, control opponents, or enhance their own abilities.
+
+        Strengths: Can manipulate the turn order, predict opponents’ moves, and control the board.
+
+        Weaknesses: Low physical stats; requires high strategic thinking and prediction.
+
+        Example Moves: Mind Control, Telekinesis, Psychic Shield.
+
+        Animal Shifters
+
+        Description: Fighters who can transform into animals or take on animalistic traits, gaining unique abilities.
+
+        Strengths: Versatile abilities based on chosen animal forms; increased strength, speed, or senses.
+
+        Weaknesses: Limited transformation duration; can’t use equipment in animal form.
+
+        Example Moves: Wolf Form (enhanced speed), Bear Form (enhanced strength), Eagle Form (heightened senses).
+
+        Wrestlers
+
+        Description: Masters of grappling and submission holds, these fighters rely on strength and technique to overpower opponents.
+
+        Strengths: High control over the opponent, with the ability to pin or submit them.
+
+        Weaknesses: May struggle against fast or ranged fighters; can be countered with evasive maneuvers.
+
+        Example Moves: Suplex, Armbar, Powerbomb.
+
+        Samurais
+
+        Description: Highly disciplined fighters trained in swordsmanship and honor, using precision and technique.
+
+        Strengths: Strong critical hits, counters, and high damage attacks with precise timing.
+
+        Weaknesses: Requires careful timing and positioning; may struggle against multiple opponents.
+
+        Example Moves: Iaijutsu (quick draw), Counter Slash, Honorable Duel.
+
+        Combining Fighting Types and Factions
+
+        You can mix and match these fighting types within your factions, creating hybrid fighters that draw from multiple styles. For instance:
+
+        Elemental Berserkers: A berserker who channels elemental fury, gaining power from their rage and elemental affinities.
+
+        Psychic Acrobats: Agile fighters who use their mental prowess to predict and evade attacks, striking when least expected.
+
+        Wrestlers from the Iron Fists Clan: Brawlers specializing in grappling, combining brute strength with technical skills.
+
+        Gameplay Dynamics
+
+        Each fighting type can introduce unique mechanics and synergies, encouraging players to build decks that leverage strengths while addressing weaknesses. Consider how these types can interact, creating strategies that promote engaging gameplay.
+
+        Would you like to focus on any specific fighting type or faction for deeper exploration or integration into your game?
+    </p>
+    <p>
+        In a Trading Card Game (TCG), different types of energy can add layers of strategy and gameplay mechanics. Here’s a breakdown of various energy types you can incorporate into your game, each with unique characteristics and uses:
+
+        Types of Energy
+
+        Physical Energy
+
+        Description: Represents physical strength and stamina. Used for basic attacks and defense.
+
+        Mechanics: Can be expended for standard attacks, blocking damage, or performing physical maneuvers.
+
+        Examples of Use: Fueling melee attacks, grapples, and evasive maneuvers.
+
+        Magical Energy
+
+        Description: Represents arcane or elemental power. Used for casting spells and activating magical abilities.
+
+        Mechanics: Spells may require different amounts of magical energy based on their power.
+
+        Examples of Use: Casting spells, summoning creatures, or creating magical barriers.
+
+        Elemental Energy
+
+        Description: Tied to the four classical elements: fire, water, earth, and air.
+
+        Mechanics: Certain cards may require a specific elemental energy to play, and elemental interactions can create combos or counters.
+
+        Examples of Use: Fire energy for fiery spells, water energy for healing, earth energy for defensive shields, air energy for swift movements.
+
+        Dark Energy
+
+        Description: A corrupting force that can debuff opponents and enhance destructive abilities.
+
+        Mechanics: Often used for negative effects like curses or direct damage.
+
+        Examples of Use: Cursing enemies, life drain, or summoning dark creatures.
+
+        Light Energy
+
+        Description: Represents purity, healing, and protection. Can be used to buff allies or restore health.
+
+        Mechanics: Often used for healing spells, shields, and protective effects.
+
+        Examples of Use: Healing allies, cleansing debuffs, or creating protective barriers.
+
+        Spirit Energy
+
+        Description: Represents the soul or essence of the fighters and can boost abilities based on emotional states or spiritual connections.
+
+        Mechanics: Tied to morale, encouraging players to maintain certain conditions for benefits.
+
+        Examples of Use: Empowering allies, enhancing attacks based on team synergy, or activating unique abilities.
+
+        Chi/Ki Energy
+
+        Description: A vital energy used in martial arts, representing internal power and focus.
+
+        Mechanics: Can be harnessed to enhance physical moves, counterattacks, or special martial arts techniques.
+
+        Examples of Use: Powering up attacks, evading damage, or performing advanced maneuvers.
+
+        Tech Energy
+
+        Description: Represents technological power, often used by futuristic or cybernetic fighters.
+
+        Mechanics: Used to activate gadgets, drones, or mechanical enhancements.
+
+        Examples of Use: Deploying robots, enhancing weapon efficiency, or utilizing tech-based attacks.
+
+        Stamina Energy
+
+        Description: Represents the fighter's endurance and resilience. Used for sustained actions or defensive maneuvers.
+
+        Mechanics: Can regenerate over time, allowing players to use powerful abilities after a cooldown.
+
+        Examples of Use: Blocking attacks, executing combo moves, or recovering from fatigue.
+
+        Life Energy
+
+        Description: Represents the essence of life itself, often tied to health and vitality.
+
+        Mechanics: May be used to revive fallen fighters or enhance healing abilities.
+
+        Examples of Use: Healing spells, resurrection effects, or buffs to health.
+
+        Combining Energy Types
+
+        Hybrid Energy: Some cards can require multiple types of energy, encouraging strategic deck-building and resource management. For instance, a powerful spell may require both magical and elemental energy.
+
+        Energy Synergies: Create cards that synergize with specific energy types, like a card that gains bonuses when certain energy levels are met or combined.
+
+        Gameplay Dynamics
+
+        Resource Management: Players must manage their energy effectively, balancing offensive and defensive moves based on the energy available.
+
+        Energy Interactions: Different energy types can have strengths and weaknesses against each other, similar to rock-paper-scissors mechanics. For example, light energy may counter dark energy but be weak against elemental energy.
+
+        Incorporating these energy types can create engaging gameplay dynamics and encourage players to develop diverse strategies. Would you like to delve deeper into specific energy mechanics or how they might interact with other game elements?
+    </p>
+    <ul>
+        <li>
+            <div class="card">
+                <img src="TradingCardsLifestyle/FrontLifestyleCardTemplate.png" alt="Card Image">
+                <div class="card-info">
+                    <h2>Lifestyle</h2>
+                    <p>Description of the card.</p>
+                    <p>Other details...</p>
+                </div>
+            </div>
+
+        <li>
+            <div class="card">
+                <img src="TradingCardsLifestyle/FrontLifestyleCardTemplate.png" alt="Card Image">
+                <div class="card-info">
+                    <h2>Lifestyle</h2>
+                    <p>Description of the card.</p>
+                    <p>Other details...</p>
+                </div>
+            </div>
+
+        <li>
+            <div class="card">
+                <img src="TradingCardsLifestyle/FrontLifestyleCardTemplate.png" alt="Card Image">
+                <div class="card-info">
+                    <h2>Lifestyle</h2>
+                    <p>Description of the card.</p>
+                    <p>Other details...</p>
+                </div>
+            </div>
+
+        <li>
+            <div class="card">
+                <img src="TradingCardsLifestyle/FrontLifestyleCardTemplate.png" alt="Card Image">
+                <div class="card-info">
+                    <h2>Lifestyle</h2>
+                    <p>Description of the card.</p>
+                    <p>Other details...</p>
+                </div>
+            </div>
+
+        <li>
+            <div class="card">
+                <img src="TradingCardsLifestyle/FrontLifestyleCardTemplate.png" alt="Card Image">
+                <div class="card-info">
+                    <h2>Lifestyle</h2>
+                    <p>Description of the card.</p>
+                    <p>Other details...</p>
+                </div>
+            </div>
+
+        <li>
+            <div class="card">
+                <img src="TradingCardsLifestyle/FrontLifestyleCardTemplate.png" alt="Card Image">
+                <div class="card-info">
+                    <h2>Lifestyle</h2>
+                    <p>Description of the card.</p>
+                    <p>Other details...</p>
+                </div>
+            </div>
+
+        <li>
+            <div class="card">
+                <img src="TradingCardsLifestyle/FrontLifestyleCardTemplate.png" alt="Card Image">
+                <div class="card-info">
+                    <h2>Lifestyle</h2>
+                    <p>Description of the card.</p>
+                    <p>Other details...</p>
+                </div>
+            </div>
+
+        <li>
+            <div class="card">
+                <img src="TradingCardsLifestyle/FrontLifestyleCardTemplate.png" alt="Card Image">
+                <div class="card-info">
+                    <h2>Lifestyle</h2>
+                    <p>Description of the card.</p>
+                    <p>Other details...</p>
+                </div>
+            </div>
+
+        <li>
+            <div class="card">
+                <img src="TradingCardsLifestyle/FrontLifestyleCardTemplate.png" alt="Card Image">
+                <div class="card-info">
+                    <h2>Lifestyle</h2>
+                    <p>Description of the card.</p>
+                    <p>Other details...</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+</body>
+</html>
