@@ -67,8 +67,8 @@
     </p>
     <!--Catagories-->
     <nav>
-        <button class="buttons" onclick="document.location='tabletop/tabletop.html'">
-            TableTop
+        <button class="buttons" onclick="document.location='store.html'">
+            Store
         </button>
 
         <button class="buttons" onclick="document.location='tabletop/tradingcards.html'">
@@ -83,6 +83,49 @@
             Models
         </button>
     </nav>
+
+    <h1>Support Store 💖</h1>
+    <p>Choose a support tier and checkout with PayPal:</p>
+
+    <!-- Tier Selection -->
+    <select id="tier" style="padding:10px; font-size:16px;">
+        <option value="5">🌱 Starter Pack - $5</option>
+        <option value="10">🔥 Supporter Pack - $10</option>
+        <option value="25">🌟 VIP Pack - $25</option>
+    </select>
+
+    <!-- PayPal button -->
+    <div id="paypal-button-container" style="margin-top:20px;"></div>
+
+    <!-- Load PayPal SDK (replace YOUR_CLIENT_ID with real one) -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AWmb-fHLcc3rlG35ypR80YBbn6MUhSABQ-j_LYevZunxBN2IKEHC7ZE6wACgKJzcT3cZvlKddUrvgGLO&currency=USD"></script>
+
+    <script>
+        paypal.Buttons({
+            createOrder: function (data, actions) {
+                // Get selected tier value
+                const amount = document.getElementById('tier').value;
+                let description = "";
+
+                if (amount === "5") description = "Starter Pack - $5";
+                if (amount === "10") description = "Supporter Pack - $10";
+                if (amount === "25") description = "VIP Pack - $25";
+
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: { value: amount },
+                        description: description
+                    }]
+                });
+            },
+            onApprove: function (data, actions) {
+                return actions.order.capture().then(function (details) {
+                    alert("✅ Thank you, " + details.payer.name.given_name + "! You purchased the " + details.purchase_units[0].description + ".");
+                });
+            }
+        }).render('#paypal-button-container');
+    </script>
+
     <!--Content-->
     <p>
         Welcome to Hardcore Gaming where you can find information on Hardcoregaming.
